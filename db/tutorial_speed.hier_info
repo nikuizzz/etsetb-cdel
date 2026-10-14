@@ -1,0 +1,306 @@
+|tutorial
+less <= control:inst3.less
+clk => control:inst3.clk
+clk => inst4[3].CLK
+clk => inst4[2].CLK
+clk => inst4[1].CLK
+clk => inst4[0].CLK
+clk => inst5[3].CLK
+clk => inst5[2].CLK
+clk => inst5[1].CLK
+clk => inst5[0].CLK
+clk => BCDcnt:inst.clk
+nrst => control:inst3.nrst
+nrst => inst5[3].ACLR
+nrst => inst5[2].ACLR
+nrst => inst5[1].ACLR
+nrst => inst5[0].ACLR
+nrst => inst4[3].ACLR
+nrst => inst4[2].ACLR
+nrst => inst4[1].ACLR
+nrst => inst4[0].ACLR
+nrst => BCDcnt:inst.nrst
+num[0] <= <GND>
+num[1] <= <GND>
+num[2] <= <GND>
+num[3] <= <GND>
+num[4] <= inst5[0].DB_MAX_OUTPUT_PORT_TYPE
+num[5] <= inst5[1].DB_MAX_OUTPUT_PORT_TYPE
+num[6] <= inst5[2].DB_MAX_OUTPUT_PORT_TYPE
+num[7] <= inst5[3].DB_MAX_OUTPUT_PORT_TYPE
+keycode[0] => inst4[0].DATAIN
+keycode[0] => keygroup:inst2.keycode[0]
+keycode[1] => inst4[1].DATAIN
+keycode[1] => keygroup:inst2.keycode[1]
+keycode[2] => inst4[2].DATAIN
+keycode[2] => keygroup:inst2.keycode[2]
+keycode[3] => inst4[3].DATAIN
+keycode[3] => keygroup:inst2.keycode[3]
+key => keygroup:inst2.key
+equal <= control:inst3.equal
+pin_nagreatme3 <= control:inst3.great
+
+
+|tutorial|control:inst3
+clk => state~4.DATAIN
+nrst => state~6.DATAIN
+netx => equal.IN0
+netx => shftl.IN0
+netx => process_0.IN0
+ngtx => great.IN0
+nltx => less.IN0
+bcd => process_0.IN1
+bcd => shftl.DATAB
+ast => state.OUTPUTSELECT
+ast => state.OUTPUTSELECT
+ast => state.OUTPUTSELECT
+ast => state.OUTPUTSELECT
+ast => state.OUTPUTSELECT
+ast => state.OUTPUTSELECT
+ast => state.OUTPUTSELECT
+ast => state.OUTPUTSELECT
+ast => ecnt.DATAB
+alm => state.OUTPUTSELECT
+alm => state.OUTPUTSELECT
+alm => state.OUTPUTSELECT
+less <= less.DB_MAX_OUTPUT_PORT_TYPE
+equal <= equal.DB_MAX_OUTPUT_PORT_TYPE
+great <= great.DB_MAX_OUTPUT_PORT_TYPE
+shftl <= shftl.DB_MAX_OUTPUT_PORT_TYPE
+ecnt <= ecnt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|tutorial|cmp2x4:inst1
+a[0] => Equal0.IN7
+a[0] => LessThan0.IN8
+a[0] => LessThan1.IN8
+a[1] => Equal0.IN6
+a[1] => LessThan0.IN7
+a[1] => LessThan1.IN7
+a[2] => Equal0.IN5
+a[2] => LessThan0.IN6
+a[2] => LessThan1.IN6
+a[3] => Equal0.IN4
+a[3] => LessThan0.IN5
+a[3] => LessThan1.IN5
+a[4] => Equal0.IN3
+a[4] => LessThan0.IN4
+a[4] => LessThan1.IN4
+a[5] => Equal0.IN2
+a[5] => LessThan0.IN3
+a[5] => LessThan1.IN3
+a[6] => Equal0.IN1
+a[6] => LessThan0.IN2
+a[6] => LessThan1.IN2
+a[7] => Equal0.IN0
+a[7] => LessThan0.IN1
+a[7] => LessThan1.IN1
+b[0] => Equal0.IN15
+b[0] => LessThan0.IN16
+b[0] => LessThan1.IN16
+b[1] => Equal0.IN14
+b[1] => LessThan0.IN15
+b[1] => LessThan1.IN15
+b[2] => Equal0.IN13
+b[2] => LessThan0.IN14
+b[2] => LessThan1.IN14
+b[3] => Equal0.IN12
+b[3] => LessThan0.IN13
+b[3] => LessThan1.IN13
+b[4] => Equal0.IN11
+b[4] => LessThan0.IN12
+b[4] => LessThan1.IN12
+b[5] => Equal0.IN10
+b[5] => LessThan0.IN11
+b[5] => LessThan1.IN11
+b[6] => Equal0.IN9
+b[6] => LessThan0.IN10
+b[6] => LessThan1.IN10
+b[7] => Equal0.IN8
+b[7] => LessThan0.IN9
+b[7] => LessThan1.IN9
+netx <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+ngtx <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+nltx <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|tutorial|BCDcnt:inst
+q[0] <= mod16count:inst.q[0]
+q[1] <= mod16count:inst.q[1]
+q[2] <= mod16count:inst.q[2]
+q[3] <= mod16count:inst.q[3]
+q[4] <= mod16count:inst1.q[0]
+q[5] <= mod16count:inst1.q[1]
+q[6] <= mod16count:inst1.q[2]
+q[7] <= mod16count:inst1.q[3]
+ecnt => inst2.IN2
+ecnt => mod16count:inst.cnt_en
+clk => mod16count:inst.clock
+clk => mod16count:inst1.clock
+nrst => inst4.IN0
+nrst => inst5.IN0
+
+
+|tutorial|BCDcnt:inst|mod16count:inst
+aclr => lpm_counter:LPM_COUNTER_component.aclr
+clock => lpm_counter:LPM_COUNTER_component.clock
+cnt_en => lpm_counter:LPM_COUNTER_component.cnt_en
+sclr => lpm_counter:LPM_COUNTER_component.sclr
+cout <= lpm_counter:LPM_COUNTER_component.cout
+q[0] <= lpm_counter:LPM_COUNTER_component.q[0]
+q[1] <= lpm_counter:LPM_COUNTER_component.q[1]
+q[2] <= lpm_counter:LPM_COUNTER_component.q[2]
+q[3] <= lpm_counter:LPM_COUNTER_component.q[3]
+
+
+|tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component
+clock => cntr_0lj:auto_generated.clock
+clk_en => ~NO_FANOUT~
+cnt_en => cntr_0lj:auto_generated.cnt_en
+updown => ~NO_FANOUT~
+aclr => cntr_0lj:auto_generated.aclr
+aset => ~NO_FANOUT~
+aconst => ~NO_FANOUT~
+aload => ~NO_FANOUT~
+sclr => cntr_0lj:auto_generated.sclr
+sset => ~NO_FANOUT~
+sconst => ~NO_FANOUT~
+sload => ~NO_FANOUT~
+data[0] => ~NO_FANOUT~
+data[1] => ~NO_FANOUT~
+data[2] => ~NO_FANOUT~
+data[3] => ~NO_FANOUT~
+cin => ~NO_FANOUT~
+q[0] <= cntr_0lj:auto_generated.q[0]
+q[1] <= cntr_0lj:auto_generated.q[1]
+q[2] <= cntr_0lj:auto_generated.q[2]
+q[3] <= cntr_0lj:auto_generated.q[3]
+cout <= cntr_0lj:auto_generated.cout
+eq[0] <= <GND>
+eq[1] <= <GND>
+eq[2] <= <GND>
+eq[3] <= <GND>
+eq[4] <= <GND>
+eq[5] <= <GND>
+eq[6] <= <GND>
+eq[7] <= <GND>
+eq[8] <= <GND>
+eq[9] <= <GND>
+eq[10] <= <GND>
+eq[11] <= <GND>
+eq[12] <= <GND>
+eq[13] <= <GND>
+eq[14] <= <GND>
+eq[15] <= <GND>
+
+
+|tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated
+aclr => counter_reg_bit1a[3].ACLR
+aclr => counter_reg_bit1a[2].ACLR
+aclr => counter_reg_bit1a[1].ACLR
+aclr => counter_reg_bit1a[0].ACLR
+clock => counter_reg_bit1a[3].CLK
+clock => counter_reg_bit1a[2].CLK
+clock => counter_reg_bit1a[1].CLK
+clock => counter_reg_bit1a[0].CLK
+cnt_en => _.IN1
+cout <= cout_actual.DB_MAX_OUTPUT_PORT_TYPE
+q[0] <= counter_reg_bit1a[0].REGOUT
+q[1] <= counter_reg_bit1a[1].REGOUT
+q[2] <= counter_reg_bit1a[2].REGOUT
+q[3] <= counter_reg_bit1a[3].REGOUT
+sclr => _.IN0
+sclr => _.IN0
+sclr => _.IN0
+
+
+|tutorial|BCDcnt:inst|mod16count:inst1
+aclr => lpm_counter:LPM_COUNTER_component.aclr
+clock => lpm_counter:LPM_COUNTER_component.clock
+cnt_en => lpm_counter:LPM_COUNTER_component.cnt_en
+sclr => lpm_counter:LPM_COUNTER_component.sclr
+cout <= lpm_counter:LPM_COUNTER_component.cout
+q[0] <= lpm_counter:LPM_COUNTER_component.q[0]
+q[1] <= lpm_counter:LPM_COUNTER_component.q[1]
+q[2] <= lpm_counter:LPM_COUNTER_component.q[2]
+q[3] <= lpm_counter:LPM_COUNTER_component.q[3]
+
+
+|tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component
+clock => cntr_0lj:auto_generated.clock
+clk_en => ~NO_FANOUT~
+cnt_en => cntr_0lj:auto_generated.cnt_en
+updown => ~NO_FANOUT~
+aclr => cntr_0lj:auto_generated.aclr
+aset => ~NO_FANOUT~
+aconst => ~NO_FANOUT~
+aload => ~NO_FANOUT~
+sclr => cntr_0lj:auto_generated.sclr
+sset => ~NO_FANOUT~
+sconst => ~NO_FANOUT~
+sload => ~NO_FANOUT~
+data[0] => ~NO_FANOUT~
+data[1] => ~NO_FANOUT~
+data[2] => ~NO_FANOUT~
+data[3] => ~NO_FANOUT~
+cin => ~NO_FANOUT~
+q[0] <= cntr_0lj:auto_generated.q[0]
+q[1] <= cntr_0lj:auto_generated.q[1]
+q[2] <= cntr_0lj:auto_generated.q[2]
+q[3] <= cntr_0lj:auto_generated.q[3]
+cout <= cntr_0lj:auto_generated.cout
+eq[0] <= <GND>
+eq[1] <= <GND>
+eq[2] <= <GND>
+eq[3] <= <GND>
+eq[4] <= <GND>
+eq[5] <= <GND>
+eq[6] <= <GND>
+eq[7] <= <GND>
+eq[8] <= <GND>
+eq[9] <= <GND>
+eq[10] <= <GND>
+eq[11] <= <GND>
+eq[12] <= <GND>
+eq[13] <= <GND>
+eq[14] <= <GND>
+eq[15] <= <GND>
+
+
+|tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated
+aclr => counter_reg_bit1a[3].ACLR
+aclr => counter_reg_bit1a[2].ACLR
+aclr => counter_reg_bit1a[1].ACLR
+aclr => counter_reg_bit1a[0].ACLR
+clock => counter_reg_bit1a[3].CLK
+clock => counter_reg_bit1a[2].CLK
+clock => counter_reg_bit1a[1].CLK
+clock => counter_reg_bit1a[0].CLK
+cnt_en => _.IN1
+cout <= cout_actual.DB_MAX_OUTPUT_PORT_TYPE
+q[0] <= counter_reg_bit1a[0].REGOUT
+q[1] <= counter_reg_bit1a[1].REGOUT
+q[2] <= counter_reg_bit1a[2].REGOUT
+q[3] <= counter_reg_bit1a[3].REGOUT
+sclr => _.IN0
+sclr => _.IN0
+sclr => _.IN0
+
+
+|tutorial|keygroup:inst2
+bcd <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+key => inst5.IN0
+key => inst4.IN0
+key => inst6.IN0
+keycode[0] => inst.IN0
+keycode[0] => inst7.IN1
+keycode[1] => inst1.IN0
+keycode[1] => inst6.IN3
+keycode[2] => inst2.IN0
+keycode[2] => inst6.IN2
+keycode[3] => inst3.IN0
+keycode[3] => inst6.IN1
+ast <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+alm <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+

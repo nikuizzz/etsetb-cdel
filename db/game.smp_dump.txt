@@ -1,0 +1,17 @@
+
+State Machine - |game|keypad:inst3|current_state
+Name current_state.check1 current_state.wait1 current_state.kra3 current_state.kra2 current_state.kra1 current_state.kra0 current_state.check0 current_state.wait0 
+current_state.wait0 0 0 0 0 0 0 0 0 
+current_state.check0 0 0 0 0 0 0 1 1 
+current_state.kra0 0 0 0 0 0 1 0 1 
+current_state.kra1 0 0 0 0 1 0 0 1 
+current_state.kra2 0 0 0 1 0 0 0 1 
+current_state.kra3 0 0 1 0 0 0 0 1 
+current_state.wait1 0 1 0 0 0 0 0 1 
+current_state.check1 1 0 0 0 0 0 0 1 
+
+State Machine - |game|tutorial:inst10|control:inst3|state
+Name state.show state.check state.start 
+state.start 0 0 0 
+state.check 0 1 1 
+state.show 1 0 1 

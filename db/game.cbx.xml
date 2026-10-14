@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="game">
+		<CBX_INST_ENTRY INSTANCE_NAME="|game|tutorial:inst10|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_0lj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|game|tutorial:inst10|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_0lj.tdf"/>
+	</PROJECT>
+	<PROJECT NAME="BCDcnt">
+	</PROJECT>
+</LOG_ROOT>

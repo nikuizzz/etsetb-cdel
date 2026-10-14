@@ -1,0 +1,347 @@
+Simulator report for tutorial
+Tue Oct 13 18:23:28 2026
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 100.0 us     ;
+; Simulation Netlist Size     ; 163 nodes    ;
+; Simulation Coverage         ;      92.31 % ;
+; Total Number of Transitions ; 2564         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                    ;
++--------------------------------------------------------------------------------------------+------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                  ; Default Value ;
++--------------------------------------------------------------------------------------------+------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                               ; Timing        ;
+; Start time                                                                                 ; 0 ns                                     ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                      ;               ;
+; Vector input source                                                                        ; C:/Users/minhh/Desktop/lab1/tutorial.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                       ; On            ;
+; Check outputs                                                                              ; Off                                      ; Off           ;
+; Report simulation coverage                                                                 ; On                                       ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                       ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                       ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                       ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                      ; Off           ;
+; Detect glitches                                                                            ; Off                                      ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                      ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                      ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                      ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                      ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                       ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                               ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                      ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                      ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                     ; Auto          ;
++--------------------------------------------------------------------------------------------+------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      92.31 % ;
+; Total nodes checked                                 ; 163          ;
+; Total output ports checked                          ; 169          ;
+; Total output ports with complete 1/0-value coverage ; 156          ;
+; Total output ports with no 1/0-value coverage       ; 13           ;
+; Total output ports with no 1-value coverage         ; 13           ;
+; Total output ports with no 0-value coverage         ; 13           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                                                                                                                         ;
++-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                                                             ; Output Port Name                                                                                                         ; Output Port Type ;
++-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+------------------+
+; |tutorial|less                                                                                                        ; |tutorial|less                                                                                                           ; pin_out          ;
+; |tutorial|clk                                                                                                         ; |tutorial|clk                                                                                                            ; out              ;
+; |tutorial|nrst                                                                                                        ; |tutorial|nrst                                                                                                           ; out              ;
+; |tutorial|num[6]                                                                                                      ; |tutorial|num[6]                                                                                                         ; pin_out          ;
+; |tutorial|num[5]                                                                                                      ; |tutorial|num[5]                                                                                                         ; pin_out          ;
+; |tutorial|num[4]                                                                                                      ; |tutorial|num[4]                                                                                                         ; pin_out          ;
+; |tutorial|num[3]                                                                                                      ; |tutorial|num[3]                                                                                                         ; pin_out          ;
+; |tutorial|num[2]                                                                                                      ; |tutorial|num[2]                                                                                                         ; pin_out          ;
+; |tutorial|num[1]                                                                                                      ; |tutorial|num[1]                                                                                                         ; pin_out          ;
+; |tutorial|num[0]                                                                                                      ; |tutorial|num[0]                                                                                                         ; pin_out          ;
+; |tutorial|inst5[2]                                                                                                    ; |tutorial|inst5[2]                                                                                                       ; regout           ;
+; |tutorial|inst5[1]                                                                                                    ; |tutorial|inst5[1]                                                                                                       ; regout           ;
+; |tutorial|inst5[0]                                                                                                    ; |tutorial|inst5[0]                                                                                                       ; regout           ;
+; |tutorial|inst4[3]                                                                                                    ; |tutorial|inst4[3]                                                                                                       ; regout           ;
+; |tutorial|inst4[2]                                                                                                    ; |tutorial|inst4[2]                                                                                                       ; regout           ;
+; |tutorial|inst4[1]                                                                                                    ; |tutorial|inst4[1]                                                                                                       ; regout           ;
+; |tutorial|inst4[0]                                                                                                    ; |tutorial|inst4[0]                                                                                                       ; regout           ;
+; |tutorial|keycode[3]                                                                                                  ; |tutorial|keycode[3]                                                                                                     ; out              ;
+; |tutorial|keycode[2]                                                                                                  ; |tutorial|keycode[2]                                                                                                     ; out              ;
+; |tutorial|keycode[1]                                                                                                  ; |tutorial|keycode[1]                                                                                                     ; out              ;
+; |tutorial|keycode[0]                                                                                                  ; |tutorial|keycode[0]                                                                                                     ; out              ;
+; |tutorial|key                                                                                                         ; |tutorial|key                                                                                                            ; out              ;
+; |tutorial|equal                                                                                                       ; |tutorial|equal                                                                                                          ; pin_out          ;
+; |tutorial|great                                                                                                       ; |tutorial|great                                                                                                          ; pin_out          ;
+; |tutorial|keygroup:inst2|inst10                                                                                       ; |tutorial|keygroup:inst2|inst10                                                                                          ; out0             ;
+; |tutorial|keygroup:inst2|inst5                                                                                        ; |tutorial|keygroup:inst2|inst5                                                                                           ; out0             ;
+; |tutorial|keygroup:inst2|inst4                                                                                        ; |tutorial|keygroup:inst2|inst4                                                                                           ; out0             ;
+; |tutorial|keygroup:inst2|inst8                                                                                        ; |tutorial|keygroup:inst2|inst8                                                                                           ; out0             ;
+; |tutorial|keygroup:inst2|inst6                                                                                        ; |tutorial|keygroup:inst2|inst6                                                                                           ; out0             ;
+; |tutorial|keygroup:inst2|inst7                                                                                        ; |tutorial|keygroup:inst2|inst7                                                                                           ; out0             ;
+; |tutorial|BCDcnt:inst|inst2                                                                                           ; |tutorial|BCDcnt:inst|inst2                                                                                              ; out0             ;
+; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|_~2                  ; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|_~2                     ; out0             ;
+; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita0   ; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita0      ; combout          ;
+; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita0   ; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita0~COUT ; cout             ;
+; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita1   ; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita1      ; combout          ;
+; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita1   ; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita1~COUT ; cout             ;
+; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita2   ; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita2      ; combout          ;
+; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_reg_bit1a[1] ; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|safe_q[1]               ; regout           ;
+; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_reg_bit1a[0] ; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|safe_q[0]               ; regout           ;
+; |tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|_~2                   ; |tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|_~2                      ; out0             ;
+; |tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita0    ; |tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita0       ; combout          ;
+; |tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita0    ; |tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita0~COUT  ; cout             ;
+; |tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita1    ; |tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita1       ; combout          ;
+; |tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita1    ; |tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita1~COUT  ; cout             ;
+; |tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita2    ; |tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita2       ; combout          ;
+; |tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita2    ; |tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita2~COUT  ; cout             ;
+; |tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita3    ; |tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita3       ; combout          ;
+; |tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_reg_bit1a[3]  ; |tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|safe_q[3]                ; regout           ;
+; |tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_reg_bit1a[2]  ; |tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|safe_q[2]                ; regout           ;
+; |tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_reg_bit1a[1]  ; |tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|safe_q[1]                ; regout           ;
+; |tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_reg_bit1a[0]  ; |tutorial|BCDcnt:inst|mod16count:inst|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|safe_q[0]                ; regout           ;
+; |tutorial|control:inst3|state~0                                                                                       ; |tutorial|control:inst3|state~0                                                                                          ; out              ;
+; |tutorial|control:inst3|state~1                                                                                       ; |tutorial|control:inst3|state~1                                                                                          ; out              ;
+; |tutorial|control:inst3|state~2                                                                                       ; |tutorial|control:inst3|state~2                                                                                          ; out              ;
+; |tutorial|control:inst3|state~3                                                                                       ; |tutorial|control:inst3|state~3                                                                                          ; out              ;
+; |tutorial|control:inst3|state~4                                                                                       ; |tutorial|control:inst3|state~4                                                                                          ; out              ;
+; |tutorial|control:inst3|state~5                                                                                       ; |tutorial|control:inst3|state~5                                                                                          ; out              ;
+; |tutorial|control:inst3|state~6                                                                                       ; |tutorial|control:inst3|state~6                                                                                          ; out              ;
+; |tutorial|control:inst3|state~7                                                                                       ; |tutorial|control:inst3|state~7                                                                                          ; out              ;
+; |tutorial|control:inst3|process_0~0                                                                                   ; |tutorial|control:inst3|process_0~0                                                                                      ; out0             ;
+; |tutorial|control:inst3|state~8                                                                                       ; |tutorial|control:inst3|state~8                                                                                          ; out              ;
+; |tutorial|control:inst3|state~9                                                                                       ; |tutorial|control:inst3|state~9                                                                                          ; out              ;
+; |tutorial|control:inst3|state~10                                                                                      ; |tutorial|control:inst3|state~10                                                                                         ; out              ;
+; |tutorial|control:inst3|state~11                                                                                      ; |tutorial|control:inst3|state~11                                                                                         ; out              ;
+; |tutorial|control:inst3|state~12                                                                                      ; |tutorial|control:inst3|state~12                                                                                         ; out              ;
+; |tutorial|control:inst3|state~13                                                                                      ; |tutorial|control:inst3|state~13                                                                                         ; out              ;
+; |tutorial|control:inst3|state.start                                                                                   ; |tutorial|control:inst3|state.start                                                                                      ; regout           ;
+; |tutorial|control:inst3|state.check                                                                                   ; |tutorial|control:inst3|state.check                                                                                      ; regout           ;
+; |tutorial|control:inst3|shftl~0                                                                                       ; |tutorial|control:inst3|shftl~0                                                                                          ; out0             ;
+; |tutorial|control:inst3|shftl~1                                                                                       ; |tutorial|control:inst3|shftl~1                                                                                          ; out0             ;
+; |tutorial|control:inst3|shftl                                                                                         ; |tutorial|control:inst3|shftl                                                                                            ; out              ;
+; |tutorial|control:inst3|ecnt                                                                                          ; |tutorial|control:inst3|ecnt                                                                                             ; out              ;
+; |tutorial|control:inst3|less~0                                                                                        ; |tutorial|control:inst3|less~0                                                                                           ; out0             ;
+; |tutorial|control:inst3|less                                                                                          ; |tutorial|control:inst3|less                                                                                             ; out0             ;
+; |tutorial|control:inst3|state.show                                                                                    ; |tutorial|control:inst3|state.show                                                                                       ; regout           ;
+; |tutorial|control:inst3|equal~0                                                                                       ; |tutorial|control:inst3|equal~0                                                                                          ; out0             ;
+; |tutorial|control:inst3|equal                                                                                         ; |tutorial|control:inst3|equal                                                                                            ; out0             ;
+; |tutorial|control:inst3|great~0                                                                                       ; |tutorial|control:inst3|great~0                                                                                          ; out0             ;
+; |tutorial|control:inst3|great                                                                                         ; |tutorial|control:inst3|great                                                                                            ; out0             ;
+; |tutorial|control:inst3|state~14                                                                                      ; |tutorial|control:inst3|state~14                                                                                         ; out0             ;
+; |tutorial|control:inst3|state~15                                                                                      ; |tutorial|control:inst3|state~15                                                                                         ; out0             ;
+; |tutorial|control:inst3|state.start~0                                                                                 ; |tutorial|control:inst3|state.start~0                                                                                    ; out0             ;
+; |tutorial|control:inst3|state~17                                                                                      ; |tutorial|control:inst3|state~17                                                                                         ; out0             ;
+; |tutorial|control:inst3|state.check~0                                                                                 ; |tutorial|control:inst3|state.check~0                                                                                    ; out0             ;
+; |tutorial|control:inst3|state~19                                                                                      ; |tutorial|control:inst3|state~19                                                                                         ; out0             ;
+; |tutorial|control:inst3|state.show~0                                                                                  ; |tutorial|control:inst3|state.show~0                                                                                     ; out0             ;
+; |tutorial|control:inst3|state~21                                                                                      ; |tutorial|control:inst3|state~21                                                                                         ; out0             ;
+; |tutorial|control:inst3|state~25                                                                                      ; |tutorial|control:inst3|state~25                                                                                         ; out0             ;
+; |tutorial|control:inst3|state~29                                                                                      ; |tutorial|control:inst3|state~29                                                                                         ; out0             ;
+; |tutorial|control:inst3|Selector0~0                                                                                   ; |tutorial|control:inst3|Selector0~0                                                                                      ; out              ;
+; |tutorial|control:inst3|Selector0~1                                                                                   ; |tutorial|control:inst3|Selector0~1                                                                                      ; out              ;
+; |tutorial|control:inst3|Selector1~0                                                                                   ; |tutorial|control:inst3|Selector1~0                                                                                      ; out              ;
+; |tutorial|control:inst3|Selector1~1                                                                                   ; |tutorial|control:inst3|Selector1~1                                                                                      ; out              ;
+; |tutorial|control:inst3|Selector2~0                                                                                   ; |tutorial|control:inst3|Selector2~0                                                                                      ; out              ;
+; |tutorial|control:inst3|Selector2~1                                                                                   ; |tutorial|control:inst3|Selector2~1                                                                                      ; out              ;
+; |tutorial|cmp2x4:inst1|LessThan0~0                                                                                    ; |tutorial|cmp2x4:inst1|LessThan0~0                                                                                       ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~1                                                                                    ; |tutorial|cmp2x4:inst1|LessThan0~1                                                                                       ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~2                                                                                    ; |tutorial|cmp2x4:inst1|LessThan0~2                                                                                       ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~3                                                                                    ; |tutorial|cmp2x4:inst1|LessThan0~3                                                                                       ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~4                                                                                    ; |tutorial|cmp2x4:inst1|LessThan0~4                                                                                       ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~5                                                                                    ; |tutorial|cmp2x4:inst1|LessThan0~5                                                                                       ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~6                                                                                    ; |tutorial|cmp2x4:inst1|LessThan0~6                                                                                       ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~7                                                                                    ; |tutorial|cmp2x4:inst1|LessThan0~7                                                                                       ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~8                                                                                    ; |tutorial|cmp2x4:inst1|LessThan0~8                                                                                       ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~9                                                                                    ; |tutorial|cmp2x4:inst1|LessThan0~9                                                                                       ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~10                                                                                   ; |tutorial|cmp2x4:inst1|LessThan0~10                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~11                                                                                   ; |tutorial|cmp2x4:inst1|LessThan0~11                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~12                                                                                   ; |tutorial|cmp2x4:inst1|LessThan0~12                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~13                                                                                   ; |tutorial|cmp2x4:inst1|LessThan0~13                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~14                                                                                   ; |tutorial|cmp2x4:inst1|LessThan0~14                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~15                                                                                   ; |tutorial|cmp2x4:inst1|LessThan0~15                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~16                                                                                   ; |tutorial|cmp2x4:inst1|LessThan0~16                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~17                                                                                   ; |tutorial|cmp2x4:inst1|LessThan0~17                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~18                                                                                   ; |tutorial|cmp2x4:inst1|LessThan0~18                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~19                                                                                   ; |tutorial|cmp2x4:inst1|LessThan0~19                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~20                                                                                   ; |tutorial|cmp2x4:inst1|LessThan0~20                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~21                                                                                   ; |tutorial|cmp2x4:inst1|LessThan0~21                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~22                                                                                   ; |tutorial|cmp2x4:inst1|LessThan0~22                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~23                                                                                   ; |tutorial|cmp2x4:inst1|LessThan0~23                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~24                                                                                   ; |tutorial|cmp2x4:inst1|LessThan0~24                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~26                                                                                   ; |tutorial|cmp2x4:inst1|LessThan0~26                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~28                                                                                   ; |tutorial|cmp2x4:inst1|LessThan0~28                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~0                                                                                    ; |tutorial|cmp2x4:inst1|LessThan1~0                                                                                       ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~1                                                                                    ; |tutorial|cmp2x4:inst1|LessThan1~1                                                                                       ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~2                                                                                    ; |tutorial|cmp2x4:inst1|LessThan1~2                                                                                       ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~3                                                                                    ; |tutorial|cmp2x4:inst1|LessThan1~3                                                                                       ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~4                                                                                    ; |tutorial|cmp2x4:inst1|LessThan1~4                                                                                       ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~5                                                                                    ; |tutorial|cmp2x4:inst1|LessThan1~5                                                                                       ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~6                                                                                    ; |tutorial|cmp2x4:inst1|LessThan1~6                                                                                       ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~7                                                                                    ; |tutorial|cmp2x4:inst1|LessThan1~7                                                                                       ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~8                                                                                    ; |tutorial|cmp2x4:inst1|LessThan1~8                                                                                       ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~9                                                                                    ; |tutorial|cmp2x4:inst1|LessThan1~9                                                                                       ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~10                                                                                   ; |tutorial|cmp2x4:inst1|LessThan1~10                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~11                                                                                   ; |tutorial|cmp2x4:inst1|LessThan1~11                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~12                                                                                   ; |tutorial|cmp2x4:inst1|LessThan1~12                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~13                                                                                   ; |tutorial|cmp2x4:inst1|LessThan1~13                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~14                                                                                   ; |tutorial|cmp2x4:inst1|LessThan1~14                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~15                                                                                   ; |tutorial|cmp2x4:inst1|LessThan1~15                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~16                                                                                   ; |tutorial|cmp2x4:inst1|LessThan1~16                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~17                                                                                   ; |tutorial|cmp2x4:inst1|LessThan1~17                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~18                                                                                   ; |tutorial|cmp2x4:inst1|LessThan1~18                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~19                                                                                   ; |tutorial|cmp2x4:inst1|LessThan1~19                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~20                                                                                   ; |tutorial|cmp2x4:inst1|LessThan1~20                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~22                                                                                   ; |tutorial|cmp2x4:inst1|LessThan1~22                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~23                                                                                   ; |tutorial|cmp2x4:inst1|LessThan1~23                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~24                                                                                   ; |tutorial|cmp2x4:inst1|LessThan1~24                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~26                                                                                   ; |tutorial|cmp2x4:inst1|LessThan1~26                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~28                                                                                   ; |tutorial|cmp2x4:inst1|LessThan1~28                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|Equal0~0                                                                                       ; |tutorial|cmp2x4:inst1|Equal0~0                                                                                          ; out0             ;
+; |tutorial|cmp2x4:inst1|Equal0~1                                                                                       ; |tutorial|cmp2x4:inst1|Equal0~1                                                                                          ; out0             ;
+; |tutorial|cmp2x4:inst1|Equal0~2                                                                                       ; |tutorial|cmp2x4:inst1|Equal0~2                                                                                          ; out0             ;
+; |tutorial|cmp2x4:inst1|Equal0~3                                                                                       ; |tutorial|cmp2x4:inst1|Equal0~3                                                                                          ; out0             ;
+; |tutorial|cmp2x4:inst1|Equal0~4                                                                                       ; |tutorial|cmp2x4:inst1|Equal0~4                                                                                          ; out0             ;
+; |tutorial|cmp2x4:inst1|Equal0~5                                                                                       ; |tutorial|cmp2x4:inst1|Equal0~5                                                                                          ; out0             ;
+; |tutorial|cmp2x4:inst1|Equal0~6                                                                                       ; |tutorial|cmp2x4:inst1|Equal0~6                                                                                          ; out0             ;
+; |tutorial|cmp2x4:inst1|Equal0~8                                                                                       ; |tutorial|cmp2x4:inst1|Equal0~8                                                                                          ; out0             ;
++-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                                                                                                                                                            ;
++-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                                                             ; Output Port Name                                                                                                         ; Output Port Type ;
++-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+------------------+
+; |tutorial|num[7]                                                                                                      ; |tutorial|num[7]                                                                                                         ; pin_out          ;
+; |tutorial|inst5[3]                                                                                                    ; |tutorial|inst5[3]                                                                                                       ; regout           ;
+; |tutorial|BCDcnt:inst|inst3                                                                                           ; |tutorial|BCDcnt:inst|inst3                                                                                              ; out0             ;
+; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita2   ; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita2~COUT ; cout             ;
+; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita3   ; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita3      ; combout          ;
+; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_reg_bit1a[3] ; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|safe_q[3]               ; regout           ;
+; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_reg_bit1a[2] ; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|safe_q[2]               ; regout           ;
+; |tutorial|cmp2x4:inst1|LessThan0~25                                                                                   ; |tutorial|cmp2x4:inst1|LessThan0~25                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~27                                                                                   ; |tutorial|cmp2x4:inst1|LessThan0~27                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~21                                                                                   ; |tutorial|cmp2x4:inst1|LessThan1~21                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~25                                                                                   ; |tutorial|cmp2x4:inst1|LessThan1~25                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~27                                                                                   ; |tutorial|cmp2x4:inst1|LessThan1~27                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|Equal0~7                                                                                       ; |tutorial|cmp2x4:inst1|Equal0~7                                                                                          ; out0             ;
++-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                                                                                                                                                            ;
++-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                                                             ; Output Port Name                                                                                                         ; Output Port Type ;
++-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+------------------+
+; |tutorial|num[7]                                                                                                      ; |tutorial|num[7]                                                                                                         ; pin_out          ;
+; |tutorial|inst5[3]                                                                                                    ; |tutorial|inst5[3]                                                                                                       ; regout           ;
+; |tutorial|BCDcnt:inst|inst3                                                                                           ; |tutorial|BCDcnt:inst|inst3                                                                                              ; out0             ;
+; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita2   ; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita2~COUT ; cout             ;
+; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita3   ; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_comb_bita3      ; combout          ;
+; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_reg_bit1a[3] ; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|safe_q[3]               ; regout           ;
+; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|counter_reg_bit1a[2] ; |tutorial|BCDcnt:inst|mod16count:inst1|lpm_counter:LPM_COUNTER_component|cntr_0lj:auto_generated|safe_q[2]               ; regout           ;
+; |tutorial|cmp2x4:inst1|LessThan0~25                                                                                   ; |tutorial|cmp2x4:inst1|LessThan0~25                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan0~27                                                                                   ; |tutorial|cmp2x4:inst1|LessThan0~27                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~21                                                                                   ; |tutorial|cmp2x4:inst1|LessThan1~21                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~25                                                                                   ; |tutorial|cmp2x4:inst1|LessThan1~25                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|LessThan1~27                                                                                   ; |tutorial|cmp2x4:inst1|LessThan1~27                                                                                      ; out0             ;
+; |tutorial|cmp2x4:inst1|Equal0~7                                                                                       ; |tutorial|cmp2x4:inst1|Equal0~7                                                                                          ; out0             ;
++-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Oct 13 18:23:27 2026
+Info: Command: quartus_sim --simulation_results_format=VWF game -c tutorial
+Info (324025): Using vector source file "C:/Users/minhh/Desktop/lab1/tutorial.vwf"
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "state.start" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "state.show" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "state.check" in design.
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      92.31 %
+Info (328052): Number of transitions in simulation is 2564
+Info (324045): Vector file tutorial.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 12820 megabytes
+    Info: Processing ended: Tue Oct 13 18:23:28 2026
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
