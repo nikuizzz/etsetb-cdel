@@ -1,0 +1,31 @@
+# Quartus internal build output
+db/
+incremental_db/
+greybox_tmp/
+simulation/
+
+*.cdb
+*.hdb
+*.rdb
+*.ddb
+*.kpt
+*.ammdb
+*.logdb
+*.db_info
+*.syn_hier_info
+*.simfam
+*.xrf
+*.sft
+*.vo
+*.sdo
+*.qmsg
+*.smsg
+*.qws
+*.sci
+*.bpm
+*.cbx.xml
+
+# Backups and temp
+*.bak
+*.temp
+*~
