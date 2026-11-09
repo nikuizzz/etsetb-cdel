@@ -45,15 +45,18 @@ set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
 set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
 set_global_assignment -name VHDL_FILE BCD7seg.vhd
 set_global_assignment -name VERILOG_FILE clk_lock.v
-set_global_assignment -name VHDL_FILE count4b.vhd
+set_global_assignment -name VHDL_FILE count10b.vhd
 set_global_assignment -name VHDL_FILE hex_disps.vhd
 set_global_assignment -name VHDL_FILE LCD_int.vhd
 set_global_assignment -name VHDL_FILE part1.vhd
 set_global_assignment -name VHDL_FILE part2.vhd
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -entity "cdel-module-2" -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -entity "cdel-module-2" -section_id "Root Region"
 set_global_assignment -name VECTOR_WAVEFORM_FILE "part1-simulation.vwf"
 set_global_assignment -name VECTOR_WAVEFORM_FILE "part1-first-simulation.vwf"
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "part1-contact-bounce-simulation.vwf"
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

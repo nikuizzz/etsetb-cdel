@@ -12,20 +12,22 @@ entity part1 is
 end part1;
 
 architecture arc_keypad of part1 is
-  component count4b
+  component count10b
     port ( clk, nrst : in  std_logic;
-           output    : out integer range 0 to 15);
+           output    : out integer range 0 to 1023);
   end component;
   type   states is (wait0, check0, kra0, kra1, kra2, kra3, wait1, check1);
   signal curr_st, next_st : states;
-  signal comp                      : integer range 0 to 15;
+  signal comp                      : integer range 0 to 1023;
   signal rowq, colq                : std_logic_vector(3 downto 0);
   signal look, kpressed            : std_logic;
+  signal key_i                     : std_logic;
+  signal keycode_i                 : std_logic_vector(3 downto 0);
 begin  -- arc_keypad
 
 --look generation
-  counter : count4b port map ( clk => clk, nrst => nrst, output => comp);
-  look <= '1' when comp = 15 else '0';
+  counter : count10b port map ( clk => clk, nrst => nrst, output => comp);
+  look <= '1' when comp = 1023 else '0';
 
 --columns register and kpressed generation
   reg4 : process (clk, nrst)
@@ -72,10 +74,10 @@ begin  -- arc_keypad
             "0111" when kra3,
             "1111" when others;
 
-  key <= '0' when (curr_st = wait0 or curr_st = check0 or curr_st = wait1 or
-                   curr_st = check1 or colq = "1111") else '1';
+  key_i <= '0' when (curr_st = wait0 or curr_st = check0 or curr_st = wait1 or
+                     curr_st = check1 or colq = "1111") else '1';
 
-  keycode <= x"1" when (curr_st = kra0 and colq(0) = '0')
+  keycode_i <= x"1" when (curr_st = kra0 and colq(0) = '0')
        else  x"2" when (curr_st = kra0 and colq(1) = '0')
        else  x"3" when (curr_st = kra0 and colq(2) = '0')
        else  x"a" when (curr_st = kra0 and colq(3) = '0')
@@ -93,7 +95,20 @@ begin  -- arc_keypad
        else  x"d" when (curr_st = kra3 and colq(3) = '0')
        else  x"0";
   --whatkey end
-  
+
+  --output register: key and keycode only change on the rising edge of clk,
+  -- so the glitches of the combinational functions never reach the outputs
+  outreg : process (clk, nrst)
+  begin
+    if nrst = '0' then
+      key     <= '0';
+      keycode <= x"0";
+    elsif clk'event and clk = '1' then
+      key     <= key_i;
+      keycode <= keycode_i;
+    end if;
+  end process outreg;
+
   --tristate buffers
   tribuf: for i in 0 to 3 generate
     row(i) <= '0' when rowq(i) = '0' else 'Z';
