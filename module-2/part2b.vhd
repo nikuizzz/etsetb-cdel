@@ -76,6 +76,7 @@ begin
       end case;
     end if;
 end process seq_detector;
+-- good is driven from internal signal bcs we couldn't use good (out) on line 135 otherwise
 good <= good_i;
 
 --code selection and detection
@@ -111,7 +112,7 @@ begin
     end if;
 end process err_counter;
 
---wrong flag: set in seqko, cleared in start
+-- the wrong flag is set to 0 on start, set to 1 when seqko
 wrong_reg : process (clk, nrst)
 begin
     if nrst = '0' then wrong <= '0';
@@ -128,10 +129,10 @@ bad2   <= '1' when errcnt = err2 or errcnt = err3 else '0';
 bad3   <= '1' when errcnt = err3 else '0';
 shift  <= '0' when (seqdet = waiting or seqdet = seqko) else bcdind;
 
---LCD message (priority order)
-msg <= 5 when errcnt = err3 else                                        -- System Locked
+--LCD message
+msg <= 5 when errcnt = err3 else                                         -- System Locked
        3 when seqdet = seqok or (seqdet = waiting and good_i = '1') else -- Right code
-       4 when seqdet = seqko or (seqdet = waiting and wrong = '1') else -- Wrong code
+       4 when seqdet = seqko or (seqdet = waiting and wrong = '1') else  -- Wrong code
        1 when seqdet = waiting else                                      -- Press * to start
        2;                                                                -- Enter PIN code
 

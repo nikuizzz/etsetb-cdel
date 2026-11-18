@@ -21,14 +21,17 @@ architecture arc of keypad_de2_i1 is
            keycode   : out std_logic_vector(3 downto 0);
            good, bad1, bad2, bad3, shift : out std_logic );
   end component;
+
   component hex_disps
     port ( num0, num1, num2, num3, num4, num5, num6, num7 : in std_logic_vector (3 downto 0);
            HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7 : out std_logic_vector (6 downto 0));
   end component;
+
   component clock_div
     port ( clk, nrst : in  std_logic;
            q         : out std_logic_vector(15 downto 0) );
   end component;
+  
   component CLK_LOCK
     port ( inclk  : in  std_logic;
            outclk : out std_logic );
@@ -49,7 +52,8 @@ begin
   cdiv  : clock_div port map ( clk => OSC_50, nrst => nrst, q => q );
   clklk : CLK_LOCK  port map ( inclk => q(8), outclk => sclk );
 
-  -- improvement 1: 1 Hz blink (modulo 25e6 counter + toggle at 50 MHz)
+  -- improvement 1: 1 Hz blink
+  -- 50.000.000 / 24999999 = 0.5s to rise / fall => 1s total period
   process (OSC_50, nrst)
   begin
     if nrst = '0' then bcnt <= 0; blink <= '0';
@@ -65,7 +69,7 @@ begin
                          good => good_s, bad1 => bad1_s, bad2 => bad2_s,
                          bad3 => bad3_s, shift => shift_s );
 
-  -- LEDs
+  -- LEDs with LED_RED mapped to blink when bad3_s = 1
   LED_GREEN <= (others => good_s);
   gen_led : for i in 0 to 5 generate
     LED_RED(i + 12) <= blink when bad3_s = '1' else bad1_s;

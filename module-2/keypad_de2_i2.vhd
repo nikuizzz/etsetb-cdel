@@ -21,6 +21,7 @@ architecture arc of keypad_de2_i2 is
            key          : out std_logic;
            keycode, row : out std_logic_vector(3 downto 0));
   end component;
+
   component part2b
     port ( clk, nrst, key         : in  std_logic;
            keycode                : in  std_logic_vector(3 downto 0);
@@ -28,10 +29,12 @@ architecture arc of keypad_de2_i2 is
            shift                  : out std_logic;
            msg                    : out integer range 0 to 5 );
   end component;
+
   component hex_disps
     port ( num0, num1, num2, num3, num4, num5, num6, num7 : in std_logic_vector (3 downto 0);
            HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7 : out std_logic_vector (6 downto 0));
   end component;
+
   component LCD_int
     port ( clk, nrst                 : in    std_logic;
            DB_LCD                    : inout std_logic_vector (7 downto 0);
@@ -39,10 +42,12 @@ architecture arc of keypad_de2_i2 is
            run                       : in    std_logic;
            message                   : in    integer range 0 to 5 );
   end component;
+
   component clock_div
     port ( clk, nrst : in  std_logic;
            q         : out std_logic_vector(15 downto 0) );
   end component;
+
   component CLK_LOCK
     port ( inclk  : in  std_logic;
            outclk : out std_logic );
@@ -54,9 +59,9 @@ architecture arc of keypad_de2_i2 is
   signal bcnt    : integer range 0 to 24999999;
   signal key_s, key_eff, good_s, bad1_s, bad2_s, bad3_s, shift_s : std_logic;
   signal keycode_s : std_logic_vector(3 downto 0);
-  signal num, disp : std_logic_vector(15 downto 0);
+  signal num     : std_logic_vector(15 downto 0);
   signal ndig    : integer range 0 to 4;
-  signal msg, shown : integer range 0 to 5;
+  signal msg, shown_msg : integer range 0 to 5;
   signal run, busy  : std_logic;
 begin
   nrst <= KEY(0);
@@ -67,6 +72,7 @@ begin
   clklk2 : CLK_LOCK  port map ( inclk => q(15), outclk => lclk );
 
   -- improvement 1: 1 Hz blink
+  -- 50.000.000 / 24999999 = 0.5s to rise / fall => 1s total period
   process (OSC_50, nrst)
   begin
     if nrst = '0' then bcnt <= 0; blink <= '0';
@@ -84,7 +90,7 @@ begin
                          good => good_s, bad1 => bad1_s, bad2 => bad2_s, bad3 => bad3_s,
                          shift => shift_s, msg => msg );
 
-  -- LEDs
+  -- LEDs with LED_RED mapped to blink when bad3_s = 1
   LED_GREEN <= (others => good_s);
   gen_led : for i in 0 to 5 generate
     LED_RED(i + 12) <= blink when bad3_s = '1' else bad1_s;
@@ -108,22 +114,22 @@ begin
   end process;
 
   -- displays
-  disp <= num;
   displays : hex_disps
-    port map ( num0 => disp(3 downto 0),  num1 => disp(7 downto 4),
-               num2 => disp(11 downto 8), num3 => disp(15 downto 12),
+    port map ( num0 => num(3 downto 0),   num1 => num(7 downto 4),
+               num2 => num(11 downto 8),  num3 => num(15 downto 12),
                num4 => x"F", num5 => x"F", num6 => x"F", num7 => x"F",
                HEX0 => HEX0, HEX1 => HEX1, HEX2 => HEX2, HEX3 => HEX3,
                HEX4 => HEX4, HEX5 => HEX5, HEX6 => HEX6, HEX7 => HEX7 );
 
   -- improvement 2: LCD request. run falls (and stays low) until the LCD answers busy = '1'
+  -- to acknowledge that it changes the message
   process (sclk, nrst)
   begin
     if nrst = '0' then
-      shown <= 0; run <= '1';
+      shown_msg <= 0; run <= '1';
     elsif rising_edge(sclk) then
       if run = '1' then
-        if shown /= msg and busy = '0' then run <= '0'; shown <= msg; end if;
+        if shown_msg /= msg and busy = '0' then run <= '0'; shown_msg <= msg; end if;
       elsif busy = '1' then
         run <= '1';
       end if;

@@ -461,10 +461,81 @@ Its ports are <code>clk, nrst, col, row, key, keycode, good, bad1, bad2, bad3, s
 </figure>
 <ul>
 <li><strong><code>clock_div</code></strong> (teacher's): free-running 16-bit counter; each bit <code>q[n]</code> is a square wave of frequency 50e3 / 2<sup>n+1</sup> kHz.</li>
-<li><strong><code>CLK_LOCK</code></strong> (teacher's, based on the <code>altclkctrl</code> megafunction): "functionally transparent", it tells the compiler to put the signal on a global clock line, so the divided clock reaches all flip-flops with low skew.</li>
+<li><strong><code>CLK_LOCK</code></strong> (teacher's, based on the <code>altclkctrl</code> megafunction): "functionally transparent", it tells the compiler to put the signal on a global clock line, so the divided clock reaches all flip-flops with low skew. Explained step by step in the next subsection.</li>
 <li><strong>Choice of <code>q[8]</code></strong>: 50 MHz / 512 = 97.66 kHz. With our 10-bit counter, <code>look</code> comes every 1024 / 97.66 kHz = <strong>10.49 ms</strong>, just above the 10 ms of the handout's hypothesis.</li>
 <li>Reset: <code>KEY[0]</code> (push button, active low), which matches <code>nrst</code>.</li>
 </ul>
+
+<h3>Clock division and <code>CLK_LOCK</code>, step by step</h3>
+
+<p><strong>1. What <code>clock_div</code> really outputs.</strong> It is a binary counter that adds 1 on every rising edge of the 50 MHz clock. <code>q[n]</code> is simply <em>bit n</em> of that counter, so it is a <strong>square wave</strong>, not a "tick when the count reaches 512":</p>
+<table>
+<tr><th>count (50 MHz cycles)</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th></tr>
+<tr><td><code>q[0]</code></td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td><code>q[1]</code></td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td><code>q[2]</code></td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+</table>
+<ul>
+<li>Bit <code>n</code> flips every 2<sup>n</sup> cycles, so its full period is 2<sup>n+1</sup> cycles: low for 2<sup>n</sup> cycles, then high for 2<sup>n</sup> cycles.</li>
+<li><code>q[8]</code>: low for 256 cycles, high for 256 cycles, period <strong>512 cycles</strong> = 10.24 us = 97.66 kHz. A circuit clocked by it sees <strong>one rising edge every 512 cycles of the 50 MHz clock</strong>: that is the "tick". (So "divides by 512" is right.)</li>
+<li><code>q[15]</code>: it does <em>not</em> change all the time. It flips only every 32768 cycles (0.66 ms); its period is 65536 cycles = 1.31 ms = 763 Hz. The bit that changes at every cycle is <code>q[0]</code> (25 MHz).</li>
+</ul>
+
+<p><strong>2. The problem <code>CLK_LOCK</code> solves.</strong> <code>q[8]</code> is the output of a flip-flop <em>inside the logic</em> of the FPGA. If we connect it straight to the clock inputs of hundreds of other flip-flops, the fitter must carry it over the normal routing wires. Those wires have a different length (so a different delay) for every destination:</p>
+<ul>
+<li>Some flip-flops see the clock edge slightly <strong>earlier</strong>, others slightly <strong>later</strong>. This difference is called <em>clock skew</em>.</li>
+<li>A flip-flop that fires early can change its output before a neighbour has seen the same clock edge, and the neighbour then captures the <em>new</em> value instead of the old one: a <em>hold-time violation</em>, i.e. a design that works in simulation and may fail on the chip.</li>
+<li>The timing analyser also treats such a signal as ordinary data, not as a clock.</li>
+</ul>
+
+<figure>
+<svg viewBox="0 0 900 270" role="img" aria-label="Clock via normal routing versus global clock network">
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+  <g style="color:var(--fg)">
+  <text x="10" y="22" font-weight="bold">Without CLK_LOCK: q[8] over normal routing</text>
+  <rect class="bx" x="10" y="115" width="90" height="40" rx="6"/><text x="55" y="139" text-anchor="middle" class="mono">q[8]</text>
+  <path class="ln" d="M100,135 L180,135 L180,60 L268,60" marker-end="url(#ar)"/>
+  <path class="ln" d="M100,135 L420,135" marker-end="url(#ar)"/>
+  <path class="ln" d="M100,135 L160,135 L160,230 L250,230 L250,240 L328,240" marker-end="url(#ar)"/>
+  <rect class="st" x="270" y="47" width="60" height="26" rx="4"/><text x="300" y="65" text-anchor="middle" class="mono">FF a</text>
+  <rect class="st" x="422" y="122" width="60" height="26" rx="4"/><text x="452" y="140" text-anchor="middle" class="mono">FF b</text>
+  <rect class="st" x="330" y="227" width="60" height="26" rx="4"/><text x="360" y="245" text-anchor="middle" class="mono">FF c</text>
+  <text x="520" y="100" class="mut">different wires, different lengths</text>
+  <text x="520" y="118" class="mut">-> the clock edge arrives at different times (skew)</text>
+  </g>
+</svg>
+<figcaption>Figure 6b. A clock distributed on ordinary wires reaches each flip-flop at a slightly different moment.</figcaption>
+</figure>
+
+<figure>
+<svg viewBox="0 0 900 200" role="img" aria-label="Global clock network">
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+  <g style="color:var(--fg)">
+  <text x="10" y="22" font-weight="bold">With CLK_LOCK: q[8] put on a global clock line</text>
+  <rect class="bx" x="10" y="80" width="90" height="40" rx="6"/><text x="55" y="104" text-anchor="middle" class="mono">q[8]</text>
+  <rect class="bx" x="150" y="70" width="140" height="60" rx="8"/><text x="220" y="96" text-anchor="middle">CLK_LOCK</text><text x="220" y="114" text-anchor="middle" class="mut">clock control block</text>
+  <path class="ln" d="M100,100 L148,100" marker-end="url(#ar)"/>
+  <path class="acc" d="M290,100 L360,100 M360,50 L360,150 M360,50 L650,50 M360,100 L650,100 M360,150 L650,150"/>
+  <path class="acc" d="M640,50 L653,50" marker-end="url(#ar)"/>
+  <path class="acc" d="M640,100 L653,100" marker-end="url(#ar)"/>
+  <path class="acc" d="M640,150 L653,150" marker-end="url(#ar)"/>
+  <rect class="st" x="655" y="38" width="60" height="26" rx="4"/><text x="685" y="56" text-anchor="middle" class="mono">FF a</text>
+  <rect class="st" x="655" y="88" width="60" height="26" rx="4"/><text x="685" y="106" text-anchor="middle" class="mono">FF b</text>
+  <rect class="st" x="655" y="138" width="60" height="26" rx="4"/><text x="685" y="156" text-anchor="middle" class="mono">FF c</text>
+  <text x="10" y="186" class="mut">dedicated, balanced wiring with strong buffers: the edge arrives at (almost) the same time everywhere</text>
+  </g>
+</svg>
+<figcaption>Figure 6c. The global clock network is a dedicated "clock tree" to all registers.</figcaption>
+</figure>
+
+<p><strong>3. What <code>CLK_LOCK</code> is.</strong> The Cyclone II has a small number of <strong>global clock networks</strong> (16 lines): dedicated, balanced wires and buffers that reach every flip-flop in the chip with nearly the same delay, designed for exactly this. <code>CLK_LOCK</code> is a wrapper (generated by the Quartus MegaWizard) around the <code>altclkctrl</code> megafunction, i.e. the chip's <em>clock control block</em>, configured as "Global Clock". It has one input <code>inclk</code> and one output <code>outclk</code>.</p>
+<ul>
+<li><strong>Logically it does nothing</strong>: <code>outclk</code> is <code>inclk</code>. That is why the handout calls it "functionally transparent", and why it makes no difference in a functional simulation.</li>
+<li><strong>Physically</strong> it tells the compiler "this signal is a clock: put it on a global clock line", so that all the flip-flops clocked by <code>outclk</code> receive the edge at the same moment. The name "lock" refers to locking the signal onto that dedicated resource.</li>
+<li>In our design there are two: <code>sclk = CLK_LOCK(q[8])</code> for all the flip-flops of part1, part2, the digit register and the LCD request logic, and <code>lclk = CLK_LOCK(q[15])</code> for <code>LCD_int</code> (improvement 2). The 50 MHz pin <code>OSC_50</code> is already a dedicated clock pin; the blink counter uses it directly.</li>
+</ul>
+
+<p><strong>4. Is it really needed here?</strong> Be honest about this in the presentation: the clock is slow (97.7 kHz, a period of 10 us) and skew is on the order of nanoseconds, so this design would very probably also work without it. Quartus can also promote a high-fanout signal to a global line by itself. We use it because (a) the lab handout explicitly provides it for this purpose (lab 1: "the compiler will assign clk to a dedicated clock path"), (b) it guarantees a clean clock distribution instead of relying on a compiler heuristic, and (c) it is good practice whenever a clock is derived inside the logic.</p>
 
 <h3>Board outputs</h3>
 <table>
@@ -493,6 +564,97 @@ end process;</pre>
 <li><code>num(3:0)</code> goes to HEX0 (rightmost). After 1, 2, 4, 8 the displays read "1 2 4 8" from left to right.</li>
 <li><strong>Why <code>ndig &lt; 4</code></strong> (our own addition): in states <code>now4ok</code>/<code>now4ko</code> part2 keeps <code>shift=1</code> for any further digit, which would push the first digit off the display. The counter ignores digits after the fourth until the next <code>*</code>.</li>
 </ul>
+
+<h3>The digits register and the displays, explained</h3>
+
+<p><strong>0. Which displays are these?</strong> <code>HEX0</code> ... <code>HEX7</code> are the <strong>eight seven-segment displays</strong> of the DE2 board: the red "digital clock" style digits, <em>not</em> the LCD screen where text is written (that one is driven by <code>LCD_int</code>, improvement 2). Each display is made of 7 little LEDs called segments (a to g). Each name <code>HEXk</code> in the code is the <strong>7 signals</strong> that switch the segments of display k on or off.</p>
+<figure>
+<svg viewBox="80 330 940 620" role="img" aria-label="DE2 board photo with the seven-segment displays and the LCD highlighted">
+  <image href="figures/de2_board_displays.jpg" x="0" y="0" width="1200" height="1600"/>
+  <rect x="272" y="338" width="130" height="570" rx="8" fill="none" stroke="#ffd400" stroke-width="5"/>
+  <rect x="440" y="362" width="240" height="520" rx="8" fill="none" stroke="#35d07f" stroke-width="5"/>
+  <g>
+    <rect x="708" y="372" width="300" height="104" rx="8" style="fill:#000;opacity:.78"/>
+    <text x="722" y="400" style="fill:#ffd400;font:bold 20px system-ui,sans-serif">Seven-segment displays</text>
+    <text x="722" y="425" style="fill:#fff;font:17px system-ui,sans-serif">HEX7 ... HEX0 (digital-clock digits)</text>
+    <text x="722" y="447" style="fill:#fff;font:17px system-ui,sans-serif">Here HEX0 = bottom digit (the 5)</text>
+    <path d="M708,425 L404,520" stroke="#ffd400" stroke-width="3" fill="none"/>
+    <rect x="708" y="520" width="300" height="82" rx="8" style="fill:#000;opacity:.78"/>
+    <text x="722" y="548" style="fill:#35d07f;font:bold 20px system-ui,sans-serif">LCD, 2 x 16 characters</text>
+    <text x="722" y="574" style="fill:#fff;font:17px system-ui,sans-serif">(the screen for text, improvement 2)</text>
+    <path d="M708,560 L682,560" stroke="#35d07f" stroke-width="3" fill="none"/>
+  </g>
+</svg>
+<figcaption>Figure 8a. Our DE2 board (photo from lab 1). The red digits on the left (yellow frame) are the seven-segment displays driven by <code>hex_disps</code>; the grey-green screen (green frame) is the LCD driven by <code>LCD_int</code>. The board is photographed turned by 90 degrees, so the displays form a column and HEX0, the rightmost digit when the board is held normally, is the bottom one.</figcaption>
+</figure>
+<figure><svg viewBox="0 0 900 330" role="img" aria-label="Seven-segment display anatomy and examples"><text x="10" y="22" style="font-weight:bold">One seven-segment display = 7 independent LEDs (segments a to g)</text><g transform="translate(70,60) scale(2.2)"><rect x="8" y="0" width="34" height="8" rx="3" style="fill:#e5322d"/><rect x="42" y="8" width="8" height="33" rx="3" style="fill:#e5322d"/><rect x="42" y="49" width="8" height="33" rx="3" style="fill:#e5322d"/><rect x="8" y="82" width="34" height="8" rx="3" style="fill:#e5322d"/><rect x="0" y="49" width="8" height="33" rx="3" style="fill:#e5322d"/><rect x="0" y="8" width="8" height="33" rx="3" style="fill:#e5322d"/><rect x="8" y="41" width="34" height="8" rx="3" style="fill:#e5322d"/></g>
+<g text-anchor="middle" font-weight="bold">
+ <text x="125" y="52">a</text>
+ <text x="205" y="115">b</text>
+ <text x="205" y="215">c</text>
+ <text x="125" y="276">d</text>
+ <text x="45" y="215">e</text>
+ <text x="45" y="115">f</text>
+ <text x="45" y="165">g</text>
+</g>
+<text x="250" y="100" class="mut">The 7 outputs of <tspan class="mono">HEX0</tspan>:</text>
+<text x="250" y="122" class="mono">HEX0[0] = a, HEX0[1] = b, ... HEX0[6] = g</text>
+<text x="250" y="152" class="mut">On the DE2 a segment is lit when its bit is 0</text>
+<text x="250" y="170" class="mut">("active low"). So 1111111 = all segments off.</text>
+<text x="250" y="200" class="mut">One digit = 4 bits in, 7 bits out.</text>
+<text x="250" y="218" class="mut"><tspan class="mono">BCD7seg</tspan> does that conversion.</text>
+<g transform="translate(560,50) scale(0.75)"><rect x="8" y="0" width="34" height="8" rx="3" style="fill:#e5322d"/><rect x="42" y="8" width="8" height="33" rx="3" style="fill:#e5322d"/><rect x="42" y="49" width="8" height="33" rx="3" style="fill:#e5322d"/><rect x="8" y="82" width="34" height="8" rx="3" style="fill:#e5322d"/><rect x="0" y="49" width="8" height="33" rx="3" style="fill:#e5322d"/><rect x="0" y="8" width="8" height="33" rx="3" style="fill:#e5322d"/><rect x="8" y="41" width="34" height="8" rx="3" style="fill:var(--line)"/></g><text x="556" y="134" class="mono" font-size="12">0</text><text x="556" y="150" class="mono" font-size="12">1000000</text><g transform="translate(730,50) scale(0.75)"><rect x="8" y="0" width="34" height="8" rx="3" style="fill:var(--line)"/><rect x="42" y="8" width="8" height="33" rx="3" style="fill:#e5322d"/><rect x="42" y="49" width="8" height="33" rx="3" style="fill:#e5322d"/><rect x="8" y="82" width="34" height="8" rx="3" style="fill:var(--line)"/><rect x="0" y="49" width="8" height="33" rx="3" style="fill:var(--line)"/><rect x="0" y="8" width="8" height="33" rx="3" style="fill:var(--line)"/><rect x="8" y="41" width="34" height="8" rx="3" style="fill:var(--line)"/></g><text x="726" y="134" class="mono" font-size="12">1</text><text x="726" y="150" class="mono" font-size="12">1111001</text><g transform="translate(560,190) scale(0.75)"><rect x="8" y="0" width="34" height="8" rx="3" style="fill:#e5322d"/><rect x="42" y="8" width="8" height="33" rx="3" style="fill:#e5322d"/><rect x="42" y="49" width="8" height="33" rx="3" style="fill:#e5322d"/><rect x="8" y="82" width="34" height="8" rx="3" style="fill:#e5322d"/><rect x="0" y="49" width="8" height="33" rx="3" style="fill:#e5322d"/><rect x="0" y="8" width="8" height="33" rx="3" style="fill:#e5322d"/><rect x="8" y="41" width="34" height="8" rx="3" style="fill:#e5322d"/></g><text x="556" y="274" class="mono" font-size="12">8</text><text x="556" y="290" class="mono" font-size="12">0000000</text><g transform="translate(730,190) scale(0.75)"><rect x="8" y="0" width="34" height="8" rx="3" style="fill:var(--line)"/><rect x="42" y="8" width="8" height="33" rx="3" style="fill:var(--line)"/><rect x="42" y="49" width="8" height="33" rx="3" style="fill:var(--line)"/><rect x="8" y="82" width="34" height="8" rx="3" style="fill:var(--line)"/><rect x="0" y="49" width="8" height="33" rx="3" style="fill:var(--line)"/><rect x="0" y="8" width="8" height="33" rx="3" style="fill:var(--line)"/><rect x="8" y="41" width="34" height="8" rx="3" style="fill:var(--line)"/></g><text x="726" y="274" class="mono" font-size="12">blank (F)</text><text x="726" y="290" class="mono" font-size="12">1111111</text><text x="560" y="34" class="mut">examples (bits g f e d c b a)</text></svg><figcaption>Figure 8b. A seven-segment display and the segment patterns produced by <code>BCD7seg</code>.</figcaption></figure>
+
+
+<p><strong>1. The register is a 4-digit memory.</strong> <code>num</code> has 16 bits = four groups of 4 bits (one group = one hexadecimal digit). Each group holds the code of one digit to show, and each group belongs to one display:</p>
+<table>
+<tr><th>bits of <code>num</code></th><th>15..12</th><th>11..8</th><th>7..4</th><th>3..0</th></tr>
+<tr><td>goes to display</td><td>HEX3 (leftmost)</td><td>HEX2</td><td>HEX1</td><td>HEX0 (rightmost)</td></tr>
+</table>
+
+<p><strong>2. What <code>num &lt;= num(11 downto 0) &amp; keycode_s</code> does.</strong> The symbol <code>&amp;</code> is VHDL <em>concatenation</em> ("glue these bits together"). <code>num(11 downto 0)</code> is the register without its top 4 bits (the leftmost digit); gluing the new <code>keycode_s</code> (4 bits) on the right gives 16 bits again. In other words: <strong>every old digit moves one position to the left, the leftmost one falls out, and the new digit enters on the right.</strong> This is a <em>shift register</em> built with 4-bit words.</p>
+<p>Example, the correct sequence <code>*</code> <code>1</code> <code>2</code> <code>4</code> <code>8</code> <code>#</code> (the register value is shown in hexadecimal; F means "blank"):</p>
+<table>
+<tr><th>Event</th><th>Branch of the process</th><th><code>num</code></th><th>HEX3</th><th>HEX2</th><th>HEX1</th><th>HEX0</th><th><code>ndig</code></th></tr>
+<tr><td>reset</td><td>reset</td><td><code>FFFF</code></td><td>blank</td><td>blank</td><td>blank</td><td>blank</td><td>0</td></tr>
+<tr><td><code>*</code> (code E)</td><td>clear</td><td><code>FFFF</code></td><td>blank</td><td>blank</td><td>blank</td><td>blank</td><td>0</td></tr>
+<tr><td><code>1</code></td><td>shift</td><td><code>FFF1</code></td><td>blank</td><td>blank</td><td>blank</td><td>1</td><td>1</td></tr>
+<tr><td><code>2</code></td><td>shift</td><td><code>FF12</code></td><td>blank</td><td>blank</td><td>1</td><td>2</td><td>2</td></tr>
+<tr><td><code>4</code></td><td>shift</td><td><code>F124</code></td><td>blank</td><td>1</td><td>2</td><td>4</td><td>3</td></tr>
+<tr><td><code>8</code></td><td>shift</td><td><code>1248</code></td><td>1</td><td>2</td><td>4</td><td>8</td><td>4</td></tr>
+<tr><td><code>#</code> (code F)</td><td>none</td><td><code>1248</code></td><td>1</td><td>2</td><td>4</td><td>8</td><td>4</td></tr>
+<tr><td>another digit</td><td>none (<code>ndig</code> = 4)</td><td><code>1248</code></td><td>1</td><td>2</td><td>4</td><td>8</td><td>4</td></tr>
+</table>
+<p>The three branches of the process correspond to three situations:</p>
+<ul>
+<li><strong><code>nrst = '0'</code></strong>: reset, everything blank.</li>
+<li><strong><code>key_s = '1' and keycode_s = x"E"</code></strong>: the <code>*</code> key was reported by part1, so a new sequence starts: blank all displays and reset the digit counter <code>ndig</code>.</li>
+<li><strong><code>shift_s = '1' and ndig &lt; 4</code></strong>: part2 says "a digit of a sequence was entered" and there is still room: shift it in and count it.</li>
+</ul>
+<p>Nothing happens in the other cases, so the displays keep showing the last value (for example <code>1248</code> stays after the <code>#</code>, until the next <code>*</code>).</p>
+
+<p><strong>3. Why F means "blank".</strong> <code>BCD7seg</code> converts a 4-bit code into the 7 segment signals of a display. Codes 0..9 give the digit; <strong>any other code</strong> (A..F) gives <code>1111111</code>. On the DE2 the segments are <em>active low</em> (0 = segment lit, 1 = segment off), so <code>1111111</code> turns every segment off: a blank display. We use the unused code F as "empty". Examples from <code>BCD7seg.vhd</code> (bit 0 = segment a ... bit 6 = segment g):</p>
+<table>
+<tr><th>code</th><th>7 bits (g f e d c b a)</th><th>what is lit</th></tr>
+<tr><td><code>0</code></td><td><code>1000000</code></td><td>all segments except the middle one (g)</td></tr>
+<tr><td><code>1</code></td><td><code>1111001</code></td><td>segments b and c (the right side)</td></tr>
+<tr><td><code>8</code></td><td><code>0000000</code></td><td>all 7 segments</td></tr>
+<tr><td><code>F</code> (or A..E)</td><td><code>1111111</code></td><td>nothing (blank)</td></tr>
+</table>
+
+<p><strong>4. What the <code>displays : hex_disps port map (...)</code> instance does.</strong> <code>hex_disps</code> is a purely combinational module with <strong>eight 4-bit inputs</strong> (<code>num0</code>..<code>num7</code>, one per display) and <strong>eight 7-bit outputs</strong> (<code>HEX0</code>..<code>HEX7</code>, the segment signals of each display). Inside it there are eight copies of <code>BCD7seg</code>, one per display. It does not store anything: it only translates the digit codes into segments.</p>
+<p>The <code>port map</code> connects them with <em>named association</em>: <code>input_of_hex_disps =&gt; our_signal</code>.</p>
+<table>
+<tr><th>Connection</th><th>Meaning</th></tr>
+<tr><td><code>num0 =&gt; num(3 downto 0)</code></td><td>display 0 (rightmost) shows the lowest digit of our register</td></tr>
+<tr><td><code>num1 =&gt; num(7 downto 4)</code></td><td>display 1 shows the second digit</td></tr>
+<tr><td><code>num2 =&gt; num(11 downto 8)</code></td><td>display 2 shows the third digit</td></tr>
+<tr><td><code>num3 =&gt; num(15 downto 12)</code></td><td>display 3 shows the leftmost digit</td></tr>
+<tr><td><code>num4..num7 =&gt; x"F"</code></td><td>displays 4..7 get the constant F, so they stay blank (unused displays off, as the handout asks)</td></tr>
+<tr><td><code>HEX0 =&gt; HEX0</code> ... <code>HEX7 =&gt; HEX7</code></td><td>the segment outputs of <code>hex_disps</code> (left name) go to the output ports of our top-level entity (right name); the pin table then connects those ports to the physical display pins. The two names are the same only by coincidence of naming: left = port of <code>hex_disps</code>, right = port of <code>keypad_de2</code>.</td></tr>
+</table>
+
+<p><strong>5. The whole data path in one line.</strong> keypad &rarr; <code>part1</code> (<code>key</code>, <code>keycode</code>) &rarr; <code>part2</code> (<code>shift</code>) &rarr; digit register <code>num</code> (shifts <code>keycode</code> in) &rarr; <code>hex_disps</code> (<code>BCD7seg</code> x 8) &rarr; the segments of the seven-segment displays.</p>
 
 <h3>Pins</h3>
 <p>Pins come from the teacher's <code>DE2_pin_assignments.csv</code> (imported with Assignments &gt; Import Assignments). The file already contains <code>ROW[0..3]</code> (N18, P18, G23, G24) and <code>COL[0..3]</code> (K22, G25, H23, H24), the same as in lab 1. Port names in the VHDL are chosen to match the csv names (<code>OSC_50, KEY, LED_RED, LED_GREEN, HEX0..7, LCD_*</code>).</p>
@@ -605,6 +767,12 @@ good: the sequence <code>* 1 2 4 8 #</code>. Locked (<code>bad3</code>): three w
 
 <p><strong>Why a different clock for the LCD?</strong><br>
 LCD_int does not wait for the LCD between commands; the LCD needs tens of microseconds per command and 1.5 ms for clear, so the LCD clock must be slow (we use 763 Hz as in lab 1). The keypad needs a faster one for a reasonable response time. The <code>run</code>/<code>busy</code> handshake crosses the two.</p>
+
+<p><strong>What does <code>CLK_LOCK</code> do, if it does not change the signal?</strong><br>
+It does not change the logic value; it changes where the signal travels. It puts the divided clock on the chip's dedicated global clock network, so every flip-flop gets the clock edge at almost the same time (low skew) instead of through ordinary routing wires with different delays. In simulation it is transparent.</p>
+
+<p><strong>What is <code>q[8]</code>?</strong><br>
+Bit 8 of the free-running 16-bit counter in <code>clock_div</code>: a square wave of period 2<sup>9</sup> = 512 cycles of the 50 MHz clock (97.66 kHz).</p>
 
 <p><strong>Why did you not modify part2?</strong><br>
 We needed an extra output <code>msg</code>; we put it in a copy (<code>part2b</code>) so that the reports for 3.2/3.3 still describe the original.</p>

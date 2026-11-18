@@ -21,6 +21,7 @@ architecture arc of keypad_de2 is
            keycode   : out std_logic_vector(3 downto 0);
            good, bad1, bad2, bad3, shift : out std_logic );
   end component;
+
   component hex_disps
     port ( num0, num1, num2, num3, num4, num5, num6, num7 : in std_logic_vector (3 downto 0);
            HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7 : out std_logic_vector (6 downto 0));
@@ -30,6 +31,7 @@ architecture arc of keypad_de2 is
     port ( clk, nrst : in  std_logic;
            q         : out std_logic_vector(15 downto 0) );
   end component;
+
   component CLK_LOCK
     port ( inclk  : in  std_logic;
            outclk : out std_logic );
