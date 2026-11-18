@@ -48,9 +48,9 @@ architecture arc of keypad_de2_i1 is
 begin
   nrst <= KEY(0);
 
-  -- clocks: system = 50 MHz / 2^9 = 97.7 kHz
+  -- clocks: system = 50 MHz / 2^11 = 24.4 kHz
   cdiv  : clock_div port map ( clk => OSC_50, nrst => nrst, q => q );
-  clklk : CLK_LOCK  port map ( inclk => q(8), outclk => sclk );
+  clklk : CLK_LOCK  port map ( inclk => q(10), outclk => sclk );
 
   -- improvement 1: 1 Hz blink
   -- 50.000.000 / 24999999 = 0.5s to rise / fall => 1s total period

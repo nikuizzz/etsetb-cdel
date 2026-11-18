@@ -9,6 +9,7 @@ entity part2d is
          shift                   : out std_logic;
          trick                   : out std_logic;
          correct_code            : out std_logic_vector(15 downto 0);
+         clrnum                  : out std_logic;
          msg                     : out integer range 0 to 9 );
 end part2d;
 
@@ -43,8 +44,9 @@ signal   trick_i, key_eff        : std_logic;
 begin
 
 -- improvement 4: toggle trick on A
-aind <= '1' when key = '1' and (keycode = x"a") else '0';
-
+aind <= '1' when key = '1' and keycode(3) = '1' and keycode(2) = '0'
+                           and keycode(1) = '1' and keycode(0) = '0' else '0';
+                           
 trick_reg : process (clk, nrst)
 begin
   if nrst = '0' then trick_i <= '0';
@@ -108,8 +110,7 @@ begin
                         code3 <= new_code3; code4 <= new_code4;
                         if astind = '1' or almind = '1' then seqdet <= start; end if;
         when config_failed => 
-                        if cind = '1' then seqdet <= config_start;
-                        elsif astind = '1' then seqdet <= start; 
+                        if cind = '1' or astind = '1' then seqdet <= config_start;
                         end if;
         when start  =>  good_i <= '0';
                         if    astind = '1' then seqdet <= start;
@@ -209,6 +210,8 @@ bad1   <= '1' when errcnt /= err0 else '0';
 bad2   <= '1' when errcnt = err2 or errcnt = err3 else '0';
 bad3   <= '1' when errcnt = err3 else '0';
 shift  <= '0' when (seqdet = waiting or seqdet = seqko) else bcdind;
+-- clear the typed digits when a configuration (re)starts
+clrnum <= '1' when cind = '1' and ((seqdet = waiting and good_i = '1') or seqdet = config_failed) else '0';
 correct_code <= code1 & code2 & code3 & code4; -- 16 bit array where every quadruple is 1 digit of the actual code
 
 --LCD message

@@ -48,7 +48,7 @@ begin
   
   -- clock divider from lab1
   cdiv  : clock_div port map ( clk => OSC_50, nrst => nrst, q => q );
-  clklk : CLK_LOCK  port map ( inclk => q(8), outclk => sclk );
+  clklk : CLK_LOCK  port map ( inclk => q(10), outclk => sclk );
 
   -- full system (part1 + part2)
   kp : keypad port map ( clk => sclk, nrst => nrst, col => COL, row => ROW,

@@ -447,11 +447,11 @@ Its ports are <code>clk, nrst, col, row, key, keycode, good, bad1, bad2, bad3, s
   <rect class="bx" x="190" y="95" width="130" height="50" rx="8"/><text x="255" y="118" text-anchor="middle">clock_div</text><text x="255" y="134" text-anchor="middle" class="mut">16-bit counter, q[15:0]</text>
   <rect class="bx" x="410" y="30" width="110" height="46" rx="8"/><text x="465" y="50" text-anchor="middle">CLK_LOCK</text><text x="465" y="66" text-anchor="middle" class="mut">global clock</text>
   <rect class="bx" x="410" y="165" width="110" height="46" rx="8"/><text x="465" y="185" text-anchor="middle">CLK_LOCK</text><text x="465" y="201" text-anchor="middle" class="mut">global clock</text>
-  <rect class="bx" x="610" y="20" width="270" height="70" rx="8"/><text x="745" y="42" text-anchor="middle" font-weight="bold">sclk = 97.7 kHz</text><text x="745" y="60" text-anchor="middle" class="mut">part1, part2(b), digit register, LCD request logic</text><text x="745" y="76" text-anchor="middle" class="mut">look period = 1024 / 97.7 kHz = 10.5 ms</text>
+  <rect class="bx" x="610" y="20" width="270" height="70" rx="8"/><text x="745" y="42" text-anchor="middle" font-weight="bold">sclk = 24.4 kHz</text><text x="745" y="60" text-anchor="middle" class="mut">part1, part2(b), digit register, LCD request logic</text><text x="745" y="76" text-anchor="middle" class="mut">look period = 1024 / 24.4 kHz = 42 ms</text>
   <rect class="bx" x="610" y="155" width="270" height="70" rx="8"/><text x="745" y="177" text-anchor="middle" font-weight="bold">lclk = 763 Hz (improvement 2 only)</text><text x="745" y="195" text-anchor="middle" class="mut">LCD_int</text><text x="745" y="211" text-anchor="middle" class="mut">1.3 ms per LCD state</text>
   <rect class="bx" x="190" y="195" width="170" height="40" rx="8" style="stroke-dasharray:4 3"/><text x="275" y="212" text-anchor="middle">1 Hz blink counter</text><text x="275" y="227" text-anchor="middle" class="mut">25e6 cycles, on 50 MHz</text>
   <path class="ln" d="M120,120 L188,120" marker-end="url(#ar)"/>
-  <path class="ln" d="M320,110 L360,110 L360,53 L408,53" marker-end="url(#ar)"/><text x="365" y="85" class="mono" font-size="11">q[8]</text>
+  <path class="ln" d="M320,110 L360,110 L360,53 L408,53" marker-end="url(#ar)"/><text x="365" y="85" class="mono" font-size="11">q[10]</text>
   <path class="ln" d="M320,130 L360,130 L360,188 L408,188" marker-end="url(#ar)"/><text x="365" y="165" class="mono" font-size="11">q[15]</text>
   <path class="ln" d="M520,53 L608,53" marker-end="url(#ar)"/><path class="ln" d="M520,188 L608,188" marker-end="url(#ar)"/>
   <path class="ln" d="M65,145 L65,215 L188,215" marker-end="url(#ar)" style="stroke-dasharray:4 3"/>
@@ -462,7 +462,7 @@ Its ports are <code>clk, nrst, col, row, key, keycode, good, bad1, bad2, bad3, s
 <ul>
 <li><strong><code>clock_div</code></strong> (teacher's): free-running 16-bit counter; each bit <code>q[n]</code> is a square wave of frequency 50e3 / 2<sup>n+1</sup> kHz.</li>
 <li><strong><code>CLK_LOCK</code></strong> (teacher's, based on the <code>altclkctrl</code> megafunction): "functionally transparent", it tells the compiler to put the signal on a global clock line, so the divided clock reaches all flip-flops with low skew. Explained step by step in the next subsection.</li>
-<li><strong>Choice of <code>q[8]</code></strong>: 50 MHz / 512 = 97.66 kHz. With our 10-bit counter, <code>look</code> comes every 1024 / 97.66 kHz = <strong>10.49 ms</strong>, just above the 10 ms of the handout's hypothesis.</li>
+<li><strong>Choice of <code>q[10]</code></strong>: 50 MHz / 2048 = 24.41 kHz. With our 10-bit counter, <code>look</code> comes every 1024 / 24.41 kHz = <strong>41.9 ms</strong>, well above the 10 ms of the handout's hypothesis. (We first used <code>q[8]</code> = 97.66 kHz, see section 15 for why it was changed after the lab test.)</li>
 <li>Reset: <code>KEY[0]</code> (push button, active low), which matches <code>nrst</code>.</li>
 </ul>
 
@@ -477,11 +477,11 @@ Its ports are <code>clk, nrst, col, row, key, keycode, good, bad1, bad2, bad3, s
 </table>
 <ul>
 <li>Bit <code>n</code> flips every 2<sup>n</sup> cycles, so its full period is 2<sup>n+1</sup> cycles: low for 2<sup>n</sup> cycles, then high for 2<sup>n</sup> cycles.</li>
-<li><code>q[8]</code>: low for 256 cycles, high for 256 cycles, period <strong>512 cycles</strong> = 10.24 us = 97.66 kHz. A circuit clocked by it sees <strong>one rising edge every 512 cycles of the 50 MHz clock</strong>: that is the "tick". (So "divides by 512" is right.)</li>
+<li><code>q[10]</code>: low for 1024 cycles, high for 1024 cycles, period <strong>2048 cycles</strong> = 40.96 us = 24.41 kHz. A circuit clocked by it sees <strong>one rising edge every 2048 cycles of the 50 MHz clock</strong>: that is the "tick". (So "divides by 2048" is right.)</li>
 <li><code>q[15]</code>: it does <em>not</em> change all the time. It flips only every 32768 cycles (0.66 ms); its period is 65536 cycles = 1.31 ms = 763 Hz. The bit that changes at every cycle is <code>q[0]</code> (25 MHz).</li>
 </ul>
 
-<p><strong>2. The problem <code>CLK_LOCK</code> solves.</strong> <code>q[8]</code> is the output of a flip-flop <em>inside the logic</em> of the FPGA. If we connect it straight to the clock inputs of hundreds of other flip-flops, the fitter must carry it over the normal routing wires. Those wires have a different length (so a different delay) for every destination:</p>
+<p><strong>2. The problem <code>CLK_LOCK</code> solves.</strong> <code>q[10]</code> is the output of a flip-flop <em>inside the logic</em> of the FPGA. If we connect it straight to the clock inputs of hundreds of other flip-flops, the fitter must carry it over the normal routing wires. Those wires have a different length (so a different delay) for every destination:</p>
 <ul>
 <li>Some flip-flops see the clock edge slightly <strong>earlier</strong>, others slightly <strong>later</strong>. This difference is called <em>clock skew</em>.</li>
 <li>A flip-flop that fires early can change its output before a neighbour has seen the same clock edge, and the neighbour then captures the <em>new</em> value instead of the old one: a <em>hold-time violation</em>, i.e. a design that works in simulation and may fail on the chip.</li>
@@ -492,8 +492,8 @@ Its ports are <code>clk, nrst, col, row, key, keycode, good, bad1, bad2, bad3, s
 <svg viewBox="0 0 900 270" role="img" aria-label="Clock via normal routing versus global clock network">
   <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
   <g style="color:var(--fg)">
-  <text x="10" y="22" font-weight="bold">Without CLK_LOCK: q[8] over normal routing</text>
-  <rect class="bx" x="10" y="115" width="90" height="40" rx="6"/><text x="55" y="139" text-anchor="middle" class="mono">q[8]</text>
+  <text x="10" y="22" font-weight="bold">Without CLK_LOCK: q[10] over normal routing</text>
+  <rect class="bx" x="10" y="115" width="90" height="40" rx="6"/><text x="55" y="139" text-anchor="middle" class="mono">q[10]</text>
   <path class="ln" d="M100,135 L180,135 L180,60 L268,60" marker-end="url(#ar)"/>
   <path class="ln" d="M100,135 L420,135" marker-end="url(#ar)"/>
   <path class="ln" d="M100,135 L160,135 L160,230 L250,230 L250,240 L328,240" marker-end="url(#ar)"/>
@@ -511,8 +511,8 @@ Its ports are <code>clk, nrst, col, row, key, keycode, good, bad1, bad2, bad3, s
 <svg viewBox="0 0 900 200" role="img" aria-label="Global clock network">
   <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
   <g style="color:var(--fg)">
-  <text x="10" y="22" font-weight="bold">With CLK_LOCK: q[8] put on a global clock line</text>
-  <rect class="bx" x="10" y="80" width="90" height="40" rx="6"/><text x="55" y="104" text-anchor="middle" class="mono">q[8]</text>
+  <text x="10" y="22" font-weight="bold">With CLK_LOCK: q[10] put on a global clock line</text>
+  <rect class="bx" x="10" y="80" width="90" height="40" rx="6"/><text x="55" y="104" text-anchor="middle" class="mono">q[10]</text>
   <rect class="bx" x="150" y="70" width="140" height="60" rx="8"/><text x="220" y="96" text-anchor="middle">CLK_LOCK</text><text x="220" y="114" text-anchor="middle" class="mut">clock control block</text>
   <path class="ln" d="M100,100 L148,100" marker-end="url(#ar)"/>
   <path class="acc" d="M290,100 L360,100 M360,50 L360,150 M360,50 L650,50 M360,100 L650,100 M360,150 L650,150"/>
@@ -532,10 +532,10 @@ Its ports are <code>clk, nrst, col, row, key, keycode, good, bad1, bad2, bad3, s
 <ul>
 <li><strong>Logically it does nothing</strong>: <code>outclk</code> is <code>inclk</code>. That is why the handout calls it "functionally transparent", and why it makes no difference in a functional simulation.</li>
 <li><strong>Physically</strong> it tells the compiler "this signal is a clock: put it on a global clock line", so that all the flip-flops clocked by <code>outclk</code> receive the edge at the same moment. The name "lock" refers to locking the signal onto that dedicated resource.</li>
-<li>In our design there are two: <code>sclk = CLK_LOCK(q[8])</code> for all the flip-flops of part1, part2, the digit register and the LCD request logic, and <code>lclk = CLK_LOCK(q[15])</code> for <code>LCD_int</code> (improvement 2). The 50 MHz pin <code>OSC_50</code> is already a dedicated clock pin; the blink counter uses it directly.</li>
+<li>In our design there are two: <code>sclk = CLK_LOCK(q[10])</code> for all the flip-flops of part1, part2, the digit register and the LCD request logic, and <code>lclk = CLK_LOCK(q[15])</code> for <code>LCD_int</code> (improvement 2). The 50 MHz pin <code>OSC_50</code> is already a dedicated clock pin; the blink counter uses it directly.</li>
 </ul>
 
-<p><strong>4. Is it really needed here?</strong> Be honest about this in the presentation: the clock is slow (97.7 kHz, a period of 10 us) and skew is on the order of nanoseconds, so this design would very probably also work without it. Quartus can also promote a high-fanout signal to a global line by itself. We use it because (a) the lab handout explicitly provides it for this purpose (lab 1: "the compiler will assign clk to a dedicated clock path"), (b) it guarantees a clean clock distribution instead of relying on a compiler heuristic, and (c) it is good practice whenever a clock is derived inside the logic.</p>
+<p><strong>4. Is it really needed here?</strong> Be honest about this in the presentation: the clock is slow (24.4 kHz, a period of 41 us) and skew is on the order of nanoseconds, so this design would very probably also work without it. Quartus can also promote a high-fanout signal to a global line by itself. We use it because (a) the lab handout explicitly provides it for this purpose (lab 1: "the compiler will assign clk to a dedicated clock path"), (b) it guarantees a clean clock distribution instead of relying on a compiler heuristic, and (c) it is good practice whenever a clock is derived inside the logic.</p>
 
 <h3>Board outputs</h3>
 <table>
@@ -683,7 +683,7 @@ end process;</pre>
 <p><strong>LCD_int</strong> (teacher's) writes 16 characters; we only replaced its message table with the five texts proposed in the handout (messages 1..5 above). It starts writing on a <em>falling edge of <code>run</code></em> when it is idle (<code>busy=0</code>) and sets <code>busy=1</code> while writing.</p>
 
 <h3>Why the LCD has its own, slower clock (decision)</h3>
-<p>LCD_int sends its commands one state per clock without waiting for the LCD, and an HD44780 LCD needs about 37 us per command and 1.5 ms for "clear". At 97.7 kHz each state lasts only 10 us, which is too fast. In lab 1 the whole design ran on <code>q[15]</code> (763 Hz) and the handout says "use a clock slower than <code>q[12]</code>". So the LCD runs on <code>lclk</code> = <code>q[15]</code> through its own <code>CLK_LOCK</code> (1.3 ms per state), while the keypad stays on <code>sclk</code> (a 763 Hz keypad would sample only every 1.3 s, with a 1024-count look).</p>
+<p>LCD_int sends its commands one state per clock without waiting for the LCD, and an HD44780 LCD needs about 37 us per command and 1.5 ms for "clear". At 24.4 kHz each state lasts only 41 us, which is still too fast for the clear command. In lab 1 the whole design ran on <code>q[15]</code> (763 Hz) and the handout says "use a clock slower than <code>q[12]</code>". So the LCD runs on <code>lclk</code> = <code>q[15]</code> through its own <code>CLK_LOCK</code> (1.3 ms per state), while the keypad stays on <code>sclk</code> (a 763 Hz keypad would sample only every 1.3 s, with a 1024-count look).</p>
 
 <h3>The <code>run</code> / <code>busy</code> handshake between the two clocks</h3>
 <figure>
@@ -732,7 +732,7 @@ end process;</pre>
 <tr><td>Register <code>key</code>/<code>keycode</code></td><td>Leave combinational; move <code>colq</code> to the rising edge</td><td>Registering removes the glitches with no change to the FSM. Moving <code>colq</code> breaks the row/answer alignment.</td></tr>
 <tr><td>Keep <code>colq</code> on the falling edge</td><td>Rising edge</td><td>Gives the keypad half a period to answer the current row.</td></tr>
 <tr><td>Keep part2 unmodified; new <code>part2b</code> for the LCD</td><td>Edit part2.vhd in place</td><td>The earlier revisions keep compiling; the handout itself says "a modified version of part2".</td></tr>
-<tr><td>Slow clock 97.7 kHz (<code>q[8]</code>) for the keypad</td><td>A slower clock with the original 4-bit look (q[14], see section 13)</td><td>Same sampling period (10.5 ms); our <code>look</code> is a property of the design, not just of the clock chosen.</td></tr>
+<tr><td>Slow clock 24.4 kHz (<code>q[10]</code>) for the keypad (first <code>q[8]</code>, changed after the lab test, section 15)</td><td>A slower clock with the original 4-bit look (q[14], see section 13)</td><td>Look period 42 ms; and a half period of 20 us, long enough for the column RC of the board (section 15). Our <code>look</code> is a property of the design, not just of the clock chosen.</td></tr>
 <tr><td>Separate 763 Hz clock for the LCD + <code>run</code>/<code>busy</code> handshake</td><td>Everything on <code>q[15]</code> (as lab 1)</td><td>LCD needs a slow clock; a 763 Hz keypad clock would give a 1.3 s sampling period with our 10-bit counter.</td></tr>
 <tr><td>Own <code>ndig</code> counter limiting digits to 4</td><td>Let a 5th digit shift in</td><td>part2 asserts <code>shift</code> for extra digits in now4ok/now4ko; the display should show the 4 digits of the sequence.</td></tr>
 <tr><td>One revision per improvement</td><td>All in one top level</td><td>Each step has a working fallback for the board session; easy to explain.</td></tr>
@@ -754,7 +754,7 @@ kpressed=1: the key is in row 3, validated, go to wait1. kpressed=0: check0 saw 
 Two: (1) the 16-cycle <code>look</code> period is much shorter than the contact bounce, so one press gives several detections (shown in simulation with col bouncing like the oscilloscope capture); (2) <code>key</code>/<code>keycode</code> are combinational, with glitches because <code>colq</code> changes on the falling edge.</p>
 
 <p><strong>How did you choose 10 bits?</strong><br>
-At 1 MHz, 2<sup>10</sup> cycles = 1024 us; measured bounce about 400 us, so about 2.5x margin. On the board with <code>q[8]</code> it is 10.5 ms, above the 10 ms assumed in 3.4.</p>
+At 1 MHz, 2<sup>10</sup> cycles = 1024 us; measured bounce about 400 us, so about 2.5x margin. On the board with <code>q[10]</code> it is 42 ms, above the 10 ms assumed in 3.4.</p>
 
 <p><strong>What if a key is pressed for less than the look period?</strong><br>
 It can be missed. That is the usual trade-off of a slow sampled keypad; human presses last tens of ms.</p>
@@ -771,8 +771,8 @@ LCD_int does not wait for the LCD between commands; the LCD needs tens of micros
 <p><strong>What does <code>CLK_LOCK</code> do, if it does not change the signal?</strong><br>
 It does not change the logic value; it changes where the signal travels. It puts the divided clock on the chip's dedicated global clock network, so every flip-flop gets the clock edge at almost the same time (low skew) instead of through ordinary routing wires with different delays. In simulation it is transparent.</p>
 
-<p><strong>What is <code>q[8]</code>?</strong><br>
-Bit 8 of the free-running 16-bit counter in <code>clock_div</code>: a square wave of period 2<sup>9</sup> = 512 cycles of the 50 MHz clock (97.66 kHz).</p>
+<p><strong>What is <code>q[10]</code>?</strong><br>
+Bit 10 of the free-running 16-bit counter in <code>clock_div</code>: a square wave of period 2<sup>11</sup> = 2048 cycles of the 50 MHz clock (24.41 kHz).</p>
 
 <p><strong>Why did you not modify part2?</strong><br>
 We needed an extra output <code>msg</code>; we put it in a copy (<code>part2b</code>) so that the reports for 3.2/3.3 still describe the original.</p>
@@ -800,7 +800,7 @@ It sounds as if debouncing had not been done in part1, so maybe part1 in 3.1 was
 <ul>
 <li>The 10 ms and the "clock_div / clk_lock" remark in 3.4 describe the <strong>board-level</strong> way to reach the right period: feed part1 a slow clock (about <code>q[14]</code> or <code>q[15]</code>) instead of 50 MHz. That is consistent with the original part1; it does not imply part1 lacked the mechanism.</li>
 <li>In 3.1 the lab is run at 1 MHz and asks to <em>find and fix</em> a fault. With the original file at 1 MHz, the sampling period (16 us) is shorter than any realistic bounce, so the fault is real in simulation. Our change makes part1 robust at <em>any</em> clock: the period is 1024 clock cycles.</li>
-<li>Numerically, our solution and the "teacher's way" end up the same on the board: 1024 cycles at 97.66 kHz (<code>q[8]</code>) = 10.49 ms = 16 cycles at 1.526 kHz (<code>q[14]</code>). We reach 10.5 ms either way.</li>
+<li>Numerically, our solution and the "teacher's way" end up the same on the board: 1024 cycles at 24.41 kHz (<code>q[10]</code>) = 41.9 ms (16 cycles at 1.526 kHz, <code>q[14]</code>, would give 10.5 ms). Both are above 10 ms.</li>
 </ul>
 
 <h3>What we cannot know</h3>
@@ -809,12 +809,18 @@ It sounds as if debouncing had not been done in part1, so maybe part1 in 3.1 was
 <h3>Possible concerns and how to answer</h3>
 <ul>
 <li><em>"You changed the teacher's part1."</em> That is exactly what 3.1 asks ("suggest and implement a feasible alternative").</li>
-<li><em>"In 3.4 I said to use a slow clock."</em> We do: <code>q[8]</code>. Our look counter makes the final period 10.5 ms. If the teacher prefers the original 4-bit counter, switching <code>count10b</code> back to <code>count4b</code> and clocking with <code>q[14]</code> gives the same period; but the keypad would then run 64x slower (every FSM state 655 us), which is still fine for a keypad. No code was changed for this analysis.</li>
-<li><em>10.49 ms is only 5% above 10 ms.</em> True; if more margin were wanted, use <code>q[15]</code> with the 10-bit counter, or an 11-bit counter. For real keys (our measurement was about 0.4 ms) the margin is large.</li>
+<li><em>"In 3.4 I said to use a slow clock."</em> We do: <code>q[10]</code>. Our look counter makes the final period 42 ms. If the teacher prefers the original 4-bit counter, switching <code>count10b</code> back to <code>count4b</code> and clocking with <code>q[14]</code> gives the same period; but the keypad would then run 64x slower (every FSM state 655 us), which is still fine for a keypad. No code was changed for this analysis.</li>
+<li><em>Is the look period close to 10 ms?</em> With <code>q[10]</code> it is 42 ms, four times the 10 ms of the hypothesis and 100 times our measured 0.4 ms bounce.</li>
 </ul>
 <p><strong>Suggestion:</strong> ask the teacher at the start of the lab session, in one sentence: "In 3.1, which design fault did you have in mind: the sampling period shorter than the bounce, or something else?" It would settle the question and costs nothing.</p>
 
 <!-- ============================================================ -->
+<h2 id="rc">15. Lab finding: the keypad column RC and the clock (q[8] changed to q[10])</h2>
+<p>In the lab, with the keypad clocked by <code>q[8]</code> (97.7 kHz), the key <strong>A</strong> always worked, but <strong>B, C and D</strong> sometimes toggled the trick mode, which only listens to <code>keycode = A</code>. We read the key code on the LEDs: it was always correct when read in isolation (A=1010, B=1011, C=1100, D=1101), so the keypad was sometimes <em>spuriously</em> reporting A.</p>
+<p><strong>Hypothesis (explanation, not yet proven by a measurement):</strong> the handout says the columns have pull-up resistors and capacitors. In the state <code>check0</code> all rows are 0, so a pressed key in column 3 (A, B, C or D) pulls column 3 low. In <code>kra0</code> the FSM drives row 0 only and releases the other rows (tristate). Column 3 then rises back to 1 with a time constant RC. <code>colq</code> is sampled half a clock period later (5 us at 97.7 kHz); if column 3 has not risen yet, <code>colq(3)=0</code> in <code>kra0</code> is read as the key A (row 0, column 3). A is the true reading for the A key, so A was always fine; for B, C and D the false A reading from <code>kra0</code> sometimes wins over the real one.</p>
+<p><strong>Change:</strong> keypad clock from <code>q[8]</code> (97.66 kHz, half period 5 us) to <code>q[10]</code> (24.41 kHz, half period 20 us) in all board revisions (<code>keypad_de2</code> to <code>keypad_de2_i5</code>), since the clock was introduced in 3.4. The look period is now 1024 / 24.41 kHz = 41.9 ms. The LCD clock (<code>q[15]</code>) is unchanged.</p>
+<p><strong>Status:</strong> to be confirmed on the board (B, C, D must no longer toggle the trick mode). If it is not enough, the next option is to add a settling state in part1 after each row change.</p>
+
 <h2 id="todo">14. What is still to do</h2>
 <ul>
 <li><strong>Test on the board</strong> (all revisions): keypad reading, correct code (green LEDs), wrong codes (left, middle, right red groups), lock, blinking, LCD messages, tricking mode. <span class="tag">to verify</span></li>

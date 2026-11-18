@@ -67,9 +67,9 @@ architecture arc of keypad_de2_i3 is
 begin
   nrst <= KEY(0);
 
-  -- clocks: keypad/system = 50MHz/2^9 = 97.7 kHz, LCD = 50MHz/2^16 = 763 Hz
+  -- clocks: keypad/system = 50MHz/2^11 = 24.4 kHz, LCD = 50MHz/2^16 = 763 Hz
   cdiv   : clock_div port map ( clk => OSC_50, nrst => nrst, q => q );
-  clklk  : CLK_LOCK  port map ( inclk => q(8),  outclk => sclk );
+  clklk  : CLK_LOCK  port map ( inclk => q(10),  outclk => sclk );
   clklk2 : CLK_LOCK  port map ( inclk => q(15), outclk => lclk );
 
   -- improvement 1: 1 Hz blink

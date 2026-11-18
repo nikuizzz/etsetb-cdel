@@ -29,6 +29,7 @@ architecture arc of keypad_de2_i5 is
            shift                  : out std_logic;
            trick                  : out std_logic;
            correct_code           : out std_logic_vector(15 downto 0);
+           clrnum                 : out std_logic;
            msg                    : out integer range 0 to 9 );
   end component;
 
@@ -62,6 +63,7 @@ architecture arc of keypad_de2_i5 is
   signal key_s, good_s, bad1_s, bad2_s, bad3_s, shift_s : std_logic;
   signal keycode_s : std_logic_vector(3 downto 0);
   signal num, display, correct_code : std_logic_vector(15 downto 0);
+  signal clrnum : std_logic;
   signal ndig    : integer range 0 to 4;
   signal msg, shown_msg : integer range 0 to 9;
   signal run, busy  : std_logic;
@@ -69,9 +71,9 @@ architecture arc of keypad_de2_i5 is
 begin
   nrst <= KEY(0);
 
-  -- clocks: keypad/system = 50MHz/2^9 = 97.7 kHz, LCD = 50MHz/2^16 = 763 Hz
+  -- clocks: keypad/system = 50MHz/2^11 = 24.4 kHz, LCD = 50MHz/2^16 = 763 Hz
   cdiv   : clock_div port map ( clk => OSC_50, nrst => nrst, q => q );
-  clklk  : CLK_LOCK  port map ( inclk => q(8),  outclk => sclk );
+  clklk  : CLK_LOCK  port map ( inclk => q(10), outclk => sclk );
   clklk2 : CLK_LOCK  port map ( inclk => q(15), outclk => lclk );
 
   -- improvement 1: 1 Hz blink
@@ -90,7 +92,7 @@ begin
                          keycode => keycode_s, row => ROW );
   p2 : part2d port map ( clk => sclk, nrst => nrst, key => key_s, keycode => keycode_s,
                          good => good_s, bad1 => bad1_s, bad2 => bad2_s, bad3 => bad3_s,
-                         shift => shift_s, trick => trick, correct_code => correct_code, msg => msg );
+                         shift => shift_s, trick => trick, correct_code => correct_code, clrnum => clrnum, msg => msg );
 
   -- LEDs with LED_RED mapped to blink when bad3_s = 1
   LED_GREEN <= (others => good_s);
@@ -106,7 +108,7 @@ begin
     if nrst = '0' then
       num <= x"FFFF"; ndig <= 0;
     elsif rising_edge(sclk) then
-      if key_s = '1' and (keycode_s = x"E" or keycode_s = x"C") then
+      if (key_s = '1' and keycode_s = x"E") or clrnum = '1' then
         num <= x"FFFF"; ndig <= 0;
       elsif shift_s = '1' and ndig < 4 then
         num <= num(11 downto 0) & keycode_s;
