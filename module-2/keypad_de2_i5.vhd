@@ -63,7 +63,6 @@ architecture arc of keypad_de2_i5 is
   signal keycode_s : std_logic_vector(3 downto 0);
   signal num, display, correct_code : std_logic_vector(15 downto 0);
   signal ndig    : integer range 0 to 4;
-  signal last_key : std_logic_vector(3 downto 0);  -- DEBUG: last key code
   signal msg, shown_msg : integer range 0 to 9;
   signal run, busy  : std_logic;
   signal trick  : std_logic;
@@ -94,8 +93,7 @@ begin
                          shift => shift_s, trick => trick, correct_code => correct_code, msg => msg );
 
   -- LEDs with LED_RED mapped to blink when bad3_s = 1
-  LED_GREEN(8 downto 4) <= (others => good_s);
-  LED_GREEN(3 downto 0) <= last_key;   -- DEBUG: last key code in binary (LEDG3 = MSB)
+  LED_GREEN <= (others => good_s);
   gen_led : for i in 0 to 5 generate
     LED_RED(i + 12) <= blink when bad3_s = '1' else bad1_s;
     LED_RED(i + 6)  <= blink when bad3_s = '1' else bad2_s;
@@ -117,21 +115,12 @@ begin
     end if;
   end process;
 
-  -- DEBUG: remember the code of the last key pressed (shown on HEX4)
-  process (sclk, nrst)
-  begin
-    if nrst = '0' then last_key <= x"F";
-    elsif rising_edge(sclk) then
-      if key_s = '1' then last_key <= keycode_s; end if;
-    end if;
-  end process;
-
   -- display mapping: show 1248 if trick is active, else show the number
   display <= correct_code when trick = '1' else num;
   displays : hex_disps
     port map ( num0 => display(3 downto 0),  num1 => display(7 downto 4),
                num2 => display(11 downto 8), num3 => display(15 downto 12),
-               num4 => last_key, num5 => x"F", num6 => x"F", num7 => x"F",
+               num4 => x"F", num5 => x"F", num6 => x"F", num7 => x"F",
                HEX0 => HEX0, HEX1 => HEX1, HEX2 => HEX2, HEX3 => HEX3,
                HEX4 => HEX4, HEX5 => HEX5, HEX6 => HEX6, HEX7 => HEX7 );
 
