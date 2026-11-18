@@ -20,7 +20,7 @@ architecture behaviour of LCD_int_i4 is
    signal lcdctrl 	: std_logic_vector(2 downto 0);
    signal data		: std_logic_vector(7 downto 0);
    signal ch		: character;
-   signal add	  	: integer range 80 downto 0;
+   signal add	  	: integer range 96 downto 0;
    signal counter   : integer range 16 downto 0;	
    signal run_d     : std_logic;
    signal go        : std_logic_vector (1 downto 0);
