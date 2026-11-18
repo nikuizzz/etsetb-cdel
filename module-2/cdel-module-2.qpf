@@ -18,15 +18,16 @@
 #
 # Quartus II
 # Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-# Date created = 11:57:21  November 18, 2026
+# Date created = 13:13:17  November 18, 2026
 #
 # -------------------------------------------------------------------------- #
 
 QUARTUS_VERSION = "9.1"
-DATE = "11:57:21  November 18, 2026"
+DATE = "13:13:17  November 18, 2026"
 
 # Revisions
 
+PROJECT_REVISION = "keypad_de2_i4"
 PROJECT_REVISION = "keypad_de2_i3"
 PROJECT_REVISION = "keypad_de2_i2"
 PROJECT_REVISION = "keypad_de2_i1"
