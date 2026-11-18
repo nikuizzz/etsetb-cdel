@@ -27,9 +27,9 @@ architecture arc_keypad_top of keypad is
   signal key_s     : std_logic;
   signal keycode_s : std_logic_vector(3 downto 0);
 begin
-  u1 : part1 port map ( clk => clk, nrst => nrst, col => col,
+  p1 : part1 port map ( clk => clk, nrst => nrst, col => col,
                         key => key_s, keycode => keycode_s, row => row );
-  u2 : part2 port map ( clk => clk, nrst => nrst, key => key_s, keycode => keycode_s,
+  p2 : part2 port map ( clk => clk, nrst => nrst, key => key_s, keycode => keycode_s,
                         good => good, bad1 => bad1, bad2 => bad2, bad3 => bad3,
                         shift => shift );
   key     <= key_s;

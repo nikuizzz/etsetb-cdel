@@ -90,9 +90,9 @@ begin
   key_eff <= key_s and not trick;   -- other keys are ignored while tricking
 
   -- part1 and part2b (part2 + LCD message output)
-  u1 : part1  port map ( clk => sclk, nrst => nrst, col => COL, key => key_s,
+  p1 : part1  port map ( clk => sclk, nrst => nrst, col => COL, key => key_s,
                          keycode => keycode_s, row => ROW );
-  u2 : part2b port map ( clk => sclk, nrst => nrst, key => key_eff, keycode => keycode_s,
+  p2 : part2b port map ( clk => sclk, nrst => nrst, key => key_eff, keycode => keycode_s,
                          good => good_s, bad1 => bad1_s, bad2 => bad2_s, bad3 => bad3_s,
                          shift => shift_s, msg => msg );
 

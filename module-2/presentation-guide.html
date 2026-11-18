@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CDEL Lab 2 - Presentation guide</title>
+<style>
+  :root { --bg:#fff; --fg:#1d2430; --muted:#5b6472; --line:#d6dbe3; --accent:#1f5fbf; --soft:#f3f6fb; --warn:#fff6e0; --warnline:#e3b341; --code:#f5f5f7; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#14171c; --fg:#e6e9ee; --muted:#9aa3b2; --line:#2e3542; --accent:#7fb0ff; --soft:#1b2029; --warn:#2b2412; --warnline:#8a6d1c; --code:#1d2128; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.55 system-ui, "Segoe UI", sans-serif; }
+  main { max-width: 980px; margin: 0 auto; padding: 24px 20px 80px; }
+  h1 { font-size: 30px; margin: 8px 0 4px; }
+  h2 { font-size: 23px; margin: 46px 0 8px; padding-top: 14px; border-top: 2px solid var(--line); }
+  h3 { font-size: 18px; margin: 26px 0 6px; color: var(--accent); }
+  p, li { max-width: 78ch; }
+  .sub { color: var(--muted); margin-top: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 14.5px; }
+  th, td { border: 1px solid var(--line); padding: 6px 9px; text-align: left; vertical-align: top; }
+  th { background: var(--soft); }
+  code, pre { font-family: Consolas, "Cascadia Mono", monospace; font-size: 13.5px; }
+  code { background: var(--code); padding: 1px 5px; border-radius: 4px; }
+  pre { background: var(--code); padding: 12px 14px; border-radius: 8px; overflow-x: auto; border: 1px solid var(--line); }
+  .box { background: var(--soft); border: 1px solid var(--line); border-radius: 10px; padding: 10px 16px; margin: 14px 0; }
+  .warn { background: var(--warn); border-color: var(--warnline); }
+  figure { margin: 18px 0; }
+  figure svg { width: 100%; height: auto; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; }
+  figcaption { color: var(--muted); font-size: 14px; margin-top: 4px; }
+  svg text { fill: var(--fg); font: 12.5px system-ui, sans-serif; }
+  svg .mono { font-family: Consolas, monospace; }
+  svg .mut { fill: var(--muted); }
+  svg .st { fill: var(--soft); stroke: var(--fg); stroke-width: 1.4; }
+  svg .hl { fill: #ffe9a8; stroke: #b07d00; stroke-width: 1.4; }
+  svg .ln { stroke: var(--fg); stroke-width: 1.4; fill: none; }
+  svg .th { stroke: var(--line); stroke-width: 1; fill: none; }
+  svg .acc { stroke: var(--accent); stroke-width: 2; fill: none; }
+  svg .bx { fill: var(--soft); stroke: var(--fg); stroke-width: 1.4; }
+  .toc a { color: var(--accent); text-decoration: none; }
+  .toc li { margin: 2px 0; }
+  .tag { display:inline-block; font-size:12px; padding:1px 8px; border-radius:99px; border:1px solid var(--line); color:var(--muted); }
+  @media print { main { max-width: none; } h2 { page-break-before: auto; } figure, table, pre { page-break-inside: avoid; } }
+</style>
+</head>
+<body>
+<main>
+
+<h1>CDEL Laboratory Module 2 - Keypad analyzer</h1>
+<p class="sub">Presentation guide: what we built, why, and how it works. Written so that you can explain every decision to the teacher.</p>
+
+<div class="box warn">
+<strong>Status.</strong> Everything below compiles or was reviewed by reading the code, but the board revisions
+(<code>keypad_de2</code>, <code>_i1</code>, <code>_i2</code>, <code>_i3</code>) were <em>not yet tested on the DE2 board</em> when this was written.
+Sections marked <span class="tag">to verify</span> are the points to check in the lab.
+</div>
+
+<h3>Contents</h3>
+<ol class="toc">
+  <li><a href="#big">The big picture</a></li>
+  <li><a href="#files">Files and Quartus revisions</a></li>
+  <li><a href="#keypad">How the keypad works</a></li>
+  <li><a href="#part1">part1: the keypad reader</a></li>
+  <li><a href="#problem">The problem: contact bounce and glitches (3.1)</a></li>
+  <li><a href="#fix">The fix we implemented in part1</a></li>
+  <li><a href="#part2">part2: sequence detector and error counter (3.2)</a></li>
+  <li><a href="#top">3.3: the full system</a></li>
+  <li><a href="#board">3.4: adaptation to the DE2 board</a></li>
+  <li><a href="#imp">3.5: the three improvements</a></li>
+  <li><a href="#log">Decision log</a></li>
+  <li><a href="#qa">Questions the teacher may ask</a></li>
+  <li><a href="#slow">Is part1 "the right thing"? The 3.4 slow-rate remark</a></li>
+  <li><a href="#todo">What is still to do</a></li>
+</ol>
+
+<!-- ============================================================ -->
+<h2 id="big">1. The big picture</h2>
+<p>The lab builds a <strong>PIN-code lock</strong> driven by a 4x4 keypad on the DE2 board (Cyclone II EP2C35F672C6).
+The user presses <code>*</code>, then four digits, then <code>#</code>. The correct code is <strong>1 2 4 8</strong>.
+Three wrong sequences lock the system.</p>
+
+<figure>
+<svg viewBox="0 0 900 250" role="img" aria-label="System block diagram">
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+  <g color="#1d2430" style="color:var(--fg)">
+  <rect class="bx" x="10" y="60" width="110" height="130" rx="10"/>
+  <text x="65" y="115" text-anchor="middle">4x4 keypad</text><text x="65" y="133" text-anchor="middle" class="mut">(pull-ups on col)</text>
+  <rect class="bx" x="200" y="40" width="170" height="170" rx="10"/>
+  <text x="285" y="75" text-anchor="middle" font-weight="bold">part1</text>
+  <text x="285" y="95" text-anchor="middle">keypad reader</text>
+  <text x="285" y="118" text-anchor="middle" class="mut">scans rows, reads cols</text>
+  <text x="285" y="138" text-anchor="middle" class="mut">outputs key, keycode</text>
+  <rect class="bx" x="450" y="40" width="170" height="170" rx="10"/>
+  <text x="535" y="75" text-anchor="middle" font-weight="bold">part2 (part2b)</text>
+  <text x="535" y="95" text-anchor="middle">sequence detector</text>
+  <text x="535" y="118" text-anchor="middle" class="mut">+ error counter</text>
+  <text x="535" y="138" text-anchor="middle" class="mut">good, bad1..3, shift (msg)</text>
+  <rect class="bx" x="700" y="20" width="185" height="60" rx="10"/><text x="792" y="48" text-anchor="middle">LEDs (green / red)</text><text x="792" y="66" text-anchor="middle" class="mut">good, bad1, bad2, bad3</text>
+  <rect class="bx" x="700" y="95" width="185" height="60" rx="10"/><text x="792" y="123" text-anchor="middle">7-segment displays</text><text x="792" y="141" text-anchor="middle" class="mut">digits typed (shift)</text>
+  <rect class="bx" x="700" y="170" width="185" height="60" rx="10"/><text x="792" y="198" text-anchor="middle">LCD (improvement 2)</text><text x="792" y="216" text-anchor="middle" class="mut">messages (msg)</text>
+  <path class="ln" d="M120,100 L198,100" marker-end="url(#ar)"/><text x="160" y="92" text-anchor="middle" class="mono">col[3:0]</text>
+  <path class="ln" d="M198,150 L120,150" marker-end="url(#ar)"/><text x="160" y="168" text-anchor="middle" class="mono">row[3:0]</text>
+  <path class="ln" d="M370,100 L448,100" marker-end="url(#ar)"/><text x="410" y="92" text-anchor="middle" class="mono">key</text>
+  <path class="ln" d="M370,150 L448,150" marker-end="url(#ar)"/><text x="410" y="168" text-anchor="middle" class="mono">keycode[3:0]</text>
+  <path class="ln" d="M620,60 L698,50" marker-end="url(#ar)"/>
+  <path class="ln" d="M620,110 L698,125" marker-end="url(#ar)"/>
+  <path class="ln" d="M620,160 L698,198" marker-end="url(#ar)"/>
+  </g>
+</svg>
+<figcaption>Figure 1. Global system (the handout's Figure 6, plus the board outputs we added in 3.4 and 3.5).</figcaption>
+</figure>
+
+<p>The work is split into the lab's four mandatory stages plus the optional improvements:</p>
+<table>
+<tr><th>Lab section</th><th>What it asks</th><th>What we did</th></tr>
+<tr><td>3.1 part1</td><td>Compile, simulate, explain the keypad reader, find the design fault that causes fake keys, fix it</td><td>Explained it; found two faults (contact bounce vs. a 16 us sampling period, and glitches on the combinational outputs); fixed both; simulated before and after.</td></tr>
+<tr><td>3.2 part2</td><td>Compile, simulate, explain the sequence detector</td><td>Done by the teammate (<code>part2.vhd</code>, unmodified; explained in the previous-work report).</td></tr>
+<tr><td>3.3 full system</td><td>New revision <code>keypad</code> joining part1 + part2</td><td><code>keypad.vhd</code>. Simulations still to do for the report.</td></tr>
+<tr><td>3.4 DE2 board</td><td>Pins, slow clock, LEDs, seven-segment digits</td><td>Revision <code>keypad_de2</code> (<code>keypad_de2.vhd</code>).</td></tr>
+<tr><td>3.5 improvements</td><td>1) blinking 2) LCD 3) tricking</td><td>Revisions <code>keypad_de2_i1</code>, <code>_i2</code>, <code>_i3</code>.</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2 id="files">2. Files and Quartus revisions</h2>
+<p>A Quartus <em>revision</em> is a set of project settings (top-level entity, file list, pins) with its own compilation results.
+We used one revision per step so that each step has a working fallback, and each is created from the previous one.</p>
+
+<table>
+<tr><th>Revision</th><th>Top-level entity</th><th>Purpose</th><th>Main files</th></tr>
+<tr><td><code>keypad</code></td><td><code>keypad</code></td><td>3.3: part1 + part2, for simulation</td><td>part1, count10b, part2, keypad</td></tr>
+<tr><td><code>keypad_de2</code></td><td><code>keypad_de2</code></td><td>3.4: runs on the board</td><td>+ clock_div, clk_lock.v, hex_disps, BCD7seg</td></tr>
+<tr><td><code>keypad_de2_i1</code></td><td><code>keypad_de2_i1</code></td><td>Improvement 1: blinking red LEDs</td><td>same as keypad_de2</td></tr>
+<tr><td><code>keypad_de2_i2</code></td><td><code>keypad_de2_i2</code></td><td>Improvement 2: LCD messages</td><td>+ part2b, LCD_int (new messages)</td></tr>
+<tr><td><code>keypad_de2_i3</code></td><td><code>keypad_de2_i3</code></td><td>Improvement 3: tricking mode</td><td>same as _i2</td></tr>
+</table>
+
+<table>
+<tr><th>File</th><th>Role</th><th>Origin</th></tr>
+<tr><td><code>part1.vhd</code></td><td>Keypad reader (FSM <code>whatkey</code>)</td><td>Teacher's file, <strong>modified by us</strong> (debounce, registered outputs)</td></tr>
+<tr><td><code>count10b.vhd</code></td><td>10-bit counter giving the <code>look</code> signal</td><td>Ours (replaces the teacher's <code>count4b</code>)</td></tr>
+<tr><td><code>part2.vhd</code></td><td>Sequence detector + error counter</td><td>Teacher's file, unchanged</td></tr>
+<tr><td><code>part2b.vhd</code></td><td>part2 + <code>wrong</code> flag + <code>msg</code> output (LCD)</td><td>Ours (copy of part2 with additions)</td></tr>
+<tr><td><code>keypad.vhd</code></td><td>Top level of 3.3 (part1 + part2)</td><td>Ours</td></tr>
+<tr><td><code>keypad_de2*.vhd</code></td><td>Board top levels</td><td>Ours</td></tr>
+<tr><td><code>clock_div.vhd</code></td><td>16-bit counter, frequency divider</td><td>Teacher's (lab 1)</td></tr>
+<tr><td><code>clk_lock.v</code></td><td>Puts a signal on a global clock line</td><td>Teacher's</td></tr>
+<tr><td><code>hex_disps.vhd</code>, <code>BCD7seg.vhd</code></td><td>Seven-segment decoding</td><td>Teacher's</td></tr>
+<tr><td><code>LCD_int.vhd</code></td><td>LCD controller; we only changed the 5 message strings</td><td>Teacher's, message table edited</td></tr>
+<tr><td><code>DE2_pin_assignments.csv</code></td><td>Board pin table (includes ROW/COL)</td><td>Teacher's</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2 id="keypad">3. How the keypad works</h2>
+<p>The keypad is a matrix: 4 row wires and 4 column wires. A key is a switch that connects <em>one row wire to one column wire</em>.</p>
+<ul>
+<li>The <strong>columns</strong> (<code>col[3:0]</code>) are inputs to the FPGA, each pulled up to 3.3 V by a resistor. With no key pressed, all columns read <code>1</code>.</li>
+<li>The <strong>rows</strong> (<code>row[3:0]</code>) are driven by open-drain-style tri-state buffers: a row is driven to <code>0</code> or left at high impedance <code>Z</code> (the VHDL line <code>row(i) &lt;= '0' when rowq(i)='0' else 'Z'</code>).</li>
+<li>If a row is driven to <code>0</code> and a key of that row is pressed, the column of that key is pulled to <code>0</code>. If the row is <code>Z</code>, the key has no effect on the column.</li>
+</ul>
+<p>So <strong>the row is "who we are asking" and the column is "the answer"</strong>. To find a key we ask the rows one at a time and watch which column goes to <code>0</code>.</p>
+
+<figure>
+<svg viewBox="0 0 760 330" role="img" aria-label="Keypad matrix">
+  <g>
+  <text x="10" y="22" font-weight="bold">Example: key 6 pressed (row 1, column 2), scanning row 1</text>
+  <!-- row wires -->
+  <g class="ln">
+    <line x1="120" y1="70" x2="560" y2="70"/><line x1="120" y1="120" x2="560" y2="120" style="stroke:#c44;stroke-width:2.6"/>
+    <line x1="120" y1="170" x2="560" y2="170"/><line x1="120" y1="220" x2="560" y2="220"/>
+  </g>
+  <!-- column wires -->
+  <g class="ln">
+    <line x1="200" y1="45" x2="200" y2="270"/><line x1="310" y1="45" x2="310" y2="270"/>
+    <line x1="420" y1="45" x2="420" y2="270" style="stroke:#c44;stroke-width:2.6"/><line x1="530" y1="45" x2="530" y2="270"/>
+  </g>
+  <g class="mono">
+    <text x="20" y="74">row0</text><text x="20" y="124">row1 = 0</text><text x="20" y="174">row2 = Z</text><text x="20" y="224">row3 = Z</text>
+    <text x="185" y="290">col0</text><text x="295" y="290">col1</text><text x="405" y="290">col2 = 0</text><text x="515" y="290">col3</text>
+  </g>
+  <!-- keys -->
+  <g class="st">
+   <circle cx="200" cy="70" r="14"/><circle cx="310" cy="70" r="14"/><circle cx="420" cy="70" r="14"/><circle cx="530" cy="70" r="14"/>
+   <circle cx="200" cy="120" r="14"/><circle cx="310" cy="120" r="14"/><circle cx="420" cy="120" r="14" class="hl"/><circle cx="530" cy="120" r="14"/>
+   <circle cx="200" cy="170" r="14"/><circle cx="310" cy="170" r="14"/><circle cx="420" cy="170" r="14"/><circle cx="530" cy="170" r="14"/>
+   <circle cx="200" cy="220" r="14"/><circle cx="310" cy="220" r="14"/><circle cx="420" cy="220" r="14"/><circle cx="530" cy="220" r="14"/>
+  </g>
+  <g text-anchor="middle">
+   <text x="200" y="75">1</text><text x="310" y="75">2</text><text x="420" y="75">3</text><text x="530" y="75">A</text>
+   <text x="200" y="125">4</text><text x="310" y="125">5</text><text x="420" y="125" font-weight="bold">6</text><text x="530" y="125">B</text>
+   <text x="200" y="175">7</text><text x="310" y="175">8</text><text x="420" y="175">9</text><text x="530" y="175">C</text>
+   <text x="200" y="225">*</text><text x="310" y="225">0</text><text x="420" y="225">#</text><text x="530" y="225">D</text>
+  </g>
+  <text x="600" y="120" class="mut">pressed key connects</text><text x="600" y="137" class="mut">row1 wire to col2 wire:</text><text x="600" y="154" class="mut">col2 reads 0, others 1</text>
+  <text x="600" y="190" class="mut">In the code '*' = x"E", '#' = x"F"</text>
+  </g>
+</svg>
+<figcaption>Figure 2. Keypad matrix. The pressed key (6) is at the crossing of row 1 and column 2.</figcaption>
+</figure>
+
+<p><strong>Priority when several keys are pressed.</strong> Two keys of the same row: the one with the lowest column index wins (e.g. row 0: 1 &gt; 2 &gt; 3 &gt; A), because the <code>keycode</code> assignment tests <code>colq(0), colq(1), ...</code> in that order.
+Two keys of the same column: the one with the lowest row index wins (1 &gt; 4 &gt; 7 &gt; *), because rows are scanned in order 0..3 and the scan stops at the first row where a key is found.</p>
+
+<!-- ============================================================ -->
+<h2 id="part1">4. part1: the keypad reader</h2>
+<p><code>part1</code> contains three things: a counter that produces a slow tick <code>look</code>; a 4-bit register <code>colq</code> that samples the columns;
+and the FSM <code>whatkey</code> that scans the rows and produces <code>key</code> and <code>keycode</code>.</p>
+
+<h3>The FSM states</h3>
+<figure>
+<svg viewBox="0 0 880 440" role="img" aria-label="whatkey state diagram">
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+  <g style="color:var(--fg)">
+  <g class="st">
+    <circle cx="100" cy="90" r="38"/><circle cx="300" cy="90" r="38"/><circle cx="500" cy="90" r="38"/>
+    <circle cx="500" cy="210" r="38"/><circle cx="500" cy="330" r="38"/><circle cx="700" cy="330" r="38"/>
+    <circle cx="300" cy="330" r="38"/><circle cx="100" cy="330" r="38"/>
+  </g>
+  <g text-anchor="middle" class="mono">
+    <text x="100" y="94">wait0</text><text x="300" y="94">check0</text><text x="500" y="94">kra0</text>
+    <text x="500" y="214">kra1</text><text x="500" y="334">kra2</text><text x="700" y="334">kra3</text>
+    <text x="300" y="334">wait1</text><text x="100" y="334">check1</text>
+  </g>
+  <g class="mut mono" text-anchor="middle" font-size="11">
+    <text x="100" y="140">rowq=1111</text><text x="300" y="140">rowq=0000</text><text x="500" y="140">rowq=1110</text>
+    <text x="500" y="260">rowq=1101</text><text x="500" y="380">rowq=1011</text><text x="700" y="380">rowq=0111</text>
+    <text x="300" y="380">rowq=1111</text><text x="100" y="380">rowq=0000</text>
+  </g>
+  <g class="ln">
+    <path d="M138,90 L262,90" marker-end="url(#ar)"/>
+    <path d="M338,90 L462,90" marker-end="url(#ar)"/>
+    <path d="M500,128 L500,172" marker-end="url(#ar)"/>
+    <path d="M500,248 L500,292" marker-end="url(#ar)"/>
+    <path d="M538,330 L662,330" marker-end="url(#ar)"/>
+    <path d="M462,330 L338,330" marker-end="url(#ar)"/>
+    <path d="M288,56 Q200,6 112,56" marker-end="url(#ar)"/>
+    <path d="M262,320 L138,320" marker-end="url(#ar)"/>
+    <path d="M138,340 L262,340" marker-end="url(#ar)"/>
+    <path d="M100,292 L100,128" marker-end="url(#ar)"/>
+    <path d="M662,310 Q300,200 120,124" marker-end="url(#ar)" style="stroke-dasharray:5 4"/>
+    <path d="M462,210 Q400,250 330,296" marker-end="url(#ar)"/>
+  </g>
+  <g font-size="11.5" text-anchor="middle">
+    <text x="200" y="82">look</text>
+    <text x="400" y="82">kpressed</text>
+    <text x="528" y="156" text-anchor="start">!kpressed</text>
+    <text x="528" y="276" text-anchor="start">!kpressed</text>
+    <text x="600" y="322">!kpressed</text>
+    <text x="400" y="322">kpressed</text>
+    <text x="200" y="312">look</text>
+    <text x="200" y="358">kpressed</text>
+    <text x="88" y="215" text-anchor="end">!kpressed</text>
+    <text x="200" y="20">!kpressed (check0 -> wait0)</text>
+    <text x="395" y="262" text-anchor="end">kpressed (from kra0..kra3)</text>
+  </g>
+  <text x="14" y="408" font-weight="bold">Not drawn: self-loops wait0 and wait1 on !look; kra0 and kra3 -> wait1 on kpressed.</text>
+  <text x="14" y="426" class="mut">Dashed arrow: kra3 and !kpressed -> wait0. The table below is the exact definition.</text>
+  </g>
+</svg>
+<figcaption>Figure 3. <code>whatkey</code> state machine (simplified drawing; the table is the exact definition).</figcaption>
+</figure>
+
+<table>
+<tr><th>State</th><th>Meaning</th><th>rowq</th><th>Leaves when</th></tr>
+<tr><td><code>wait0</code></td><td>Idle. No key detected; wait for the next sampling instant.</td><td>1111</td><td><code>look=1</code> -> check0</td></tr>
+<tr><td><code>check0</code></td><td>All rows driven low: is <em>any</em> key pressed?</td><td>0000</td><td><code>kpressed</code> -> kra0, otherwise -> wait0</td></tr>
+<tr><td><code>kra0</code>..<code>kra3</code></td><td>Scan row 0..3 (one row driven low). If a key is found, <code>key=1</code> and <code>keycode</code> is valid.</td><td>1110, 1101, 1011, 0111</td><td><code>kpressed</code> -> wait1 (key found). Otherwise next row; after kra3 with no key -> wait0</td></tr>
+<tr><td><code>wait1</code></td><td>A key was reported. Wait one sampling period.</td><td>1111</td><td><code>look=1</code> -> check1</td></tr>
+<tr><td><code>check1</code></td><td>Is the reported key still pressed?</td><td>0000</td><td>still pressed -> wait1 (stay: report <strong>once</strong>); released -> wait0</td></tr>
+</table>
+
+<p><strong>Why wait1/check1 exist.</strong> If we went back to wait0 right after the report, the next sampling would find the key still pressed (the human finger takes tens or hundreds of ms) and report it again. wait1/check1 make the FSM <em>wait for release</em>, so one press gives one report.
+<strong>Why kra3 has two exits:</strong> kpressed=1 means the key is in row 3 (report it); kpressed=0 means check0 saw a key but no row confirmed it (bounce, or the key was released during the scan), so we give up and go back to wait0 without reporting.</p>
+
+<h3>The two registers/counters</h3>
+<ul>
+<li><strong><code>look</code></strong>: a counter that is <code>1</code> for one clock cycle each period. The FSM only leaves wait0/wait1 when <code>look=1</code>, so the keypad is sampled at the counter's period, much slower than the clock. This is the handout's anti-bounce mechanism ("the keypad is checked at a much slower rate than the clock frequency").</li>
+<li><strong><code>colq</code></strong>: <code>col</code> sampled on the <em>falling</em> edge of the clock. The FSM changes row on the rising edge, so the keypad has half a clock period to settle before the FPGA reads the answer. The register therefore holds the answer to the <em>current</em> row. It also acts as a first synchroniser for the asynchronous <code>col</code> input.</li>
+<li><strong><code>kpressed = not (colq(3) and ... and colq(0))</code></strong>: "some column is 0".</li>
+</ul>
+
+<h3>The outputs</h3>
+<ul>
+<li><code>row</code>: tri-state function of the state (Moore: depends only on the state).</li>
+<li><code>key</code> = 1 only in a <code>kra</code> state when <code>colq /= 1111</code>.</li>
+<li><code>keycode</code>: in kra<em>i</em>, the position of the first <code>0</code> in <code>colq</code> selects one of 16 codes (row i, column j). Keypad code 0..9 digits, A..D letters, <code>*</code> = E, <code>#</code> = F.</li>
+</ul>
+<p>In the original teacher's file, <code>key</code>/<code>keycode</code> are combinational (<em>Mealy</em> outputs: they depend on the state and on <code>colq</code>, so they can change on either clock edge). We changed that, see section 6.</p>
+
+<!-- ============================================================ -->
+<h2 id="problem">5. The problem: contact bounce and glitches (lab 3.1)</h2>
+<p>The lab asks: <em>"Discuss if there is any design fault that may cause fake key detections"</em>. We found <strong>two</strong>.</p>
+
+<h3>Fault 1: the sampling period is shorter than the contact bounce</h3>
+<p>A mechanical key does not close cleanly: for a few hundred microseconds to a few milliseconds the contact opens and closes many times ("bounce"). On the oscilloscope we measured about <strong>400 us</strong> (15 squares of 100 us).</p>
+<p>The teacher's part1 uses a 4-bit counter, so <code>look</code> is 1 once every 16 clock cycles = <strong>16 us</strong> at the 1 MHz lab clock. That is 25 times shorter than the bounce. What happens:</p>
+<ol>
+<li>First contact: check0 sees the key, the scan reports it (<code>key=1</code>), FSM goes to wait1.</li>
+<li>16 us later check1 samples again, but the contact is <em>open</em> (bounce) so kpressed=0 and the FSM goes to wait0 (it believes the key was released).</li>
+<li>16 us later wait0 -> check0 sees the contact <em>closed</em> again, scans, and reports the same key <strong>again</strong>.</li>
+</ol>
+<p>Result: one physical press yields several <code>key=1</code> pulses, which part2 interprets as several digits. We reproduced this in simulation, by making <code>col</code> in the .vwf file bounce like the oscilloscope capture
+(<code>part1-contact-bounce-simulation.vwf</code>): <code>key</code> becomes 1 several times for one press.</p>
+
+<figure>
+<svg viewBox="0 0 860 230" role="img" aria-label="Bounce vs look period">
+  <g>
+  <text x="10" y="20" font-weight="bold">One key press, contact bounce about 400 us</text>
+  <text x="10" y="52" class="mono">col (one column)</text>
+  <path class="ln" d="M150,40 L170,40 L170,64 L185,64 L185,40 L200,40 L200,64 L212,64 L212,40 L228,40 L228,64 L250,64 L250,40 L262,40 L262,64 L300,64 L300,40 L310,40 L310,64 L420,64 L840,64"/>
+  <text x="10" y="100" class="mono">look, period 16 us</text>
+  <g class="ln"><path id="tk" d="M150,106 L150,88 M170,106 L170,88 M190,106 L190,88 M210,106 L210,88 M230,106 L230,88 M250,106 L250,88 M270,106 L270,88 M290,106 L290,88 M310,106 L310,88 M330,106 L330,88 M350,106 L350,88 M370,106 L370,88 M390,106 L390,88 M410,106 L410,88"/></g>
+  <text x="430" y="100" class="mut">... a sample every 16 us: many samples fall during the bounce</text>
+  <text x="10" y="150" class="mono">look, period 1024 us</text>
+  <g class="ln"><path d="M150,156 L150,138 M400,156 L400,138 M650,156 L650,138"/></g>
+  <text x="165" y="150" class="mut">first sample</text><text x="410" y="150" class="mut">next sample: the bounce is over</text>
+  <rect x="150" y="30" width="165" height="14" fill="none" style="stroke:#c44;stroke-dasharray:4 3"/>
+  <text x="152" y="190" class="mut">The dashed zone is the bounce. For debouncing the period must be longer than the bounce.</text>
+  <text x="152" y="208" class="mut">(Not to scale: time axis compressed between the two look lanes.)</text>
+  </g>
+</svg>
+<figcaption>Figure 4. Why a 16 us period fails and a longer one works.</figcaption>
+</figure>
+
+<h3>Fault 2: <code>key</code> and <code>keycode</code> glitch</h3>
+<p>Because the outputs are combinational and <code>colq</code> updates on the <em>falling</em> clock edge, during the first half of a kra state <code>colq</code> still holds the value from the previous state. For example when a key is pressed in row 1, at the start of kra0 <code>colq</code> still shows the check0 result (a column at 0), so <code>key=1</code> and <code>keycode</code> = a wrong "row 0" code for half a clock cycle, then it settles to the right value. In timing simulation we also saw a static hazard at the wait0->check0 edge.
+Part2 samples on the rising edge, so it does not see the half-cycle spike. But any consumer that is level-sensitive or asynchronous would take it as a fake key, and spikes on a signal that leaves the module are bad design.</p>
+
+<!-- ============================================================ -->
+<h2 id="fix">6. The fix we implemented in part1</h2>
+<table>
+<tr><th>Change</th><th>Why</th></tr>
+<tr><td><code>count4b</code> -> <code>count10b</code>, <code>look</code> when the count is 1023</td><td>Period = 1024 clock cycles = <strong>1024 us at 1 MHz</strong>, about 2.5 times the measured 400 us bounce, so by the time of the next sample the contact is stable. (First we proposed 9 bits = 512 us, then chose 10 bits for a bigger safety margin.)</td></tr>
+<tr><td><code>key</code>/<code>keycode</code> registered on the rising edge (new process <code>outreg</code>)</td><td>Removes the glitches: outputs now change only on the rising edge, once per cycle, always glitch-free. Cost: <code>key</code>/<code>keycode</code> appear one clock cycle later; part2 samples synchronously so this is harmless (we checked).</td></tr>
+<tr><td>We did <strong>not</strong> change <code>colq</code> to the rising edge</td><td>With <code>colq</code> on the rising edge it would hold the answer to the <em>previous</em> row (one cycle of latency) and the FSM and <code>keycode</code> would be wrong. The falling edge is what gives the keypad time to answer the row currently driven.</td></tr>
+</table>
+
+<pre>-- part1.vhd (excerpt)
+counter : count10b port map ( clk => clk, nrst => nrst, output => comp);
+look    &lt;= '1' when comp = 1023 else '0';
+...
+outreg : process (clk, nrst)
+begin
+  if nrst = '0' then key &lt;= '0'; keycode &lt;= x"0";
+  elsif clk'event and clk = '1' then key &lt;= key_i; keycode &lt;= keycode_i;
+  end if;
+end process outreg;</pre>
+
+<p><strong>Verification.</strong> In the corrected simulation, one bounced press gives exactly one 1-cycle <code>key=1</code> pulse with the right keycode, and no spike (<code>check0</code> at 1.024 ms, <code>kra0</code> at 1.025 ms, <code>key=1</code> and <code>keycode=1</code> at 1.026 ms).</p>
+
+<div class="box">
+<strong>Side effects to know.</strong> (a) A very short tap (shorter than about one <code>look</code> period) can be missed. (b) The first detection can take up to one <code>look</code> period. Both are normal for a debounced keypad.
+(c) <code>count10b</code> is a copy of the teacher's counter structure; at count 1023 the expression <code>count+1</code> is out of range in strict VHDL simulators (Quartus wraps it correctly; the teacher's <code>count4b</code> has the same quirk at 15).
+</div>
+
+<!-- ============================================================ -->
+<h2 id="part2">7. part2: sequence detector and error counter (lab 3.2)</h2>
+<p>Unmodified teacher's file (done by the teammate). It has two state machines and some combinational logic.</p>
+<h3>Key type detection (combinational)</h3>
+<ul>
+<li><code>bcdind</code>: a decimal digit was pressed (<code>key=1</code> and the code is 0..9).</li>
+<li><code>astind</code>: <code>*</code> pressed (code E). <code>almind</code>: <code>#</code> pressed (code F).</li>
+</ul>
+
+<h3>seqdet: the sequence detector</h3>
+<figure>
+<svg viewBox="0 0 900 270" role="img" aria-label="seqdet FSM">
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+  <g style="color:var(--fg)">
+  <g class="st"><rect x="10" y="110" width="80" height="38" rx="8"/><rect x="120" y="110" width="70" height="38" rx="8"/>
+   <rect x="230" y="40" width="80" height="38" rx="8"/><rect x="340" y="40" width="80" height="38" rx="8"/><rect x="450" y="40" width="80" height="38" rx="8"/><rect x="560" y="40" width="80" height="38" rx="8"/>
+   <rect x="230" y="180" width="80" height="38" rx="8"/><rect x="340" y="180" width="80" height="38" rx="8"/><rect x="450" y="180" width="80" height="38" rx="8"/><rect x="560" y="180" width="80" height="38" rx="8"/>
+   <rect x="740" y="40" width="90" height="38" rx="8"/><rect x="740" y="180" width="90" height="38" rx="8"/></g>
+  <g text-anchor="middle" class="mono">
+   <text x="50" y="134">waiting</text><text x="155" y="134">start</text>
+   <text x="270" y="64">now1ok</text><text x="380" y="64">now2ok</text><text x="490" y="64">now3ok</text><text x="600" y="64">now4ok</text>
+   <text x="270" y="204">now1ko</text><text x="380" y="204">now2ko</text><text x="490" y="204">now3ko</text><text x="600" y="204">now4ko</text>
+   <text x="785" y="64">seqok</text><text x="785" y="204">seqko</text>
+  </g>
+  <g class="ln">
+   <path d="M90,129 L118,129" marker-end="url(#ar)"/>
+   <path d="M190,118 L228,64" marker-end="url(#ar)"/><path d="M190,142 L228,196" marker-end="url(#ar)"/>
+   <path d="M310,59 L338,59" marker-end="url(#ar)"/><path d="M420,59 L448,59" marker-end="url(#ar)"/><path d="M530,59 L558,59" marker-end="url(#ar)"/>
+   <path d="M310,199 L338,199" marker-end="url(#ar)"/><path d="M420,199 L448,199" marker-end="url(#ar)"/><path d="M530,199 L558,199" marker-end="url(#ar)"/>
+   <path d="M310,70 L338,190" marker-end="url(#ar)"/><path d="M420,70 L448,190" marker-end="url(#ar)"/><path d="M530,70 L558,190" marker-end="url(#ar)"/>
+   <path d="M640,59 L738,59" marker-end="url(#ar)"/><path d="M640,199 L738,199" marker-end="url(#ar)"/>
+   <path d="M785,40 Q500,5 60,108" marker-end="url(#ar)"/>
+   <path d="M785,218 Q780,255 700,255 L60,255 Q50,255 50,150" marker-end="url(#ar)" style="stroke-dasharray:5 4"/>
+  </g>
+  <g class="mut" font-size="11.5" text-anchor="middle">
+   <text x="105" y="122">*</text>
+   <text x="200" y="68">digit ok</text><text x="200" y="195">digit ko</text>
+   <text x="324" y="52">ok</text><text x="434" y="52">ok</text><text x="544" y="52">ok</text>
+   <text x="324" y="192">any digit</text><text x="434" y="192">any digit</text><text x="544" y="192">any digit</text>
+   <text x="686" y="52">#</text><text x="686" y="192">#</text>
+   <text x="430" y="20">seqok -> waiting (good = 1)</text>
+   <text x="400" y="268">seqko -> waiting only if errcnt /= err3, otherwise stays locked</text>
+  </g>
+  <text x="10" y="20" font-weight="bold">Expected: *, 1, 2, 4, 8, #</text>
+  <text x="10" y="40" class="mut">In every state except waiting/seqok/seqko, a '*' goes back to start.</text>
+  </g>
+</svg>
+<figcaption>Figure 5. seqdet (simplified; the first branch "ko" is taken at the first wrong digit and then the FSM only counts digits).</figcaption>
+</figure>
+<ul>
+<li>The code to match is the constants <code>code1..4 = 1, 2, 4, 8</code>; the <code>code</code> signal is selected by the state (start expects 1, now1x expects 2, now2x expects 4, now3x/now4x expects 8).</li>
+<li><code>bcd_ok</code> = a digit that matches, <code>bcd_ko</code> = a digit that does not match. After the first wrong digit the FSM goes along the "ko" chain, which only counts digits (the exact value no longer matters).</li>
+<li>After four digits it waits for <code>#</code> (<code>almind</code>): <code>now4ok</code> + # -> seqok, <code>now4ko</code> + # -> seqko.</li>
+<li><code>good</code> is a flip-flop: set to 1 in seqok, cleared to 0 in <code>start</code> (the next <code>*</code>).</li>
+</ul>
+
+<h3>errcnt: the error counter</h3>
+<table>
+<tr><th>State</th><th>On a wrong sequence (detecko)</th><th>On a correct sequence (detecok)</th><th>bad1 bad2 bad3</th></tr>
+<tr><td>err0</td><td>-> err1</td><td>stay err0</td><td>0 0 0</td></tr>
+<tr><td>err1</td><td>-> err2</td><td>-> err0</td><td>1 0 0</td></tr>
+<tr><td>err2</td><td>-> err3</td><td>-> err0</td><td>1 1 0</td></tr>
+<tr><td>err3</td><td>stay (locked)</td><td>stay (locked)</td><td>1 1 1</td></tr>
+</table>
+<p>So: three consecutive wrong sequences lock the system; a correct sequence in between resets the counter. In seqko with errcnt=err3, <code>seqdet</code> never leaves seqko: <strong>locked until reset</strong>.</p>
+<p><strong>The <code>shift</code> output</strong> = <code>bcdind</code> (a digit was entered), but forced to 0 in waiting and seqko. It is a one-cycle pulse "a digit of a sequence has been entered", intended to drive a shift register that shows the digits on the displays (we use it in 3.4).</p>
+
+<h3>Synchronisation of part2's signals</h3>
+<table>
+<tr><th>Signal</th><th>Type</th></tr>
+<tr><td><code>good</code></td><td>Registered (flip-flop), rising edge, asynchronous reset</td></tr>
+<tr><td><code>bad1..3</code></td><td>Moore, decoded from <code>errcnt</code>; change on the rising edge</td></tr>
+<tr><td><code>shift</code></td><td>Mealy, combinational from key/keycode and state. Not registered.</td></tr>
+<tr><td><code>key</code>, <code>keycode</code> (inputs)</td><td>From part1; sampled by part2 on the rising edge</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2 id="top">8. 3.3: the full system (<code>keypad.vhd</code>)</h2>
+<p>A structural top level: <code>part1</code> instance <code>p1</code> and <code>part2</code> instance <code>p2</code>, connected as in the handout's Figure 6: <code>p1.key -&gt; p2.key</code> and <code>p1.keycode -&gt; p2.keycode</code>.
+Its ports are <code>clk, nrst, col, row, key, keycode, good, bad1, bad2, bad3, shift</code> (key and keycode are exposed so that they can be observed in simulation). Compile result of the revision <code>keypad</code>: 114 logic elements, 44 registers, 20 pins, timing met.</p>
+<p>Hierarchy seen in Quartus: <code>keypad</code> -&gt; <code>part1:p1</code> (-&gt; <code>count10b:counter</code>) and <code>part2:p2</code>.</p>
+
+<!-- ============================================================ -->
+<h2 id="board">9. 3.4: adaptation to the DE2 board (<code>keypad_de2.vhd</code>)</h2>
+
+<h3>Clocking</h3>
+<p>The board has a 50 MHz clock <code>OSC_50</code>. With the original look counter (16 cycles) the keypad would be sampled every 320 ns, and with ours (1024 cycles) every 20 us, both far below the 10 ms bounce time the handout supposes. We therefore <strong>run the whole system on a slow clock</strong> derived with the lab's modules:</p>
+<figure>
+<svg viewBox="0 0 900 250" role="img" aria-label="Clock structure">
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+  <g style="color:var(--fg)">
+  <rect class="bx" x="10" y="95" width="110" height="50" rx="8"/><text x="65" y="125" text-anchor="middle">OSC_50</text>
+  <rect class="bx" x="190" y="95" width="130" height="50" rx="8"/><text x="255" y="118" text-anchor="middle">clock_div</text><text x="255" y="134" text-anchor="middle" class="mut">16-bit counter, q[15:0]</text>
+  <rect class="bx" x="410" y="30" width="110" height="46" rx="8"/><text x="465" y="50" text-anchor="middle">CLK_LOCK</text><text x="465" y="66" text-anchor="middle" class="mut">global clock</text>
+  <rect class="bx" x="410" y="165" width="110" height="46" rx="8"/><text x="465" y="185" text-anchor="middle">CLK_LOCK</text><text x="465" y="201" text-anchor="middle" class="mut">global clock</text>
+  <rect class="bx" x="610" y="20" width="270" height="70" rx="8"/><text x="745" y="42" text-anchor="middle" font-weight="bold">sclk = 97.7 kHz</text><text x="745" y="60" text-anchor="middle" class="mut">part1, part2(b), digit register, LCD request logic</text><text x="745" y="76" text-anchor="middle" class="mut">look period = 1024 / 97.7 kHz = 10.5 ms</text>
+  <rect class="bx" x="610" y="155" width="270" height="70" rx="8"/><text x="745" y="177" text-anchor="middle" font-weight="bold">lclk = 763 Hz (improvement 2 only)</text><text x="745" y="195" text-anchor="middle" class="mut">LCD_int</text><text x="745" y="211" text-anchor="middle" class="mut">1.3 ms per LCD state</text>
+  <rect class="bx" x="190" y="195" width="170" height="40" rx="8" style="stroke-dasharray:4 3"/><text x="275" y="212" text-anchor="middle">1 Hz blink counter</text><text x="275" y="227" text-anchor="middle" class="mut">25e6 cycles, on 50 MHz</text>
+  <path class="ln" d="M120,120 L188,120" marker-end="url(#ar)"/>
+  <path class="ln" d="M320,110 L360,110 L360,53 L408,53" marker-end="url(#ar)"/><text x="365" y="85" class="mono" font-size="11">q[8]</text>
+  <path class="ln" d="M320,130 L360,130 L360,188 L408,188" marker-end="url(#ar)"/><text x="365" y="165" class="mono" font-size="11">q[15]</text>
+  <path class="ln" d="M520,53 L608,53" marker-end="url(#ar)"/><path class="ln" d="M520,188 L608,188" marker-end="url(#ar)"/>
+  <path class="ln" d="M65,145 L65,215 L188,215" marker-end="url(#ar)" style="stroke-dasharray:4 3"/>
+  </g>
+</svg>
+<figcaption>Figure 6. Clocks in the board design. Frequencies: <code>q[n]</code> = 50 MHz / 2<sup>n+1</sup>.</figcaption>
+</figure>
+<ul>
+<li><strong><code>clock_div</code></strong> (teacher's): free-running 16-bit counter; each bit <code>q[n]</code> is a square wave of frequency 50e3 / 2<sup>n+1</sup> kHz.</li>
+<li><strong><code>CLK_LOCK</code></strong> (teacher's, based on the <code>altclkctrl</code> megafunction): "functionally transparent", it tells the compiler to put the signal on a global clock line, so the divided clock reaches all flip-flops with low skew.</li>
+<li><strong>Choice of <code>q[8]</code></strong>: 50 MHz / 512 = 97.66 kHz. With our 10-bit counter, <code>look</code> comes every 1024 / 97.66 kHz = <strong>10.49 ms</strong>, just above the 10 ms of the handout's hypothesis.</li>
+<li>Reset: <code>KEY[0]</code> (push button, active low), which matches <code>nrst</code>.</li>
+</ul>
+
+<h3>Board outputs</h3>
+<table>
+<tr><th>Handout requirement</th><th>Implementation</th></tr>
+<tr><td><code>good</code> lights all the green LEDs</td><td><code>LED_GREEN &lt;= (others =&gt; good)</code> (9 LEDs)</td></tr>
+<tr><td><code>bad1</code> = 6 red LEDs on the left, <code>bad2</code> = 6 in the middle, <code>bad3</code> = 6 on the right</td><td>Generate loop: <code>LED_RED(i+12) &lt;= bad1</code>, <code>LED_RED(i+6) &lt;= bad2</code>, <code>LED_RED(i) &lt;= bad3</code>, i = 0..5. <code>LED_RED(17)</code> is the leftmost LED.</td></tr>
+<tr><td>Show the 4 digits on the seven-segment displays; first digit at the right, every new digit shifts the others to the left; clear when a new sequence starts (<code>*</code>)</td><td>A 16-bit register <code>num</code> (4 digits x 4 bits), see below.</td></tr>
+<tr><td>Unused displays/LEDs off</td><td>HEX4..HEX7 are driven with <code>x"F"</code>; <code>BCD7seg</code> turns every code &gt; 9 into "1111111" (all segments off, active low). All LEDs are driven. Unused pins are set "as inputs, tri-stated".</td></tr>
+</table>
+
+<h3>The digits register</h3>
+<pre>process (sclk, nrst)
+begin
+  if nrst = '0' then num &lt;= x"FFFF"; ndig &lt;= 0;
+  elsif rising_edge(sclk) then
+    if key_s = '1' and keycode_s = x"E" then       -- '*' : new sequence
+      num &lt;= x"FFFF"; ndig &lt;= 0;                    -- all four displays blank
+    elsif shift_s = '1' and ndig &lt; 4 then          -- a digit of the sequence
+      num &lt;= num(11 downto 0) &amp; keycode_s;          -- shift left, new digit at the right
+      ndig &lt;= ndig + 1;
+    end if;
+  end if;
+end process;</pre>
+<ul>
+<li>It uses part2's <code>shift</code> exactly as the handout hints ("a display function showing the digits being entered"): <code>shift</code> is 1 only for digits of a sequence in progress, so digits pressed while waiting are ignored.</li>
+<li><code>num(3:0)</code> goes to HEX0 (rightmost). After 1, 2, 4, 8 the displays read "1 2 4 8" from left to right.</li>
+<li><strong>Why <code>ndig &lt; 4</code></strong> (our own addition): in states <code>now4ok</code>/<code>now4ko</code> part2 keeps <code>shift=1</code> for any further digit, which would push the first digit off the display. The counter ignores digits after the fourth until the next <code>*</code>.</li>
+</ul>
+
+<h3>Pins</h3>
+<p>Pins come from the teacher's <code>DE2_pin_assignments.csv</code> (imported with Assignments &gt; Import Assignments). The file already contains <code>ROW[0..3]</code> (N18, P18, G23, G24) and <code>COL[0..3]</code> (K22, G25, H23, H24), the same as in lab 1. Port names in the VHDL are chosen to match the csv names (<code>OSC_50, KEY, LED_RED, LED_GREEN, HEX0..7, LCD_*</code>).</p>
+
+<!-- ============================================================ -->
+<h2 id="imp">10. 3.5: the three improvements</h2>
+<p>All three follow the teacher's "previous work" report (the preliminary design we wrote before the lab).</p>
+
+<h3>Improvement 1 - red LEDs blinking at 1 Hz when locked (<code>keypad_de2_i1</code>)</h3>
+<ul>
+<li>A counter on the 50 MHz clock counts 0..24 999 999 (0.5 s) and toggles <code>blink</code> (a T flip-flop), giving a 1 Hz square wave.</li>
+<li>A multiplexer on the red LEDs: <code>LED_RED(i) &lt;= blink when bad3 = '1' else (normal bad1/bad2/bad3)</code>. When <code>bad3=1</code> every red LED follows <code>blink</code>.</li>
+</ul>
+
+<h3>Improvement 2 - LCD messages (<code>keypad_de2_i2</code>, <code>part2b.vhd</code>)</h3>
+<p><strong>What is added to part2</strong> (the handout says "a modified version of part2"): a flag <code>wrong</code> (set in <code>seqko</code>, cleared in <code>start</code>) and a message selector <code>msg</code> (0..5) with this priority:</p>
+<table>
+<tr><th>Condition (priority from top)</th><th>msg</th><th>LCD text</th></tr>
+<tr><td><code>errcnt = err3</code></td><td>5</td><td>System Locked</td></tr>
+<tr><td>seqok, or waiting and <code>good=1</code></td><td>3</td><td>Right Code!</td></tr>
+<tr><td>seqko, or waiting and <code>wrong=1</code></td><td>4</td><td>Wrong Code!</td></tr>
+<tr><td>waiting (other cases)</td><td>1</td><td>Press * to start</td></tr>
+<tr><td>start ... now4ko (entering a sequence)</td><td>2</td><td>Enter PIN Code</td></tr>
+</table>
+<p>part2 itself (<code>part2.vhd</code>) is kept untouched so that the earlier revisions still work; <code>part2b.vhd</code> is a copy with these additions. Inside it <code>good</code> is driven from an internal <code>good_i</code> because VHDL-93 does not allow reading an <code>out</code> port.</p>
+<p><strong>LCD_int</strong> (teacher's) writes 16 characters; we only replaced its message table with the five texts proposed in the handout (messages 1..5 above). It starts writing on a <em>falling edge of <code>run</code></em> when it is idle (<code>busy=0</code>) and sets <code>busy=1</code> while writing.</p>
+
+<h3>Why the LCD has its own, slower clock (decision)</h3>
+<p>LCD_int sends its commands one state per clock without waiting for the LCD, and an HD44780 LCD needs about 37 us per command and 1.5 ms for "clear". At 97.7 kHz each state lasts only 10 us, which is too fast. In lab 1 the whole design ran on <code>q[15]</code> (763 Hz) and the handout says "use a clock slower than <code>q[12]</code>". So the LCD runs on <code>lclk</code> = <code>q[15]</code> through its own <code>CLK_LOCK</code> (1.3 ms per state), while the keypad stays on <code>sclk</code> (a 763 Hz keypad would sample only every 1.3 s, with a 1024-count look).</p>
+
+<h3>The <code>run</code> / <code>busy</code> handshake between the two clocks</h3>
+<figure>
+<svg viewBox="0 0 880 250" role="img" aria-label="LCD handshake timing">
+  <g>
+  <text x="10" y="22" font-weight="bold">A message change is requested (sclk side) and accepted (lclk side)</text>
+  <text x="10" y="64" class="mono">msg</text>
+  <path class="ln" d="M120,70 L300,70 L300,50 L860,50"/><text x="130" y="62" class="mut">msg A</text><text x="500" y="44" class="mut">msg B (new)</text>
+  <text x="10" y="114" class="mono">run</text>
+  <path class="ln" d="M120,100 L330,100 L330,126 L540,126 L540,100 L860,100"/>
+  <text x="340" y="146" class="mut">run falls and STAYS low until busy=1</text>
+  <text x="10" y="184" class="mono">busy</text>
+  <path class="ln" d="M120,190 L520,190 L520,170 L800,170 L800,190 L860,190"/>
+  <text x="560" y="165" class="mut">LCD writing msg B</text>
+  <path class="th" d="M520,40 L520,200" style="stroke-dasharray:3 3"/><text x="524" y="218" class="mut">LCD sees run falling (an lclk edge) and sets busy=1</text>
+  <path class="th" d="M330,40 L330,200" style="stroke-dasharray:3 3"/><text x="334" y="236" class="mut">sclk logic: shown /= msg and busy=0 -> run <= 0, shown <= msg</text>
+  </g>
+</svg>
+<figcaption>Figure 7. Request handshake. <code>run</code> is held low until the slow LCD acknowledges with <code>busy=1</code>; a single-cycle pulse on the fast clock could fall between two edges of the slow LCD clock and be missed.</figcaption>
+</figure>
+<pre>process (sclk, nrst)
+begin
+  if nrst = '0' then shown &lt;= 0; run &lt;= '1';
+  elsif rising_edge(sclk) then
+    if run = '1' then
+      if shown /= msg and busy = '0' then run &lt;= '0'; shown &lt;= msg; end if;
+    elsif busy = '1' then run &lt;= '1';
+    end if;
+  end if;
+end process;</pre>
+
+<h3>Improvement 3 - tricking mode (<code>keypad_de2_i3</code>)</h3>
+<ul>
+<li><code>abcdind</code> = a key among A, B, C, D was pressed (<code>key=1</code> and code x"A".. x"D").</li>
+<li>A T flip-flop <code>trick</code> toggles on every <code>abcdind</code>.</li>
+<li><code>key_eff = key and not trick</code> feeds part2b and the digit register, so while tricking, every other key is ignored. <code>abcdind</code> uses the raw <code>key</code>, so A-D can still leave the mode.</li>
+<li>Display multiplexer: <code>disp &lt;= x"1248" when trick = '1' else num</code>: the correct sequence is shown instead of the typed digits.</li>
+<li>A, B, C, D are not digits for part2 (they are not <code>bcdind</code>), so they never disturb the sequence.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2 id="log">11. Decision log</h2>
+<table>
+<tr><th>Decision</th><th>Alternatives considered</th><th>Why</th></tr>
+<tr><td>Fix part1 by a longer <code>look</code> period (10 bits)</td><td>9 bits (512 us); a software-style "stable for N samples" filter</td><td>Simplest change in the teacher's structure; 1024 us is 2.5x the measured bounce, 512 us was too tight.</td></tr>
+<tr><td>Register <code>key</code>/<code>keycode</code></td><td>Leave combinational; move <code>colq</code> to the rising edge</td><td>Registering removes the glitches with no change to the FSM. Moving <code>colq</code> breaks the row/answer alignment.</td></tr>
+<tr><td>Keep <code>colq</code> on the falling edge</td><td>Rising edge</td><td>Gives the keypad half a period to answer the current row.</td></tr>
+<tr><td>Keep part2 unmodified; new <code>part2b</code> for the LCD</td><td>Edit part2.vhd in place</td><td>The earlier revisions keep compiling; the handout itself says "a modified version of part2".</td></tr>
+<tr><td>Slow clock 97.7 kHz (<code>q[8]</code>) for the keypad</td><td>A slower clock with the original 4-bit look (q[14], see section 13)</td><td>Same sampling period (10.5 ms); our <code>look</code> is a property of the design, not just of the clock chosen.</td></tr>
+<tr><td>Separate 763 Hz clock for the LCD + <code>run</code>/<code>busy</code> handshake</td><td>Everything on <code>q[15]</code> (as lab 1)</td><td>LCD needs a slow clock; a 763 Hz keypad clock would give a 1.3 s sampling period with our 10-bit counter.</td></tr>
+<tr><td>Own <code>ndig</code> counter limiting digits to 4</td><td>Let a 5th digit shift in</td><td>part2 asserts <code>shift</code> for extra digits in now4ok/now4ko; the display should show the 4 digits of the sequence.</td></tr>
+<tr><td>One revision per improvement</td><td>All in one top level</td><td>Each step has a working fallback for the board session; easy to explain.</td></tr>
+<tr><td>Use <code>shift</code> from part2 to drive the digit register</td><td>Decode digits again in the top level</td><td>That is what <code>shift</code> is for (handout, previous work).</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2 id="qa">12. Questions the teacher may ask</h2>
+<p><strong>Why is <code>colq</code> clocked on the falling edge?</strong><br>
+The FSM drives a new row on the rising edge; the keypad (and the pull-up resistors and capacitors on the board) needs time to answer. Sampling half a period later reads the answer to the <em>current</em> row, so the answer and the state are aligned. Sampling on the rising edge would read the answer to the previous row.</p>
+
+<p><strong>What do wait1 and check1 do?</strong><br>
+After reporting a key we wait one <code>look</code> period, then check whether the key is still pressed. If yes we keep waiting, so a held key is reported once; only on release do we go back to wait0.</p>
+
+<p><strong>Why are there two exits from kra3?</strong><br>
+kpressed=1: the key is in row 3, validated, go to wait1. kpressed=0: check0 saw a key but no row confirmed it (bounce or release during the scan); there is no row left, so go back to wait0 without a report.</p>
+
+<p><strong>What is the design fault?</strong><br>
+Two: (1) the 16-cycle <code>look</code> period is much shorter than the contact bounce, so one press gives several detections (shown in simulation with col bouncing like the oscilloscope capture); (2) <code>key</code>/<code>keycode</code> are combinational, with glitches because <code>colq</code> changes on the falling edge.</p>
+
+<p><strong>How did you choose 10 bits?</strong><br>
+At 1 MHz, 2<sup>10</sup> cycles = 1024 us; measured bounce about 400 us, so about 2.5x margin. On the board with <code>q[8]</code> it is 10.5 ms, above the 10 ms assumed in 3.4.</p>
+
+<p><strong>What if a key is pressed for less than the look period?</strong><br>
+It can be missed. That is the usual trade-off of a slow sampled keypad; human presses last tens of ms.</p>
+
+<p><strong>What is <code>shift</code> for?</strong><br>
+A one-cycle pulse saying "a digit of a sequence was entered" (not in waiting or seqko). We use it to shift the digit into the display register.</p>
+
+<p><strong>What is needed to turn on the <em>good</em> LEDs? the <em>locked</em> LEDs? Can we correct wrong sequences?</strong><br>
+good: the sequence <code>* 1 2 4 8 #</code>. Locked (<code>bad3</code>): three wrong sequences in a row; a correct sequence before the third one resets the counter to err0. Once errcnt=err3 the system stays in seqko: not correctable without reset (<code>KEY[0]</code>).</p>
+
+<p><strong>Why a different clock for the LCD?</strong><br>
+LCD_int does not wait for the LCD between commands; the LCD needs tens of microseconds per command and 1.5 ms for clear, so the LCD clock must be slow (we use 763 Hz as in lab 1). The keypad needs a faster one for a reasonable response time. The <code>run</code>/<code>busy</code> handshake crosses the two.</p>
+
+<p><strong>Why did you not modify part2?</strong><br>
+We needed an extra output <code>msg</code>; we put it in a copy (<code>part2b</code>) so that the reports for 3.2/3.3 still describe the original.</p>
+
+<!-- ============================================================ -->
+<h2 id="slow">13. Is part1 "the right thing"? The 3.4 slow-rate remark</h2>
+
+<div class="box">
+<strong>Your concern.</strong> Section 3.4 says: <em>"part1 should not confuse eventual rebounds with true pressed keys. One way to avoid this is checking the keypad at a slow rate. Suppose that rebounds are no more than 10 ms long, remember that the DE2 board main clock has a frequency of 50 MHz and that modules clk_lock and clock_div are available."</em>
+It sounds as if debouncing had not been done in part1, so maybe part1 in 3.1 was meant to be something else.
+</div>
+
+<h3>What the original file does</h3>
+<p>The teacher's <code>part1</code> is already designed around slow sampling: <code>look</code> is the counter output <code>= 15</code> and the FSM only moves out of wait0/wait1 on <code>look=1</code>. The handout text of 1.1 says it explicitly: "to avoid fake detections due to possible rebounds ... the keypad is checked at a much slower rate than the clock frequency. This is done using the <strong>look</strong> signal". So the mechanism is <em>in</em> part1; the <strong>period</strong> is a function of the clock fed to it: period = 16 / f<sub>clk</sub> for the original <code>count4b</code>.</p>
+
+<table>
+<tr><th>Clock given to the original part1 (16 cycles)</th><th>look period</th><th>vs 10 ms bounce</th></tr>
+<tr><td>1 MHz (lab 3.1 simulation)</td><td>16 us</td><td>far too short (this is what simulation shows)</td></tr>
+<tr><td>50 MHz (OSC_50 directly)</td><td>0.32 us</td><td>far too short</td></tr>
+<tr><td><code>q[14]</code> = 1.526 kHz</td><td>10.49 ms</td><td>just above 10 ms</td></tr>
+<tr><td><code>q[15]</code> = 763 Hz (lab 1 used this for everything)</td><td>21 ms</td><td>good margin</td></tr>
+</table>
+
+<h3>Our reading</h3>
+<ul>
+<li>The 10 ms and the "clock_div / clk_lock" remark in 3.4 describe the <strong>board-level</strong> way to reach the right period: feed part1 a slow clock (about <code>q[14]</code> or <code>q[15]</code>) instead of 50 MHz. That is consistent with the original part1; it does not imply part1 lacked the mechanism.</li>
+<li>In 3.1 the lab is run at 1 MHz and asks to <em>find and fix</em> a fault. With the original file at 1 MHz, the sampling period (16 us) is shorter than any realistic bounce, so the fault is real in simulation. Our change makes part1 robust at <em>any</em> clock: the period is 1024 clock cycles.</li>
+<li>Numerically, our solution and the "teacher's way" end up the same on the board: 1024 cycles at 97.66 kHz (<code>q[8]</code>) = 10.49 ms = 16 cycles at 1.526 kHz (<code>q[14]</code>). We reach 10.5 ms either way.</li>
+</ul>
+
+<h3>What we cannot know</h3>
+<p>We cannot tell which fault the teacher has in mind in 3.1. Possibilities: (a) the 16 us period vs bounce (our fault 1); (b) the Mealy-output glitches (our fault 2); (c) something else in the FSM. Reading the FSM line by line, we did not find another path that creates a fake key independently of bounce: the held-key case is handled by wait1/check1, the kra3 fall-through returns to wait0 without reporting, and multi-key priority is deterministic. So we are fairly confident that bounce and glitches are the faults, but it is a judgement, not a certainty.</p>
+
+<h3>Possible concerns and how to answer</h3>
+<ul>
+<li><em>"You changed the teacher's part1."</em> That is exactly what 3.1 asks ("suggest and implement a feasible alternative").</li>
+<li><em>"In 3.4 I said to use a slow clock."</em> We do: <code>q[8]</code>. Our look counter makes the final period 10.5 ms. If the teacher prefers the original 4-bit counter, switching <code>count10b</code> back to <code>count4b</code> and clocking with <code>q[14]</code> gives the same period; but the keypad would then run 64x slower (every FSM state 655 us), which is still fine for a keypad. No code was changed for this analysis.</li>
+<li><em>10.49 ms is only 5% above 10 ms.</em> True; if more margin were wanted, use <code>q[15]</code> with the 10-bit counter, or an 11-bit counter. For real keys (our measurement was about 0.4 ms) the margin is large.</li>
+</ul>
+<p><strong>Suggestion:</strong> ask the teacher at the start of the lab session, in one sentence: "In 3.1, which design fault did you have in mind: the sampling period shorter than the bounce, or something else?" It would settle the question and costs nothing.</p>
+
+<!-- ============================================================ -->
+<h2 id="todo">14. What is still to do</h2>
+<ul>
+<li><strong>Test on the board</strong> (all revisions): keypad reading, correct code (green LEDs), wrong codes (left, middle, right red groups), lock, blinking, LCD messages, tricking mode. <span class="tag">to verify</span></li>
+<li><strong>LCD</strong>: check that messages 1..5 appear and that a message change is accepted (the <code>run</code>/<code>busy</code> handshake is the least tested part). <span class="tag">to verify</span></li>
+<li><strong>Debounce on the board</strong>: press a key hard and quickly and check that only one digit appears on the displays. <span class="tag">to verify</span></li>
+<li><strong>Simulations for the report</strong>: <code>.vwf</code> files for 3.2 (part2), 3.3 (full system) and improvements; compilation reports of each revision.</li>
+<li><strong>Report text</strong>: the board-adaptation description (3.4) and explanations for the improvements; this guide can be reused.</li>
+</ul>
+
+</main>
+</body>
+</html>
