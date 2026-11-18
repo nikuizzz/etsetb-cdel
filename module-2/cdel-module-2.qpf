@@ -18,13 +18,18 @@
 #
 # Quartus II
 # Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-# Date created = 13:07:29  October 21, 2026
+# Date created = 10:35:24  November 18, 2026
 #
 # -------------------------------------------------------------------------- #
 
 QUARTUS_VERSION = "9.1"
-DATE = "13:07:29  October 21, 2026"
+DATE = "10:35:24  November 18, 2026"
 
 # Revisions
 
+PROJECT_REVISION = "keypad_de2_i3"
+PROJECT_REVISION = "keypad_de2_i2"
+PROJECT_REVISION = "keypad_de2_i1"
+PROJECT_REVISION = "keypad_de2"
+PROJECT_REVISION = "keypad"
 PROJECT_REVISION = "cdel-module-2"
