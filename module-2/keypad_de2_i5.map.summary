@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Nov 18 15:38:07 2026
+Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
+Revision Name : keypad_de2_i5
+Top-level Entity Name : keypad_de2_i5
+Family : Cyclone II
+Total logic elements : 543
+    Total combinational functions : 502
+    Dedicated logic registers : 182
+Total registers : 182
+Total pins : 109
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -1,0 +1,16 @@
+Fitter Status : Successful - Wed Nov 18 15:38:14 2026
+Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
+Revision Name : keypad_de2_i5
+Top-level Entity Name : keypad_de2_i5
+Family : Cyclone II
+Device : EP2C35F672C6
+Timing Models : Final
+Total logic elements : 520 / 33,216 ( 2 % )
+    Total combinational functions : 503 / 33,216 ( 2 % )
+    Dedicated logic registers : 182 / 33,216 ( < 1 % )
+Total registers : 182
+Total pins : 109 / 475 ( 23 % )
+Total virtual pins : 0
+Total memory bits : 0 / 483,840 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 70 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

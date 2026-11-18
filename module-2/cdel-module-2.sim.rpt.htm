@@ -1,0 +1,1048 @@
+<HTML>
+
+<HEAD>
+<TITLE>Simulator report for cdel-module-2</TITLE>
+</HEAD>
+
+<BODY>
+
+<A NAME="top"></A>
+
+<CENTER>
+<H1>Simulator report for cdel-module-2</H1>
+<H3>Mon Nov 09 13:54:18 2026<BR>
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition</H3>
+</CENTER>
+
+<P><HR></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Table of Contents</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<OL>
+<LI><A HREF="#1">Legal Notice</A></LI>
+<LI><A HREF="#2">Simulator Summary</A></LI>
+<LI><A HREF="#3">Simulator Settings</A></LI>
+<LI><A HREF="#4">Simulation Waveforms</A></LI>
+<LI><A HREF="#5">Coverage Summary</A></LI>
+<LI><A HREF="#6">Complete 1/0-Value Coverage</A></LI>
+<LI><A HREF="#7">Missing 1-Value Coverage</A></LI>
+<LI><A HREF="#8">Missing 0-Value Coverage</A></LI>
+<LI><A HREF="#9">Simulator INI Usage</A></LI>
+<LI><A HREF="#10">Simulator Messages</A></LI>
+</OL>
+
+<P><A NAME="1"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Legal Notice</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<PRE>Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+</PRE>
+
+<P><A NAME="2"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Simulator Summary</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Type</TH>
+<TH>Value</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Simulation Start Time</TD>
+<TD ALIGN="LEFT">0 ps</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Simulation End Time</TD>
+<TD ALIGN="LEFT">2.0 ms</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Simulation Netlist Size</TD>
+<TD ALIGN="LEFT">102 nodes</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Simulation Coverage</TD>
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;54.55 %</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Total Number of Transitions</TD>
+<TD ALIGN="LEFT">28239</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Simulation Breakpoints</TD>
+<TD ALIGN="LEFT">0</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Family</TD>
+<TD ALIGN="LEFT">Cyclone II</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Device</TD>
+<TD ALIGN="LEFT">EP2C5T144C6</TD>
+</TR>
+</TABLE>
+<P><A NAME="3"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Simulator Settings</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Option</TH>
+<TH>Setting</TH>
+<TH>Default Value</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Simulation mode</TD>
+<TD ALIGN="LEFT">Timing</TD>
+<TD ALIGN="LEFT">Timing</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Start time</TD>
+<TD ALIGN="LEFT">0 ns</TD>
+<TD ALIGN="LEFT">0 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Simulation results format</TD>
+<TD ALIGN="LEFT">CVWF</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Vector input source</TD>
+<TD ALIGN="LEFT">part1-contact-bounce-simulation.vwf</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Add pins automatically to simulation output waveforms</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Check outputs</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Report simulation coverage</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Display complete 1/0 value coverage report</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Display missing 1-value coverage report</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Display missing 0-value coverage report</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Detect setup and hold time violations</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Detect glitches</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Disable timing delays in Timing Simulation</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Generate Signal Activity File</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Generate VCD File for PowerPlay Power Analyzer</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Group bus channels in simulation results</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Preserve fewer signal transitions to reduce memory requirements</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Trigger vector comparison with the specified mode</TD>
+<TD ALIGN="LEFT">INPUT_EDGE</TD>
+<TD ALIGN="LEFT">INPUT_EDGE</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Disable setup and hold time violations detection in input registers of bi-directional pins</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Overwrite Waveform Inputs With Simulation Outputs</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Perform Glitch Filtering in Timing Simulation</TD>
+<TD ALIGN="LEFT">Auto</TD>
+<TD ALIGN="LEFT">Auto</TD>
+</TR>
+</TABLE>
+<P><A NAME="4"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Simulation Waveforms</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+Waveform report data cannot be output to HTML.<BR>
+Please use Quartus II to view the waveform report data.
+<P><A NAME="5"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Coverage Summary</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Type</TH>
+<TH>Value</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Total coverage as a percentage</TD>
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;54.55 %</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Total nodes checked</TD>
+<TD ALIGN="LEFT">102</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Total output ports checked</TD>
+<TD ALIGN="LEFT">110</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Total output ports with complete 1/0-value coverage</TD>
+<TD ALIGN="LEFT">60</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Total output ports with no 1/0-value coverage</TD>
+<TD ALIGN="LEFT">33</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Total output ports with no 1-value coverage</TD>
+<TD ALIGN="LEFT">40</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Total output ports with no 0-value coverage</TD>
+<TD ALIGN="LEFT">43</TD>
+</TR>
+</TABLE>
+<P><A NAME="6"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Complete 1/0-Value Coverage</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+The following table displays output ports that toggle between 1 and 0 during simulation.<br>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Node Name</TH>
+<TH>Output Port Name</TH>
+<TH>Output Port Type</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[1]</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[1]</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[2]</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[2]</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[3]</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[3]</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[4]</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[4]</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[5]</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[5]</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[6]</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[6]</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[7]</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[7]</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[8]</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[8]</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[9]</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[9]</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[1]~9</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[1]~9</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[1]~9</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[1]~10</TD>
+<TD ALIGN="LEFT">cout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[2]~11</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[2]~11</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[2]~11</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[2]~12</TD>
+<TD ALIGN="LEFT">cout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[3]~13</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[3]~13</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[3]~13</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[3]~14</TD>
+<TD ALIGN="LEFT">cout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[4]~15</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[4]~15</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[4]~15</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[4]~16</TD>
+<TD ALIGN="LEFT">cout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[5]~17</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[5]~17</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[5]~17</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[5]~18</TD>
+<TD ALIGN="LEFT">cout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[6]~19</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[6]~19</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[6]~19</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[6]~20</TD>
+<TD ALIGN="LEFT">cout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[7]~21</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[7]~21</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[7]~21</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[7]~22</TD>
+<TD ALIGN="LEFT">cout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[8]~23</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[8]~23</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[8]~23</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[8]~24</TD>
+<TD ALIGN="LEFT">cout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[9]~25</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[9]~25</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|key~reg0</TD>
+<TD ALIGN="LEFT">|part1|key~reg0</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode[0]~reg0</TD>
+<TD ALIGN="LEFT">|part1|keycode[0]~reg0</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|colq[0]</TD>
+<TD ALIGN="LEFT">|part1|colq[0]</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|kpressed~0</TD>
+<TD ALIGN="LEFT">|part1|kpressed~0</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|curr_st.check0</TD>
+<TD ALIGN="LEFT">|part1|curr_st.check0</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|key_i~0</TD>
+<TD ALIGN="LEFT">|part1|key_i~0</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|key_i~1</TD>
+<TD ALIGN="LEFT">|part1|key_i~1</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|curr_st.kra0</TD>
+<TD ALIGN="LEFT">|part1|curr_st.kra0</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[0]~0</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[0]~0</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[0]~1</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[0]~1</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[0]~6</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[0]~6</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode[2]~1</TD>
+<TD ALIGN="LEFT">|part1|keycode[2]~1</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[2]~16</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[2]~16</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[3]~20</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[3]~20</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|WideOr3</TD>
+<TD ALIGN="LEFT">|part1|WideOr3</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|WideOr2</TD>
+<TD ALIGN="LEFT">|part1|WideOr2</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|WideOr1</TD>
+<TD ALIGN="LEFT">|part1|WideOr1</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|WideOr0</TD>
+<TD ALIGN="LEFT">|part1|WideOr0</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[0]</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[0]</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|Equal0~0</TD>
+<TD ALIGN="LEFT">|part1|Equal0~0</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|Equal0~1</TD>
+<TD ALIGN="LEFT">|part1|Equal0~1</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|Equal0~2</TD>
+<TD ALIGN="LEFT">|part1|Equal0~2</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|next_st.check0</TD>
+<TD ALIGN="LEFT">|part1|next_st.check0</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|next_st.wait0~2</TD>
+<TD ALIGN="LEFT">|part1|next_st.wait0~2</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|next_st.wait0~3</TD>
+<TD ALIGN="LEFT">|part1|next_st.wait0~3</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|next_st.wait1~0</TD>
+<TD ALIGN="LEFT">|part1|next_st.wait1~0</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|next_st.kra0~0</TD>
+<TD ALIGN="LEFT">|part1|next_st.kra0~0</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|next_st.wait0~7</TD>
+<TD ALIGN="LEFT">|part1|next_st.wait0~7</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|count10b:counter|count[0]~27</TD>
+<TD ALIGN="LEFT">|part1|count10b:counter|count[0]~27</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|key</TD>
+<TD ALIGN="LEFT">|part1|key</TD>
+<TD ALIGN="LEFT">padio</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode[0]</TD>
+<TD ALIGN="LEFT">|part1|keycode[0]</TD>
+<TD ALIGN="LEFT">padio</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|clk</TD>
+<TD ALIGN="LEFT">|part1|clk~corein</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|col[0]</TD>
+<TD ALIGN="LEFT">|part1|col[0]~corein</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|clk~clkctrl</TD>
+<TD ALIGN="LEFT">|part1|clk~clkctrl</TD>
+<TD ALIGN="LEFT">outclk</TD>
+</TR>
+</TABLE>
+<P><A NAME="7"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Missing 1-Value Coverage</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+The following table displays output ports that do not toggle to 1 during simulation.<br>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Node Name</TH>
+<TH>Output Port Name</TH>
+<TH>Output Port Type</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode[1]~reg0</TD>
+<TD ALIGN="LEFT">|part1|keycode[1]~reg0</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode[2]~reg0</TD>
+<TD ALIGN="LEFT">|part1|keycode[2]~reg0</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode[3]~reg0</TD>
+<TD ALIGN="LEFT">|part1|keycode[3]~reg0</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|curr_st.check1</TD>
+<TD ALIGN="LEFT">|part1|curr_st.check1</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|curr_st.kra2</TD>
+<TD ALIGN="LEFT">|part1|curr_st.kra2</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|curr_st.kra1</TD>
+<TD ALIGN="LEFT">|part1|curr_st.kra1</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|curr_st.kra3</TD>
+<TD ALIGN="LEFT">|part1|curr_st.kra3</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i~2</TD>
+<TD ALIGN="LEFT">|part1|keycode_i~2</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[0]~3</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[0]~3</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[0]~4</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[0]~4</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[0]~5</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[0]~5</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[1]~7</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[1]~7</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i~8</TD>
+<TD ALIGN="LEFT">|part1|keycode_i~8</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[1]~9</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[1]~9</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[1]~10</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[1]~10</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[1]~11</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[1]~11</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode[2]~0</TD>
+<TD ALIGN="LEFT">|part1|keycode[2]~0</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[2]~12</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[2]~12</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[2]~13</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[2]~13</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[2]~15</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[2]~15</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[2]~17</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[2]~17</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[3]~18</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[3]~18</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[3]~19</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[3]~19</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|next_st.check1~0</TD>
+<TD ALIGN="LEFT">|part1|next_st.check1~0</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|next_st.wait0~5</TD>
+<TD ALIGN="LEFT">|part1|next_st.wait0~5</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|next_st~9</TD>
+<TD ALIGN="LEFT">|part1|next_st~9</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|next_st.kra1~0</TD>
+<TD ALIGN="LEFT">|part1|next_st.kra1~0</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|next_st.kra3~0</TD>
+<TD ALIGN="LEFT">|part1|next_st.kra3~0</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|row[0]</TD>
+<TD ALIGN="LEFT">|part1|row[0]</TD>
+<TD ALIGN="LEFT">padio</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|row[1]</TD>
+<TD ALIGN="LEFT">|part1|row[1]</TD>
+<TD ALIGN="LEFT">padio</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|row[2]</TD>
+<TD ALIGN="LEFT">|part1|row[2]</TD>
+<TD ALIGN="LEFT">padio</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|row[3]</TD>
+<TD ALIGN="LEFT">|part1|row[3]</TD>
+<TD ALIGN="LEFT">padio</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode[1]</TD>
+<TD ALIGN="LEFT">|part1|keycode[1]</TD>
+<TD ALIGN="LEFT">padio</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode[2]</TD>
+<TD ALIGN="LEFT">|part1|keycode[2]</TD>
+<TD ALIGN="LEFT">padio</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode[3]</TD>
+<TD ALIGN="LEFT">|part1|keycode[3]</TD>
+<TD ALIGN="LEFT">padio</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|nrst</TD>
+<TD ALIGN="LEFT">|part1|nrst~corein</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|col[3]</TD>
+<TD ALIGN="LEFT">|part1|col[3]~corein</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|col[2]</TD>
+<TD ALIGN="LEFT">|part1|col[2]~corein</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|col[1]</TD>
+<TD ALIGN="LEFT">|part1|col[1]~corein</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|nrst~clkctrl</TD>
+<TD ALIGN="LEFT">|part1|nrst~clkctrl</TD>
+<TD ALIGN="LEFT">outclk</TD>
+</TR>
+</TABLE>
+<P><A NAME="8"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Missing 0-Value Coverage</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+The following table displays output ports that do not toggle to 0 during simulation.<br>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Node Name</TH>
+<TH>Output Port Name</TH>
+<TH>Output Port Type</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode[1]~reg0</TD>
+<TD ALIGN="LEFT">|part1|keycode[1]~reg0</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode[2]~reg0</TD>
+<TD ALIGN="LEFT">|part1|keycode[2]~reg0</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode[3]~reg0</TD>
+<TD ALIGN="LEFT">|part1|keycode[3]~reg0</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|colq[3]</TD>
+<TD ALIGN="LEFT">|part1|colq[3]</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|colq[2]</TD>
+<TD ALIGN="LEFT">|part1|colq[2]</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|colq[1]</TD>
+<TD ALIGN="LEFT">|part1|colq[1]</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|curr_st.check1</TD>
+<TD ALIGN="LEFT">|part1|curr_st.check1</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|curr_st.wait1</TD>
+<TD ALIGN="LEFT">|part1|curr_st.wait1</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|curr_st.wait0</TD>
+<TD ALIGN="LEFT">|part1|curr_st.wait0</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|curr_st.kra2</TD>
+<TD ALIGN="LEFT">|part1|curr_st.kra2</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|curr_st.kra1</TD>
+<TD ALIGN="LEFT">|part1|curr_st.kra1</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|curr_st.kra3</TD>
+<TD ALIGN="LEFT">|part1|curr_st.kra3</TD>
+<TD ALIGN="LEFT">regout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i~2</TD>
+<TD ALIGN="LEFT">|part1|keycode_i~2</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[0]~5</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[0]~5</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[1]~7</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[1]~7</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[1]~9</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[1]~9</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[1]~10</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[1]~10</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[1]~11</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[1]~11</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode[2]~0</TD>
+<TD ALIGN="LEFT">|part1|keycode[2]~0</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[2]~12</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[2]~12</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[2]~13</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[2]~13</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[2]~14</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[2]~14</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[2]~15</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[2]~15</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[2]~17</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[2]~17</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[3]~18</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[3]~18</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode_i[3]~19</TD>
+<TD ALIGN="LEFT">|part1|keycode_i[3]~19</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|next_st~8</TD>
+<TD ALIGN="LEFT">|part1|next_st~8</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|next_st.wait0~4</TD>
+<TD ALIGN="LEFT">|part1|next_st.wait0~4</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|next_st.check1~0</TD>
+<TD ALIGN="LEFT">|part1|next_st.check1~0</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|next_st.wait1~1</TD>
+<TD ALIGN="LEFT">|part1|next_st.wait1~1</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|next_st.wait0~5</TD>
+<TD ALIGN="LEFT">|part1|next_st.wait0~5</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|next_st.wait0~6</TD>
+<TD ALIGN="LEFT">|part1|next_st.wait0~6</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|next_st~9</TD>
+<TD ALIGN="LEFT">|part1|next_st~9</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|next_st.kra1~0</TD>
+<TD ALIGN="LEFT">|part1|next_st.kra1~0</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|next_st.kra3~0</TD>
+<TD ALIGN="LEFT">|part1|next_st.kra3~0</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode[1]</TD>
+<TD ALIGN="LEFT">|part1|keycode[1]</TD>
+<TD ALIGN="LEFT">padio</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode[2]</TD>
+<TD ALIGN="LEFT">|part1|keycode[2]</TD>
+<TD ALIGN="LEFT">padio</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|keycode[3]</TD>
+<TD ALIGN="LEFT">|part1|keycode[3]</TD>
+<TD ALIGN="LEFT">padio</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|nrst</TD>
+<TD ALIGN="LEFT">|part1|nrst~corein</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|col[3]</TD>
+<TD ALIGN="LEFT">|part1|col[3]~corein</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|col[2]</TD>
+<TD ALIGN="LEFT">|part1|col[2]~corein</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|col[1]</TD>
+<TD ALIGN="LEFT">|part1|col[1]~corein</TD>
+<TD ALIGN="LEFT">combout</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|part1|nrst~clkctrl</TD>
+<TD ALIGN="LEFT">|part1|nrst~clkctrl</TD>
+<TD ALIGN="LEFT">outclk</TD>
+</TR>
+</TABLE>
+<P><A NAME="9"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Simulator INI Usage</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Option</TH>
+<TH>Usage</TH>
+</TR>
+</TABLE>
+<P><A NAME="10"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Simulator Messages</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<PRE>
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Mon Nov 09 13:54:17 2026
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off cdel-module-2 -c cdel-module-2
+Info: Using vector source file "C:/Users/nikit/Studies/ETSETB/CDEL/etsetb-cdel/module-2/part1-contact-bounce-simulation.vwf"
+Info: Overwriting simulation input file with simulation results
+    Info: A backup of part1-contact-bounce-simulation.vwf called cdel-module-2.sim_ori.vwf has been created in the db folder
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      54.55 %
+Info: Number of transitions in simulation is 28239
+Info: Vector file part1-contact-bounce-simulation.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 152 megabytes
+    Info: Processing ended: Mon Nov 09 13:54:18 2026
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+</PRE>
+<HR>
+
+<A HREF="#top">Top</A>
+
+</BODY>
+
+</HTML>
+

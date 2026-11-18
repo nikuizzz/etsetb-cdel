@@ -1,0 +1,541 @@
+Analysis & Synthesis report for keypad_de2_i5
+Wed Nov 18 15:38:07 2026
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |keypad_de2_i5|LCD_int_i5:lcd|lcd_st
+  9. State Machine - |keypad_de2_i5|part2d:p2|errcnt
+ 10. State Machine - |keypad_de2_i5|part2d:p2|seqdet
+ 11. State Machine - |keypad_de2_i5|part1:p1|curr_st
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Port Connectivity Checks: "hex_disps:displays"
+ 17. Port Connectivity Checks: "clock_div:cdiv"
+ 18. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++------------------------------------+----------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Nov 18 15:38:07 2026        ;
+; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
+; Revision Name                      ; keypad_de2_i5                                ;
+; Top-level Entity Name              ; keypad_de2_i5                                ;
+; Family                             ; Cyclone II                                   ;
+; Total logic elements               ; 543                                          ;
+;     Total combinational functions  ; 502                                          ;
+;     Dedicated logic registers      ; 182                                          ;
+; Total registers                    ; 182                                          ;
+; Total pins                         ; 109                                          ;
+; Total virtual pins                 ; 0                                            ;
+; Total memory bits                  ; 0                                            ;
+; Embedded Multiplier 9-bit elements ; 0                                            ;
+; Total PLLs                         ; 0                                            ;
++------------------------------------+----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                      ; keypad_de2_i5      ; keypad_de2_i5      ;
+; Family name                                                                ; Cyclone II         ; Stratix II         ;
+; Use Generated Physical Constraints File                                    ; Off                ;                    ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                       ;
++----------------------------------+-----------------+-----------------------------+---------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                   ; File Name with Absolute Path                                              ;
++----------------------------------+-----------------+-----------------------------+---------------------------------------------------------------------------+
+; clock_div.vhd                    ; yes             ; User VHDL File              ; C:/Users/nikit/Studies/ETSETB/CDEL/etsetb-cdel/module-2/clock_div.vhd     ;
+; BCD7seg.vhd                      ; yes             ; User VHDL File              ; C:/Users/nikit/Studies/ETSETB/CDEL/etsetb-cdel/module-2/BCD7seg.vhd       ;
+; clk_lock.v                       ; yes             ; User Wizard-Generated File  ; C:/Users/nikit/Studies/ETSETB/CDEL/etsetb-cdel/module-2/clk_lock.v        ;
+; count10b.vhd                     ; yes             ; User VHDL File              ; C:/Users/nikit/Studies/ETSETB/CDEL/etsetb-cdel/module-2/count10b.vhd      ;
+; hex_disps.vhd                    ; yes             ; User VHDL File              ; C:/Users/nikit/Studies/ETSETB/CDEL/etsetb-cdel/module-2/hex_disps.vhd     ;
+; part1.vhd                        ; yes             ; User VHDL File              ; C:/Users/nikit/Studies/ETSETB/CDEL/etsetb-cdel/module-2/part1.vhd         ;
+; keypad_de2_i5.vhd                ; yes             ; User VHDL File              ; C:/Users/nikit/Studies/ETSETB/CDEL/etsetb-cdel/module-2/keypad_de2_i5.vhd ;
+; part2d.vhd                       ; yes             ; User VHDL File              ; C:/Users/nikit/Studies/ETSETB/CDEL/etsetb-cdel/module-2/part2d.vhd        ;
+; LCD_int_i5.vhd                   ; yes             ; User VHDL File              ; C:/Users/nikit/Studies/ETSETB/CDEL/etsetb-cdel/module-2/LCD_int_i5.vhd    ;
++----------------------------------+-----------------+-----------------------------+---------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 543    ;
+;                                             ;        ;
+; Total combinational functions               ; 502    ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 304    ;
+;     -- 3 input functions                    ; 77     ;
+;     -- <=2 input functions                  ; 121    ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 445    ;
+;     -- arithmetic mode                      ; 57     ;
+;                                             ;        ;
+; Total registers                             ; 182    ;
+;     -- Dedicated logic registers            ; 182    ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 109    ;
+; Maximum fan-out node                        ; KEY[0] ;
+; Maximum fan-out                             ; 175    ;
+; Total fan-out                               ; 2360   ;
+; Average fan-out                             ; 2.97   ;
++---------------------------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                     ;
++-------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                                        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                      ; Library Name ;
++-------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------+--------------+
+; |keypad_de2_i5                                                    ; 502 (99)          ; 182 (54)     ; 0           ; 0            ; 0       ; 0         ; 109  ; 0            ; |keypad_de2_i5                                                                           ; work         ;
+;    |CLK_LOCK:clklk2|                                              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |keypad_de2_i5|CLK_LOCK:clklk2                                                           ;              ;
+;       |CLK_LOCK_altclkctrl_tb8:CLK_LOCK_altclkctrl_tb8_component| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |keypad_de2_i5|CLK_LOCK:clklk2|CLK_LOCK_altclkctrl_tb8:CLK_LOCK_altclkctrl_tb8_component ;              ;
+;    |CLK_LOCK:clklk|                                               ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |keypad_de2_i5|CLK_LOCK:clklk                                                            ;              ;
+;       |CLK_LOCK_altclkctrl_tb8:CLK_LOCK_altclkctrl_tb8_component| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |keypad_de2_i5|CLK_LOCK:clklk|CLK_LOCK_altclkctrl_tb8:CLK_LOCK_altclkctrl_tb8_component  ;              ;
+;    |LCD_int_i5:lcd|                                               ; 173 (173)         ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |keypad_de2_i5|LCD_int_i5:lcd                                                            ;              ;
+;    |clock_div:cdiv|                                               ; 15 (15)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |keypad_de2_i5|clock_div:cdiv                                                            ;              ;
+;    |hex_disps:displays|                                           ; 35 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |keypad_de2_i5|hex_disps:displays                                                        ;              ;
+;       |BCD7seg:display0|                                          ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |keypad_de2_i5|hex_disps:displays|BCD7seg:display0                                       ;              ;
+;       |BCD7seg:display1|                                          ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |keypad_de2_i5|hex_disps:displays|BCD7seg:display1                                       ;              ;
+;       |BCD7seg:display2|                                          ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |keypad_de2_i5|hex_disps:displays|BCD7seg:display2                                       ;              ;
+;       |BCD7seg:display3|                                          ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |keypad_de2_i5|hex_disps:displays|BCD7seg:display3                                       ;              ;
+;       |BCD7seg:display4|                                          ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |keypad_de2_i5|hex_disps:displays|BCD7seg:display4                                       ;              ;
+;    |part1:p1|                                                     ; 58 (48)           ; 27 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |keypad_de2_i5|part1:p1                                                                  ;              ;
+;       |count10b:counter|                                          ; 10 (10)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |keypad_de2_i5|part1:p1|count10b:counter                                                 ;              ;
+;    |part2d:p2|                                                    ; 122 (122)         ; 58 (58)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |keypad_de2_i5|part2d:p2                                                                 ;              ;
++-------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |keypad_de2_i5|LCD_int_i5:lcd|lcd_st                                                                                                                                                                                 ;
++----------------+--------------+--------------+--------------+--------------+---------------+---------------+----------------+--------------+--------------+---------------+---------------+-------------+-------------+--------------+
+; Name           ; lcd_st.read2 ; lcd_st.read1 ; lcd_st.char2 ; lcd_st.char1 ; lcd_st.clear2 ; lcd_st.clear1 ; lcd_st.waiting ; lcd_st.mode2 ; lcd_st.mode1 ; lcd_st.onoff2 ; lcd_st.onoff1 ; lcd_st.set2 ; lcd_st.set1 ; lcd_st.delay ;
++----------------+--------------+--------------+--------------+--------------+---------------+---------------+----------------+--------------+--------------+---------------+---------------+-------------+-------------+--------------+
+; lcd_st.delay   ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0              ; 0            ; 0            ; 0             ; 0             ; 0           ; 0           ; 0            ;
+; lcd_st.set1    ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0              ; 0            ; 0            ; 0             ; 0             ; 0           ; 1           ; 1            ;
+; lcd_st.set2    ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0              ; 0            ; 0            ; 0             ; 0             ; 1           ; 0           ; 1            ;
+; lcd_st.onoff1  ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0              ; 0            ; 0            ; 0             ; 1             ; 0           ; 0           ; 1            ;
+; lcd_st.onoff2  ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0              ; 0            ; 0            ; 1             ; 0             ; 0           ; 0           ; 1            ;
+; lcd_st.mode1   ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0              ; 0            ; 1            ; 0             ; 0             ; 0           ; 0           ; 1            ;
+; lcd_st.mode2   ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0              ; 1            ; 0            ; 0             ; 0             ; 0           ; 0           ; 1            ;
+; lcd_st.waiting ; 0            ; 0            ; 0            ; 0            ; 0             ; 0             ; 1              ; 0            ; 0            ; 0             ; 0             ; 0           ; 0           ; 1            ;
+; lcd_st.clear1  ; 0            ; 0            ; 0            ; 0            ; 0             ; 1             ; 0              ; 0            ; 0            ; 0             ; 0             ; 0           ; 0           ; 1            ;
+; lcd_st.clear2  ; 0            ; 0            ; 0            ; 0            ; 1             ; 0             ; 0              ; 0            ; 0            ; 0             ; 0             ; 0           ; 0           ; 1            ;
+; lcd_st.char1   ; 0            ; 0            ; 0            ; 1            ; 0             ; 0             ; 0              ; 0            ; 0            ; 0             ; 0             ; 0           ; 0           ; 1            ;
+; lcd_st.char2   ; 0            ; 0            ; 1            ; 0            ; 0             ; 0             ; 0              ; 0            ; 0            ; 0             ; 0             ; 0           ; 0           ; 1            ;
+; lcd_st.read1   ; 0            ; 1            ; 0            ; 0            ; 0             ; 0             ; 0              ; 0            ; 0            ; 0             ; 0             ; 0           ; 0           ; 1            ;
+; lcd_st.read2   ; 1            ; 0            ; 0            ; 0            ; 0             ; 0             ; 0              ; 0            ; 0            ; 0             ; 0             ; 0           ; 0           ; 1            ;
++----------------+--------------+--------------+--------------+--------------+---------------+---------------+----------------+--------------+--------------+---------------+---------------+-------------+-------------+--------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------+
+; State Machine - |keypad_de2_i5|part2d:p2|errcnt                     ;
++-------------+-------------+-------------+-------------+-------------+
+; Name        ; errcnt.err3 ; errcnt.err2 ; errcnt.err1 ; errcnt.err0 ;
++-------------+-------------+-------------+-------------+-------------+
+; errcnt.err0 ; 0           ; 0           ; 0           ; 0           ;
+; errcnt.err1 ; 0           ; 0           ; 1           ; 1           ;
+; errcnt.err2 ; 0           ; 1           ; 0           ; 1           ;
+; errcnt.err3 ; 1           ; 0           ; 0           ; 1           ;
++-------------+-------------+-------------+-------------+-------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |keypad_de2_i5|part2d:p2|seqdet                                                                                                                                                                                                                                                                                                           ;
++----------------------+----------------------+----------------+----------------+----------------+----------------+---------------------+---------------------+--------------+--------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+--------------+----------------+
+; Name                 ; seqdet.config_failed ; seqdet.config4 ; seqdet.config3 ; seqdet.config2 ; seqdet.config1 ; seqdet.config_apply ; seqdet.config_start ; seqdet.seqko ; seqdet.seqok ; seqdet.now4ko ; seqdet.now4ok ; seqdet.now3ko ; seqdet.now3ok ; seqdet.now2ko ; seqdet.now2ok ; seqdet.now1ko ; seqdet.now1ok ; seqdet.start ; seqdet.waiting ;
++----------------------+----------------------+----------------+----------------+----------------+----------------+---------------------+---------------------+--------------+--------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+--------------+----------------+
+; seqdet.waiting       ; 0                    ; 0              ; 0              ; 0              ; 0              ; 0                   ; 0                   ; 0            ; 0            ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 0              ;
+; seqdet.start         ; 0                    ; 0              ; 0              ; 0              ; 0              ; 0                   ; 0                   ; 0            ; 0            ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1            ; 1              ;
+; seqdet.now1ok        ; 0                    ; 0              ; 0              ; 0              ; 0              ; 0                   ; 0                   ; 0            ; 0            ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0            ; 1              ;
+; seqdet.now1ko        ; 0                    ; 0              ; 0              ; 0              ; 0              ; 0                   ; 0                   ; 0            ; 0            ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0            ; 1              ;
+; seqdet.now2ok        ; 0                    ; 0              ; 0              ; 0              ; 0              ; 0                   ; 0                   ; 0            ; 0            ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0            ; 1              ;
+; seqdet.now2ko        ; 0                    ; 0              ; 0              ; 0              ; 0              ; 0                   ; 0                   ; 0            ; 0            ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0            ; 1              ;
+; seqdet.now3ok        ; 0                    ; 0              ; 0              ; 0              ; 0              ; 0                   ; 0                   ; 0            ; 0            ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0            ; 1              ;
+; seqdet.now3ko        ; 0                    ; 0              ; 0              ; 0              ; 0              ; 0                   ; 0                   ; 0            ; 0            ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 1              ;
+; seqdet.now4ok        ; 0                    ; 0              ; 0              ; 0              ; 0              ; 0                   ; 0                   ; 0            ; 0            ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 1              ;
+; seqdet.now4ko        ; 0                    ; 0              ; 0              ; 0              ; 0              ; 0                   ; 0                   ; 0            ; 0            ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 1              ;
+; seqdet.seqok         ; 0                    ; 0              ; 0              ; 0              ; 0              ; 0                   ; 0                   ; 0            ; 1            ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 1              ;
+; seqdet.seqko         ; 0                    ; 0              ; 0              ; 0              ; 0              ; 0                   ; 0                   ; 1            ; 0            ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 1              ;
+; seqdet.config_start  ; 0                    ; 0              ; 0              ; 0              ; 0              ; 0                   ; 1                   ; 0            ; 0            ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 1              ;
+; seqdet.config_apply  ; 0                    ; 0              ; 0              ; 0              ; 0              ; 1                   ; 0                   ; 0            ; 0            ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 1              ;
+; seqdet.config1       ; 0                    ; 0              ; 0              ; 0              ; 1              ; 0                   ; 0                   ; 0            ; 0            ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 1              ;
+; seqdet.config2       ; 0                    ; 0              ; 0              ; 1              ; 0              ; 0                   ; 0                   ; 0            ; 0            ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 1              ;
+; seqdet.config3       ; 0                    ; 0              ; 1              ; 0              ; 0              ; 0                   ; 0                   ; 0            ; 0            ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 1              ;
+; seqdet.config4       ; 0                    ; 1              ; 0              ; 0              ; 0              ; 0                   ; 0                   ; 0            ; 0            ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 1              ;
+; seqdet.config_failed ; 1                    ; 0              ; 0              ; 0              ; 0              ; 0                   ; 0                   ; 0            ; 0            ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0            ; 1              ;
++----------------------+----------------------+----------------+----------------+----------------+----------------+---------------------+---------------------+--------------+--------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+--------------+----------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |keypad_de2_i5|part1:p1|curr_st                                                                                              ;
++----------------+----------------+---------------+--------------+--------------+--------------+--------------+----------------+---------------+
+; Name           ; curr_st.check1 ; curr_st.wait1 ; curr_st.kra3 ; curr_st.kra2 ; curr_st.kra1 ; curr_st.kra0 ; curr_st.check0 ; curr_st.wait0 ;
++----------------+----------------+---------------+--------------+--------------+--------------+--------------+----------------+---------------+
+; curr_st.wait0  ; 0              ; 0             ; 0            ; 0            ; 0            ; 0            ; 0              ; 0             ;
+; curr_st.check0 ; 0              ; 0             ; 0            ; 0            ; 0            ; 0            ; 1              ; 1             ;
+; curr_st.kra0   ; 0              ; 0             ; 0            ; 0            ; 0            ; 1            ; 0              ; 1             ;
+; curr_st.kra1   ; 0              ; 0             ; 0            ; 0            ; 1            ; 0            ; 0              ; 1             ;
+; curr_st.kra2   ; 0              ; 0             ; 0            ; 1            ; 0            ; 0            ; 0              ; 1             ;
+; curr_st.kra3   ; 0              ; 0             ; 1            ; 0            ; 0            ; 0            ; 0              ; 1             ;
+; curr_st.wait1  ; 0              ; 1             ; 0            ; 0            ; 0            ; 0            ; 0              ; 1             ;
+; curr_st.check1 ; 1              ; 0             ; 0            ; 0            ; 0            ; 0            ; 0              ; 1             ;
++----------------+----------------+---------------+--------------+--------------+--------------+--------------+----------------+---------------+
+
+
++-------------------------------------------------------------+
+; Registers Removed During Synthesis                          ;
++---------------------------------------+---------------------+
+; Register name                         ; Reason for Removal  ;
++---------------------------------------+---------------------+
+; clock_div:cdiv|count[0]               ; Merged with bcnt[0] ;
+; Total Number of Removed Registers = 1 ;                     ;
++---------------------------------------+---------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 182   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 169   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 69    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; last_key[0]                             ; 8       ;
+; last_key[1]                             ; 8       ;
+; last_key[2]                             ; 8       ;
+; last_key[3]                             ; 8       ;
+; num[3]                                  ; 2       ;
+; part2d:p2|code4[3]                      ; 2       ;
+; num[2]                                  ; 2       ;
+; num[1]                                  ; 2       ;
+; num[0]                                  ; 2       ;
+; num[7]                                  ; 2       ;
+; num[6]                                  ; 2       ;
+; part2d:p2|code3[2]                      ; 2       ;
+; num[5]                                  ; 2       ;
+; num[4]                                  ; 2       ;
+; num[11]                                 ; 2       ;
+; num[10]                                 ; 2       ;
+; num[9]                                  ; 2       ;
+; part2d:p2|code2[1]                      ; 3       ;
+; num[8]                                  ; 2       ;
+; num[15]                                 ; 1       ;
+; num[14]                                 ; 1       ;
+; num[13]                                 ; 1       ;
+; num[12]                                 ; 1       ;
+; part2d:p2|code1[0]                      ; 2       ;
+; run                                     ; 6       ;
+; LCD_int_i5:lcd|run_d                    ; 3       ;
+; LCD_int_i5:lcd|counter[4]               ; 4       ;
+; LCD_int_i5:lcd|add[4]                   ; 44      ;
+; LCD_int_i5:lcd|add[7]                   ; 20      ;
+; Total number of inverted registers = 29 ;         ;
++-----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |keypad_de2_i5|LCD_int_i5:lcd|counter[2]                  ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |keypad_de2_i5|LCD_int_i5:lcd|add[1]                      ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 14 LEs               ; 2 LEs                  ; Yes        ; |keypad_de2_i5|part1:p1|keycode[2]                        ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |keypad_de2_i5|num[14]                                    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |keypad_de2_i5|LCD_int_i5:lcd|Selector22                  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |keypad_de2_i5|part2d:p2|Selector23                       ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |keypad_de2_i5|hex_disps:displays|BCD7seg:display0|HEX[5] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |keypad_de2_i5|hex_disps:displays|BCD7seg:display1|HEX[5] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |keypad_de2_i5|hex_disps:displays|BCD7seg:display2|HEX[5] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |keypad_de2_i5|hex_disps:displays|BCD7seg:display3|HEX[6] ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |keypad_de2_i5|hex_disps:displays|BCD7seg:display4|HEX[5] ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |keypad_de2_i5|part2d:p2|msg[1]                           ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |keypad_de2_i5|part1:p1|next_st.wait0                     ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |keypad_de2_i5|part2d:p2|Selector24                       ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |keypad_de2_i5|part2d:p2|Selector26                       ;
+; 20:1               ; 4 bits    ; 52 LEs        ; 28 LEs               ; 24 LEs                 ; No         ; |keypad_de2_i5|part2d:p2|Selector12                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "hex_disps:displays" ;
++------+-------+----------+----------------------+
+; Port ; Type  ; Severity ; Details              ;
++------+-------+----------+----------------------+
+; num5 ; Input ; Info     ; Stuck at VCC         ;
+; num6 ; Input ; Info     ; Stuck at VCC         ;
+; num7 ; Input ; Info     ; Stuck at VCC         ;
++------+-------+----------+----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_div:cdiv"                                                                         ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; q[14..9] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; q[7..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Wed Nov 18 15:38:01 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off cdel-module-2 -c keypad_de2_i5
+Info: Found 2 design units, including 1 entities, in source file keypad_de2_i2.vhd
+    Info: Found design unit 1: keypad_de2_i2-arc
+    Info: Found entity 1: keypad_de2_i2
+Info: Found 2 design units, including 1 entities, in source file clock_div.vhd
+    Info: Found design unit 1: clock_div-behaviour
+    Info: Found entity 1: clock_div
+Info: Found 2 design units, including 1 entities, in source file bcd7seg.vhd
+    Info: Found design unit 1: BCD7seg-behaviour
+    Info: Found entity 1: BCD7seg
+Info: Found 2 design units, including 2 entities, in source file clk_lock.v
+    Info: Found entity 1: CLK_LOCK_altclkctrl_tb8
+    Info: Found entity 2: CLK_LOCK
+Info: Found 2 design units, including 1 entities, in source file count10b.vhd
+    Info: Found design unit 1: count10b-arc_count10b
+    Info: Found entity 1: count10b
+Info: Found 2 design units, including 1 entities, in source file hex_disps.vhd
+    Info: Found design unit 1: hex_disps-behav_display
+    Info: Found entity 1: hex_disps
+Info: Found 2 design units, including 1 entities, in source file lcd_int.vhd
+    Info: Found design unit 1: LCD_int-behaviour
+    Info: Found entity 1: LCD_int
+Info: Found 2 design units, including 1 entities, in source file part1.vhd
+    Info: Found design unit 1: part1-arc_keypad
+    Info: Found entity 1: part1
+Info: Found 2 design units, including 1 entities, in source file part2.vhd
+    Info: Found design unit 1: part2-arc_part2
+    Info: Found entity 1: part2
+Info: Found 2 design units, including 1 entities, in source file keypad.vhd
+    Info: Found design unit 1: keypad-arc
+    Info: Found entity 1: keypad
+Info: Found 2 design units, including 1 entities, in source file keypad_de2.vhd
+    Info: Found design unit 1: keypad_de2-arc
+    Info: Found entity 1: keypad_de2
+Info: Found 2 design units, including 1 entities, in source file keypad_de2_i1.vhd
+    Info: Found design unit 1: keypad_de2_i1-arc
+    Info: Found entity 1: keypad_de2_i1
+Info: Found 2 design units, including 1 entities, in source file part2b.vhd
+    Info: Found design unit 1: part2b-arc
+    Info: Found entity 1: part2b
+Info: Found 2 design units, including 1 entities, in source file keypad_de2_i3.vhd
+    Info: Found design unit 1: keypad_de2_i3-arc
+    Info: Found entity 1: keypad_de2_i3
+Info: Found 2 design units, including 1 entities, in source file keypad_de2_i4.vhd
+    Info: Found design unit 1: keypad_de2_i4-arc
+    Info: Found entity 1: keypad_de2_i4
+Info: Found 2 design units, including 1 entities, in source file part2c.vhd
+    Info: Found design unit 1: part2c-arc
+    Info: Found entity 1: part2c
+Info: Found 2 design units, including 1 entities, in source file lcd_int_i4.vhd
+    Info: Found design unit 1: LCD_int_i4-behaviour
+    Info: Found entity 1: LCD_int_i4
+Info: Found 2 design units, including 1 entities, in source file keypad_de2_i5.vhd
+    Info: Found design unit 1: keypad_de2_i5-arc
+    Info: Found entity 1: keypad_de2_i5
+Info: Found 2 design units, including 1 entities, in source file part2d.vhd
+    Info: Found design unit 1: part2d-arc
+    Info: Found entity 1: part2d
+Info: Found 2 design units, including 1 entities, in source file lcd_int_i5.vhd
+    Info: Found design unit 1: LCD_int_i5-behaviour
+    Info: Found entity 1: LCD_int_i5
+Info: Elaborating entity "keypad_de2_i5" for the top level hierarchy
+Info: Elaborating entity "clock_div" for hierarchy "clock_div:cdiv"
+Info: Elaborating entity "CLK_LOCK" for hierarchy "CLK_LOCK:clklk"
+Info: Elaborating entity "CLK_LOCK_altclkctrl_tb8" for hierarchy "CLK_LOCK:clklk|CLK_LOCK_altclkctrl_tb8:CLK_LOCK_altclkctrl_tb8_component"
+Info: Elaborating entity "part1" for hierarchy "part1:p1"
+Info: Elaborating entity "count10b" for hierarchy "part1:p1|count10b:counter"
+Info: Elaborating entity "part2d" for hierarchy "part2d:p2"
+Info: Elaborating entity "hex_disps" for hierarchy "hex_disps:displays"
+Info: Elaborating entity "BCD7seg" for hierarchy "hex_disps:displays|BCD7seg:display0"
+Info: Elaborating entity "LCD_int_i5" for hierarchy "LCD_int_i5:lcd"
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX5[0]" is stuck at VCC
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC
+    Warning (13410): Pin "HEX5[2]" is stuck at VCC
+    Warning (13410): Pin "HEX5[3]" is stuck at VCC
+    Warning (13410): Pin "HEX5[4]" is stuck at VCC
+    Warning (13410): Pin "HEX5[5]" is stuck at VCC
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC
+    Warning (13410): Pin "HEX6[0]" is stuck at VCC
+    Warning (13410): Pin "HEX6[1]" is stuck at VCC
+    Warning (13410): Pin "HEX6[2]" is stuck at VCC
+    Warning (13410): Pin "HEX6[3]" is stuck at VCC
+    Warning (13410): Pin "HEX6[4]" is stuck at VCC
+    Warning (13410): Pin "HEX6[5]" is stuck at VCC
+    Warning (13410): Pin "HEX6[6]" is stuck at VCC
+    Warning (13410): Pin "HEX7[0]" is stuck at VCC
+    Warning (13410): Pin "HEX7[1]" is stuck at VCC
+    Warning (13410): Pin "HEX7[2]" is stuck at VCC
+    Warning (13410): Pin "HEX7[3]" is stuck at VCC
+    Warning (13410): Pin "HEX7[4]" is stuck at VCC
+    Warning (13410): Pin "HEX7[5]" is stuck at VCC
+    Warning (13410): Pin "HEX7[6]" is stuck at VCC
+    Warning (13410): Pin "LCD_ON" is stuck at VCC
+    Warning (13410): Pin "LCD_BLON" is stuck at VCC
+Warning: Ignored assignments for entity "cdel-module-2" -- entity does not exist in design
+    Warning: Assignment for entity set_global_assignment -name LL_ROOT_REGION ON -entity "cdel-module-2" -section_id "Root Region" was ignored
+    Warning: Assignment for entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity "cdel-module-2" -section_id "Root Region" was ignored
+Warning: Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]"
+    Warning (15610): No output dependent on input pin "KEY[2]"
+    Warning (15610): No output dependent on input pin "KEY[3]"
+Info: Implemented 660 device resources after synthesis - the final resource count might be different
+    Info: Implemented 9 input pins
+    Info: Implemented 92 output pins
+    Info: Implemented 8 bidirectional pins
+    Info: Implemented 549 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 31 warnings
+    Info: Peak virtual memory: 245 megabytes
+    Info: Processing ended: Wed Nov 18 15:38:07 2026
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:07
+
+

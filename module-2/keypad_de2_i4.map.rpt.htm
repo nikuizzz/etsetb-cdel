@@ -1,0 +1,1997 @@
+<HTML>
+
+<HEAD>
+<TITLE>Analysis & Synthesis report for keypad_de2_i4</TITLE>
+</HEAD>
+
+<BODY>
+
+<A NAME="top"></A>
+
+<CENTER>
+<H1>Analysis & Synthesis report for keypad_de2_i4</H1>
+<H3>Wed Nov 18 13:43:22 2026<BR>
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition</H3>
+</CENTER>
+
+<P><HR></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Table of Contents</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<OL>
+<LI><A HREF="#1">Legal Notice</A></LI>
+<LI><A HREF="#2">Analysis & Synthesis Summary</A></LI>
+<LI><A HREF="#3">Analysis & Synthesis Settings</A></LI>
+<LI><A HREF="#4">Parallel Compilation</A></LI>
+<LI><A HREF="#5">Analysis & Synthesis Source Files Read</A></LI>
+<LI><A HREF="#6">Analysis & Synthesis Resource Usage Summary</A></LI>
+<LI><A HREF="#7">Analysis & Synthesis Resource Utilization by Entity</A></LI>
+<LI><A HREF="#8">State Machine - |keypad_de2_i4|LCD_int_i4:lcd|lcd_st</A></LI>
+<LI><A HREF="#9">State Machine - |keypad_de2_i4|part2c:p2|errcnt</A></LI>
+<LI><A HREF="#10">State Machine - |keypad_de2_i4|part2c:p2|seqdet</A></LI>
+<LI><A HREF="#11">State Machine - |keypad_de2_i4|part1:p1|curr_st</A></LI>
+<LI><A HREF="#12">Registers Removed During Synthesis</A></LI>
+<LI><A HREF="#13">General Register Statistics</A></LI>
+<LI><A HREF="#14">Inverted Register Statistics</A></LI>
+<LI><A HREF="#15">Multiplexer Restructuring Statistics (Restructuring Performed)</A></LI>
+<LI><A HREF="#16">Port Connectivity Checks: "hex_disps:displays"</A></LI>
+<LI><A HREF="#17">Port Connectivity Checks: "clock_div:cdiv"</A></LI>
+<LI><A HREF="#18">Analysis & Synthesis Messages</A></LI>
+</OL>
+
+<P><A NAME="1"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Legal Notice</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<PRE>Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+</PRE>
+
+<P><A NAME="2"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Analysis & Synthesis Summary</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle">
+<TD ALIGN="LEFT">Analysis & Synthesis Status</TH>
+<TD ALIGN="LEFT">Successful - Wed Nov 18 13:43:22 2026</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Quartus II Version</TD>
+<TD ALIGN="LEFT">9.1 Build 350 03/24/2010 SP 2 SJ Web Edition</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Revision Name</TD>
+<TD ALIGN="LEFT">keypad_de2_i4</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Top-level Entity Name</TD>
+<TD ALIGN="LEFT">keypad_de2_i4</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Family</TD>
+<TD ALIGN="LEFT">Cyclone II</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Total logic elements</TD>
+<TD ALIGN="LEFT">409</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;Total combinational functions</TD>
+<TD ALIGN="LEFT">396</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;Dedicated logic registers</TD>
+<TD ALIGN="LEFT">137</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Total registers</TD>
+<TD ALIGN="LEFT">137</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Total pins</TD>
+<TD ALIGN="LEFT">109</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Total virtual pins</TD>
+<TD ALIGN="LEFT">0</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Total memory bits</TD>
+<TD ALIGN="LEFT">0</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Embedded Multiplier 9-bit elements</TD>
+<TD ALIGN="LEFT">0</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Total PLLs</TD>
+<TD ALIGN="LEFT">0</TD>
+</TR>
+</TABLE>
+<P><A NAME="3"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Analysis & Synthesis Settings</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Option</TH>
+<TH>Setting</TH>
+<TH>Default Value</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Device</TD>
+<TD ALIGN="LEFT">EP2C35F672C6</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Top-level entity name</TD>
+<TD ALIGN="LEFT">keypad_de2_i4</TD>
+<TD ALIGN="LEFT">keypad_de2_i4</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Family name</TD>
+<TD ALIGN="LEFT">Cyclone II</TD>
+<TD ALIGN="LEFT">Stratix II</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Use Generated Physical Constraints File</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Use smart compilation</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Enable parallel Assembler and TimeQuest Timing Analyzer during compilation</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Enable compact report table</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Restructure Multiplexers</TD>
+<TD ALIGN="LEFT">Auto</TD>
+<TD ALIGN="LEFT">Auto</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Create Debugging Nodes for IP Cores</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Preserve fewer node names</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Disable OpenCore Plus hardware evaluation</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Verilog Version</TD>
+<TD ALIGN="LEFT">Verilog_2001</TD>
+<TD ALIGN="LEFT">Verilog_2001</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">VHDL Version</TD>
+<TD ALIGN="LEFT">VHDL_1993</TD>
+<TD ALIGN="LEFT">VHDL_1993</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">State Machine Processing</TD>
+<TD ALIGN="LEFT">Auto</TD>
+<TD ALIGN="LEFT">Auto</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Safe State Machine</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Extract Verilog State Machines</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Extract VHDL State Machines</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Ignore Verilog initial constructs</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Iteration limit for constant Verilog loops</TD>
+<TD ALIGN="LEFT">5000</TD>
+<TD ALIGN="LEFT">5000</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Iteration limit for non-constant Verilog loops</TD>
+<TD ALIGN="LEFT">250</TD>
+<TD ALIGN="LEFT">250</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Add Pass-Through Logic to Inferred RAMs</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Parallel Synthesis</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">DSP Block Balancing</TD>
+<TD ALIGN="LEFT">Auto</TD>
+<TD ALIGN="LEFT">Auto</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">NOT Gate Push-Back</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Power-Up Don't Care</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Remove Redundant Logic Cells</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Remove Duplicate Registers</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Ignore CARRY Buffers</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Ignore CASCADE Buffers</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Ignore GLOBAL Buffers</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Ignore ROW GLOBAL Buffers</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Ignore LCELL Buffers</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Ignore SOFT Buffers</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Limit AHDL Integers to 32 Bits</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Optimization Technique</TD>
+<TD ALIGN="LEFT">Balanced</TD>
+<TD ALIGN="LEFT">Balanced</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Carry Chain Length</TD>
+<TD ALIGN="LEFT">70</TD>
+<TD ALIGN="LEFT">70</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Auto Carry Chains</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Auto Open-Drain Pins</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Perform WYSIWYG Primitive Resynthesis</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Auto ROM Replacement</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Auto RAM Replacement</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Auto Shift Register Replacement</TD>
+<TD ALIGN="LEFT">Auto</TD>
+<TD ALIGN="LEFT">Auto</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Auto Clock Enable Replacement</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Strict RAM Replacement</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Allow Synchronous Control Signals</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Force Use of Synchronous Clear Signals</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Auto RAM to Logic Cell Conversion</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Auto Resource Sharing</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Allow Any RAM Size For Recognition</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Allow Any ROM Size For Recognition</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Allow Any Shift Register Size For Recognition</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Use LogicLock Constraints during Resource Balancing</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Ignore translate_off and synthesis_off directives</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Timing-Driven Synthesis</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Show Parameter Settings Tables in Synthesis Report</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Ignore Maximum Fan-Out Assignments</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Synchronization Register Chain Length</TD>
+<TD ALIGN="LEFT">2</TD>
+<TD ALIGN="LEFT">2</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">PowerPlay Power Optimization</TD>
+<TD ALIGN="LEFT">Normal compilation</TD>
+<TD ALIGN="LEFT">Normal compilation</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">HDL message level</TD>
+<TD ALIGN="LEFT">Level2</TD>
+<TD ALIGN="LEFT">Level2</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Suppress Register Optimization Related Messages</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Number of Removed Registers Reported in Synthesis Report</TD>
+<TD ALIGN="LEFT">5000</TD>
+<TD ALIGN="LEFT">5000</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Number of Inverted Registers Reported in Synthesis Report</TD>
+<TD ALIGN="LEFT">100</TD>
+<TD ALIGN="LEFT">100</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Clock MUX Protection</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Auto Gated Clock Conversion</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Block Design Naming</TD>
+<TD ALIGN="LEFT">Auto</TD>
+<TD ALIGN="LEFT">Auto</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">SDC constraint protection</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">Off</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Synthesis Effort</TD>
+<TD ALIGN="LEFT">Auto</TD>
+<TD ALIGN="LEFT">Auto</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Shift Register Replacement - Allow Asynchronous Clear Signal</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Analysis & Synthesis Message Level</TD>
+<TD ALIGN="LEFT">Medium</TD>
+<TD ALIGN="LEFT">Medium</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Disable Register Merging Across Hierarchies</TD>
+<TD ALIGN="LEFT">Auto</TD>
+<TD ALIGN="LEFT">Auto</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Resource Aware Inference For Block RAM</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">On</TD>
+</TR>
+</TABLE>
+<P><A NAME="4"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Parallel Compilation</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.<br>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Processors</TH>
+<TH>Number</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Number detected on machine</TD>
+<TD ALIGN="LEFT">12</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Maximum allowed</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+</TABLE>
+<P><A NAME="5"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Analysis & Synthesis Source Files Read</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>File Name with User-Entered Path</TH>
+<TH>Used in Netlist</TH>
+<TH>File Type</TH>
+<TH>File Name with Absolute Path</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">clock_div.vhd</TD>
+<TD ALIGN="LEFT">yes</TD>
+<TD ALIGN="LEFT">User VHDL File </TD>
+<TD ALIGN="LEFT">C:/Users/nikit/Studies/ETSETB/CDEL/etsetb-cdel/module-2/clock_div.vhd</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">BCD7seg.vhd</TD>
+<TD ALIGN="LEFT">yes</TD>
+<TD ALIGN="LEFT">User VHDL File </TD>
+<TD ALIGN="LEFT">C:/Users/nikit/Studies/ETSETB/CDEL/etsetb-cdel/module-2/BCD7seg.vhd</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">clk_lock.v</TD>
+<TD ALIGN="LEFT">yes</TD>
+<TD ALIGN="LEFT">User Wizard-Generated File </TD>
+<TD ALIGN="LEFT">C:/Users/nikit/Studies/ETSETB/CDEL/etsetb-cdel/module-2/clk_lock.v</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">count10b.vhd</TD>
+<TD ALIGN="LEFT">yes</TD>
+<TD ALIGN="LEFT">User VHDL File </TD>
+<TD ALIGN="LEFT">C:/Users/nikit/Studies/ETSETB/CDEL/etsetb-cdel/module-2/count10b.vhd</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">hex_disps.vhd</TD>
+<TD ALIGN="LEFT">yes</TD>
+<TD ALIGN="LEFT">User VHDL File </TD>
+<TD ALIGN="LEFT">C:/Users/nikit/Studies/ETSETB/CDEL/etsetb-cdel/module-2/hex_disps.vhd</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">part1.vhd</TD>
+<TD ALIGN="LEFT">yes</TD>
+<TD ALIGN="LEFT">User VHDL File </TD>
+<TD ALIGN="LEFT">C:/Users/nikit/Studies/ETSETB/CDEL/etsetb-cdel/module-2/part1.vhd</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">keypad_de2_i4.vhd</TD>
+<TD ALIGN="LEFT">yes</TD>
+<TD ALIGN="LEFT">User VHDL File </TD>
+<TD ALIGN="LEFT">C:/Users/nikit/Studies/ETSETB/CDEL/etsetb-cdel/module-2/keypad_de2_i4.vhd</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">part2c.vhd</TD>
+<TD ALIGN="LEFT">yes</TD>
+<TD ALIGN="LEFT">User VHDL File </TD>
+<TD ALIGN="LEFT">C:/Users/nikit/Studies/ETSETB/CDEL/etsetb-cdel/module-2/part2c.vhd</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">LCD_int_i4.vhd</TD>
+<TD ALIGN="LEFT">yes</TD>
+<TD ALIGN="LEFT">User VHDL File </TD>
+<TD ALIGN="LEFT">C:/Users/nikit/Studies/ETSETB/CDEL/etsetb-cdel/module-2/LCD_int_i4.vhd</TD>
+</TR>
+</TABLE>
+<P><A NAME="6"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Analysis & Synthesis Resource Usage Summary</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Resource</TH>
+<TH>Usage</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Estimated Total logic elements</TD>
+<TD ALIGN="LEFT">409</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Total combinational functions</TD>
+<TD ALIGN="LEFT">396</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Logic element usage by number of LUT inputs</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;-- 4 input functions</TD>
+<TD ALIGN="LEFT">205</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;-- 3 input functions</TD>
+<TD ALIGN="LEFT">62</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;-- <=2 input functions</TD>
+<TD ALIGN="LEFT">129</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Logic elements by mode</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;-- normal mode</TD>
+<TD ALIGN="LEFT">340</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;-- arithmetic mode</TD>
+<TD ALIGN="LEFT">56</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Total registers</TD>
+<TD ALIGN="LEFT">137</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;-- Dedicated logic registers</TD>
+<TD ALIGN="LEFT">137</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;-- I/O registers</TD>
+<TD ALIGN="LEFT">0</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">I/O pins</TD>
+<TD ALIGN="LEFT">109</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Maximum fan-out node</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Maximum fan-out</TD>
+<TD ALIGN="LEFT">127</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Total fan-out</TD>
+<TD ALIGN="LEFT">1762</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Average fan-out</TD>
+<TD ALIGN="LEFT">2.74</TD>
+</TR>
+</TABLE>
+<P><A NAME="7"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Analysis & Synthesis Resource Utilization by Entity</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Compilation Hierarchy Node</TH>
+<TH>LC Combinationals</TH>
+<TH>LC Registers</TH>
+<TH>Memory Bits</TH>
+<TH>DSP Elements</TH>
+<TH>DSP 9x9</TH>
+<TH>DSP 18x18</TH>
+<TH>Pins</TH>
+<TH>Virtual Pins</TH>
+<TH>Full Hierarchy Name</TH>
+<TH>Library Name</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">|keypad_de2_i4</TD>
+<TD ALIGN="LEFT">396 (80)</TD>
+<TD ALIGN="LEFT">137 (49)</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">109</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4</TD>
+<TD ALIGN="LEFT">work</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;|CLK_LOCK:clklk2|</TD>
+<TD ALIGN="LEFT">0 (0)</TD>
+<TD ALIGN="LEFT">0 (0)</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|CLK_LOCK:clklk2</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|CLK_LOCK_altclkctrl_tb8:CLK_LOCK_altclkctrl_tb8_component|</TD>
+<TD ALIGN="LEFT">0 (0)</TD>
+<TD ALIGN="LEFT">0 (0)</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|CLK_LOCK:clklk2|CLK_LOCK_altclkctrl_tb8:CLK_LOCK_altclkctrl_tb8_component</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;|CLK_LOCK:clklk|</TD>
+<TD ALIGN="LEFT">0 (0)</TD>
+<TD ALIGN="LEFT">0 (0)</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|CLK_LOCK:clklk</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|CLK_LOCK_altclkctrl_tb8:CLK_LOCK_altclkctrl_tb8_component|</TD>
+<TD ALIGN="LEFT">0 (0)</TD>
+<TD ALIGN="LEFT">0 (0)</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|CLK_LOCK:clklk|CLK_LOCK_altclkctrl_tb8:CLK_LOCK_altclkctrl_tb8_component</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;|LCD_int_i4:lcd|</TD>
+<TD ALIGN="LEFT">121 (121)</TD>
+<TD ALIGN="LEFT">27 (27)</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|LCD_int_i4:lcd</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;|clock_div:cdiv|</TD>
+<TD ALIGN="LEFT">15 (15)</TD>
+<TD ALIGN="LEFT">15 (15)</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|clock_div:cdiv</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;|hex_disps:displays|</TD>
+<TD ALIGN="LEFT">55 (0)</TD>
+<TD ALIGN="LEFT">0 (0)</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|hex_disps:displays</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|BCD7seg:display0|</TD>
+<TD ALIGN="LEFT">14 (14)</TD>
+<TD ALIGN="LEFT">0 (0)</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|hex_disps:displays|BCD7seg:display0</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|BCD7seg:display1|</TD>
+<TD ALIGN="LEFT">14 (14)</TD>
+<TD ALIGN="LEFT">0 (0)</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|hex_disps:displays|BCD7seg:display1</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|BCD7seg:display2|</TD>
+<TD ALIGN="LEFT">14 (14)</TD>
+<TD ALIGN="LEFT">0 (0)</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|hex_disps:displays|BCD7seg:display2</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|BCD7seg:display3|</TD>
+<TD ALIGN="LEFT">13 (13)</TD>
+<TD ALIGN="LEFT">0 (0)</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|hex_disps:displays|BCD7seg:display3</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;|part1:p1|</TD>
+<TD ALIGN="LEFT">57 (47)</TD>
+<TD ALIGN="LEFT">27 (17)</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|part1:p1</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|count10b:counter|</TD>
+<TD ALIGN="LEFT">10 (10)</TD>
+<TD ALIGN="LEFT">10 (10)</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|part1:p1|count10b:counter</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;|part2c:p2|</TD>
+<TD ALIGN="LEFT">68 (68)</TD>
+<TD ALIGN="LEFT">19 (19)</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|part2c:p2</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.<br>
+<P><A NAME="8"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>State Machine - |keypad_de2_i4|LCD_int_i4:lcd|lcd_st</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+Encoding Type:&nbsp; One-Hot<br>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Name</TH>
+<TH>lcd_st.read2</TH>
+<TH>lcd_st.read1</TH>
+<TH>lcd_st.char2</TH>
+<TH>lcd_st.char1</TH>
+<TH>lcd_st.clear2</TH>
+<TH>lcd_st.clear1</TH>
+<TH>lcd_st.waiting</TH>
+<TH>lcd_st.mode2</TH>
+<TH>lcd_st.mode1</TH>
+<TH>lcd_st.onoff2</TH>
+<TH>lcd_st.onoff1</TH>
+<TH>lcd_st.set2</TH>
+<TH>lcd_st.set1</TH>
+<TH>lcd_st.delay</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">lcd_st.delay</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">lcd_st.set1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">lcd_st.set2</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">lcd_st.onoff1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">lcd_st.onoff2</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">lcd_st.mode1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">lcd_st.mode2</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">lcd_st.waiting</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">lcd_st.clear1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">lcd_st.clear2</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">lcd_st.char1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">lcd_st.char2</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">lcd_st.read1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">lcd_st.read2</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+</TABLE>
+<P><A NAME="9"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>State Machine - |keypad_de2_i4|part2c:p2|errcnt</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+Encoding Type:&nbsp; One-Hot<br>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Name</TH>
+<TH>errcnt.err3</TH>
+<TH>errcnt.err2</TH>
+<TH>errcnt.err1</TH>
+<TH>errcnt.err0</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">errcnt.err0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">errcnt.err1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">errcnt.err2</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">errcnt.err3</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+</TABLE>
+<P><A NAME="10"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>State Machine - |keypad_de2_i4|part2c:p2|seqdet</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+Encoding Type:&nbsp; One-Hot<br>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Name</TH>
+<TH>seqdet.seqko</TH>
+<TH>seqdet.seqok</TH>
+<TH>seqdet.now4ko</TH>
+<TH>seqdet.now4ok</TH>
+<TH>seqdet.now3ko</TH>
+<TH>seqdet.now3ok</TH>
+<TH>seqdet.now2ko</TH>
+<TH>seqdet.now2ok</TH>
+<TH>seqdet.now1ko</TH>
+<TH>seqdet.now1ok</TH>
+<TH>seqdet.start</TH>
+<TH>seqdet.waiting</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">seqdet.waiting</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">seqdet.start</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">seqdet.now1ok</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">seqdet.now1ko</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">seqdet.now2ok</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">seqdet.now2ko</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">seqdet.now3ok</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">seqdet.now3ko</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">seqdet.now4ok</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">seqdet.now4ko</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">seqdet.seqok</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">seqdet.seqko</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+</TABLE>
+<P><A NAME="11"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>State Machine - |keypad_de2_i4|part1:p1|curr_st</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+Encoding Type:&nbsp; One-Hot<br>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Name</TH>
+<TH>curr_st.check1</TH>
+<TH>curr_st.wait1</TH>
+<TH>curr_st.kra3</TH>
+<TH>curr_st.kra2</TH>
+<TH>curr_st.kra1</TH>
+<TH>curr_st.kra0</TH>
+<TH>curr_st.check0</TH>
+<TH>curr_st.wait0</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">curr_st.wait0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">curr_st.check0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">curr_st.kra0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">curr_st.kra1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">curr_st.kra2</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">curr_st.kra3</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">curr_st.wait1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">curr_st.check1</TD>
+<TD ALIGN="LEFT">1</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+</TABLE>
+<P><A NAME="12"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Registers Removed During Synthesis</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Register name</TH>
+<TH>Reason for Removal</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">clock_div:cdiv|count[0]</TD>
+<TD ALIGN="LEFT">Merged with bcnt[0]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Total Number of Removed Registers = 1</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+<P><A NAME="13"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>General Register Statistics</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Statistic</TH>
+<TH>Value</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Total registers</TD>
+<TD ALIGN="LEFT">137</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Number of registers using Synchronous Clear</TD>
+<TD ALIGN="LEFT">0</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Number of registers using Synchronous Load</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Number of registers using Asynchronous Clear</TD>
+<TD ALIGN="LEFT">125</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Number of registers using Asynchronous Load</TD>
+<TD ALIGN="LEFT">0</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Number of registers using Clock Enable</TD>
+<TD ALIGN="LEFT">30</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Number of registers using Preset</TD>
+<TD ALIGN="LEFT">0</TD>
+</TR>
+</TABLE>
+<P><A NAME="14"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Inverted Register Statistics</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Inverted Register</TH>
+<TH>Fan out</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">num[2]</TD>
+<TD ALIGN="LEFT">8</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">num[0]</TD>
+<TD ALIGN="LEFT">8</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">num[1]</TD>
+<TD ALIGN="LEFT">8</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">num[3]</TD>
+<TD ALIGN="LEFT">8</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">num[5]</TD>
+<TD ALIGN="LEFT">8</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">num[7]</TD>
+<TD ALIGN="LEFT">8</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">num[4]</TD>
+<TD ALIGN="LEFT">8</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">num[6]</TD>
+<TD ALIGN="LEFT">8</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">num[9]</TD>
+<TD ALIGN="LEFT">8</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">num[11]</TD>
+<TD ALIGN="LEFT">8</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">num[8]</TD>
+<TD ALIGN="LEFT">8</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">num[10]</TD>
+<TD ALIGN="LEFT">8</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">num[13]</TD>
+<TD ALIGN="LEFT">7</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">num[15]</TD>
+<TD ALIGN="LEFT">7</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">num[12]</TD>
+<TD ALIGN="LEFT">7</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">num[14]</TD>
+<TD ALIGN="LEFT">7</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">run</TD>
+<TD ALIGN="LEFT">5</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">LCD_int_i4:lcd|run_d</TD>
+<TD ALIGN="LEFT">2</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[4]</TD>
+<TD ALIGN="LEFT">4</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[6]</TD>
+<TD ALIGN="LEFT">24</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[5]</TD>
+<TD ALIGN="LEFT">15</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Total number of inverted registers = 21</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+<P><A NAME="15"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Multiplexer Restructuring Statistics (Restructuring Performed)</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Multiplexer Inputs</TH>
+<TH>Bus Width</TH>
+<TH>Baseline Area</TH>
+<TH>Area if Restructured</TH>
+<TH>Saving if Restructured</TH>
+<TH>Registered</TH>
+<TH>Example Multiplexer Output</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">5:1</TD>
+<TD ALIGN="LEFT">4 bits</TD>
+<TD ALIGN="LEFT">12 LEs</TD>
+<TD ALIGN="LEFT">4 LEs</TD>
+<TD ALIGN="LEFT">8 LEs</TD>
+<TD ALIGN="LEFT">Yes</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|LCD_int_i4:lcd|counter[0]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">13:1</TD>
+<TD ALIGN="LEFT">5 bits</TD>
+<TD ALIGN="LEFT">40 LEs</TD>
+<TD ALIGN="LEFT">10 LEs</TD>
+<TD ALIGN="LEFT">30 LEs</TD>
+<TD ALIGN="LEFT">Yes</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|LCD_int_i4:lcd|add[1]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">12:1</TD>
+<TD ALIGN="LEFT">2 bits</TD>
+<TD ALIGN="LEFT">16 LEs</TD>
+<TD ALIGN="LEFT">14 LEs</TD>
+<TD ALIGN="LEFT">2 LEs</TD>
+<TD ALIGN="LEFT">Yes</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|part1:p1|keycode[2]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">3:1</TD>
+<TD ALIGN="LEFT">16 bits</TD>
+<TD ALIGN="LEFT">32 LEs</TD>
+<TD ALIGN="LEFT">16 LEs</TD>
+<TD ALIGN="LEFT">16 LEs</TD>
+<TD ALIGN="LEFT">Yes</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|num[8]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">13:1</TD>
+<TD ALIGN="LEFT">2 bits</TD>
+<TD ALIGN="LEFT">16 LEs</TD>
+<TD ALIGN="LEFT">10 LEs</TD>
+<TD ALIGN="LEFT">6 LEs</TD>
+<TD ALIGN="LEFT">Yes</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|LCD_int_i4:lcd|add[6]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">5:1</TD>
+<TD ALIGN="LEFT">2 bits</TD>
+<TD ALIGN="LEFT">6 LEs</TD>
+<TD ALIGN="LEFT">6 LEs</TD>
+<TD ALIGN="LEFT">0 LEs</TD>
+<TD ALIGN="LEFT">No</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|part2c:p2|msg[1]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">3:1</TD>
+<TD ALIGN="LEFT">2 bits</TD>
+<TD ALIGN="LEFT">4 LEs</TD>
+<TD ALIGN="LEFT">4 LEs</TD>
+<TD ALIGN="LEFT">0 LEs</TD>
+<TD ALIGN="LEFT">No</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|LCD_int_i4:lcd|Selector21</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">5:1</TD>
+<TD ALIGN="LEFT">2 bits</TD>
+<TD ALIGN="LEFT">6 LEs</TD>
+<TD ALIGN="LEFT">4 LEs</TD>
+<TD ALIGN="LEFT">2 LEs</TD>
+<TD ALIGN="LEFT">No</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|hex_disps:displays|BCD7seg:display0|HEX[5]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">5:1</TD>
+<TD ALIGN="LEFT">2 bits</TD>
+<TD ALIGN="LEFT">6 LEs</TD>
+<TD ALIGN="LEFT">4 LEs</TD>
+<TD ALIGN="LEFT">2 LEs</TD>
+<TD ALIGN="LEFT">No</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|hex_disps:displays|BCD7seg:display1|HEX[5]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">5:1</TD>
+<TD ALIGN="LEFT">2 bits</TD>
+<TD ALIGN="LEFT">6 LEs</TD>
+<TD ALIGN="LEFT">4 LEs</TD>
+<TD ALIGN="LEFT">2 LEs</TD>
+<TD ALIGN="LEFT">No</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|hex_disps:displays|BCD7seg:display2|HEX[5]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">5:1</TD>
+<TD ALIGN="LEFT">2 bits</TD>
+<TD ALIGN="LEFT">6 LEs</TD>
+<TD ALIGN="LEFT">4 LEs</TD>
+<TD ALIGN="LEFT">2 LEs</TD>
+<TD ALIGN="LEFT">No</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|hex_disps:displays|BCD7seg:display3|HEX[5]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">8:1</TD>
+<TD ALIGN="LEFT">2 bits</TD>
+<TD ALIGN="LEFT">10 LEs</TD>
+<TD ALIGN="LEFT">4 LEs</TD>
+<TD ALIGN="LEFT">6 LEs</TD>
+<TD ALIGN="LEFT">No</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|part1:p1|next_st.check1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">7:1</TD>
+<TD ALIGN="LEFT">2 bits</TD>
+<TD ALIGN="LEFT">8 LEs</TD>
+<TD ALIGN="LEFT">8 LEs</TD>
+<TD ALIGN="LEFT">0 LEs</TD>
+<TD ALIGN="LEFT">No</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|part2c:p2|Selector14</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">10:1</TD>
+<TD ALIGN="LEFT">2 bits</TD>
+<TD ALIGN="LEFT">12 LEs</TD>
+<TD ALIGN="LEFT">8 LEs</TD>
+<TD ALIGN="LEFT">4 LEs</TD>
+<TD ALIGN="LEFT">No</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|part2c:p2|Selector15</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">13:1</TD>
+<TD ALIGN="LEFT">2 bits</TD>
+<TD ALIGN="LEFT">16 LEs</TD>
+<TD ALIGN="LEFT">10 LEs</TD>
+<TD ALIGN="LEFT">6 LEs</TD>
+<TD ALIGN="LEFT">No</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|part2c:p2|Selector0</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">16:1</TD>
+<TD ALIGN="LEFT">2 bits</TD>
+<TD ALIGN="LEFT">20 LEs</TD>
+<TD ALIGN="LEFT">12 LEs</TD>
+<TD ALIGN="LEFT">8 LEs</TD>
+<TD ALIGN="LEFT">No</TD>
+<TD ALIGN="LEFT">|keypad_de2_i4|part2c:p2|Selector10</TD>
+</TR>
+</TABLE>
+<P><A NAME="16"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Port Connectivity Checks: "hex_disps:displays"</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Port</TH>
+<TH>Type</TH>
+<TH>Severity</TH>
+<TH>Details</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">num4</TD>
+<TD ALIGN="LEFT">Input</TD>
+<TD ALIGN="LEFT">Info</TD>
+<TD ALIGN="LEFT">Stuck at VCC</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">num5</TD>
+<TD ALIGN="LEFT">Input</TD>
+<TD ALIGN="LEFT">Info</TD>
+<TD ALIGN="LEFT">Stuck at VCC</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">num6</TD>
+<TD ALIGN="LEFT">Input</TD>
+<TD ALIGN="LEFT">Info</TD>
+<TD ALIGN="LEFT">Stuck at VCC</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">num7</TD>
+<TD ALIGN="LEFT">Input</TD>
+<TD ALIGN="LEFT">Info</TD>
+<TD ALIGN="LEFT">Stuck at VCC</TD>
+</TR>
+</TABLE>
+<P><A NAME="17"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Port Connectivity Checks: "clock_div:cdiv"</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Port</TH>
+<TH>Type</TH>
+<TH>Severity</TH>
+<TH>Details</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">q[14..9]</TD>
+<TD ALIGN="LEFT">Output</TD>
+<TD ALIGN="LEFT">Info</TD>
+<TD ALIGN="LEFT">Connected to dangling logic. Logic that only feeds a dangling port will be removed.</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">q[7..0]</TD>
+<TD ALIGN="LEFT">Output</TD>
+<TD ALIGN="LEFT">Info</TD>
+<TD ALIGN="LEFT">Connected to dangling logic. Logic that only feeds a dangling port will be removed.</TD>
+</TR>
+</TABLE>
+<P><A NAME="18"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Analysis & Synthesis Messages</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<PRE>
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Wed Nov 18 13:43:19 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off cdel-module-2 -c keypad_de2_i4
+Info: Found 2 design units, including 1 entities, in source file keypad_de2_i2.vhd
+    Info: Found design unit 1: keypad_de2_i2-arc
+    Info: Found entity 1: keypad_de2_i2
+Info: Found 2 design units, including 1 entities, in source file clock_div.vhd
+    Info: Found design unit 1: clock_div-behaviour
+    Info: Found entity 1: clock_div
+Info: Found 2 design units, including 1 entities, in source file bcd7seg.vhd
+    Info: Found design unit 1: BCD7seg-behaviour
+    Info: Found entity 1: BCD7seg
+Info: Found 2 design units, including 2 entities, in source file clk_lock.v
+    Info: Found entity 1: CLK_LOCK_altclkctrl_tb8
+    Info: Found entity 2: CLK_LOCK
+Info: Found 2 design units, including 1 entities, in source file count10b.vhd
+    Info: Found design unit 1: count10b-arc_count10b
+    Info: Found entity 1: count10b
+Info: Found 2 design units, including 1 entities, in source file hex_disps.vhd
+    Info: Found design unit 1: hex_disps-behav_display
+    Info: Found entity 1: hex_disps
+Info: Found 2 design units, including 1 entities, in source file lcd_int.vhd
+    Info: Found design unit 1: LCD_int-behaviour
+    Info: Found entity 1: LCD_int
+Info: Found 2 design units, including 1 entities, in source file part1.vhd
+    Info: Found design unit 1: part1-arc_keypad
+    Info: Found entity 1: part1
+Info: Found 2 design units, including 1 entities, in source file part2.vhd
+    Info: Found design unit 1: part2-arc_part2
+    Info: Found entity 1: part2
+Info: Found 2 design units, including 1 entities, in source file keypad.vhd
+    Info: Found design unit 1: keypad-arc
+    Info: Found entity 1: keypad
+Info: Found 2 design units, including 1 entities, in source file keypad_de2.vhd
+    Info: Found design unit 1: keypad_de2-arc
+    Info: Found entity 1: keypad_de2
+Info: Found 2 design units, including 1 entities, in source file keypad_de2_i1.vhd
+    Info: Found design unit 1: keypad_de2_i1-arc
+    Info: Found entity 1: keypad_de2_i1
+Info: Found 2 design units, including 1 entities, in source file part2b.vhd
+    Info: Found design unit 1: part2b-arc
+    Info: Found entity 1: part2b
+Info: Found 2 design units, including 1 entities, in source file keypad_de2_i3.vhd
+    Info: Found design unit 1: keypad_de2_i3-arc
+    Info: Found entity 1: keypad_de2_i3
+Info: Found 2 design units, including 1 entities, in source file keypad_de2_i4.vhd
+    Info: Found design unit 1: keypad_de2_i4-arc
+    Info: Found entity 1: keypad_de2_i4
+Info: Found 2 design units, including 1 entities, in source file part2c.vhd
+    Info: Found design unit 1: part2c-arc
+    Info: Found entity 1: part2c
+Info: Found 2 design units, including 1 entities, in source file lcd_int_i4.vhd
+    Info: Found design unit 1: LCD_int_i4-behaviour
+    Info: Found entity 1: LCD_int_i4
+Info: Elaborating entity "keypad_de2_i4" for the top level hierarchy
+Info: Elaborating entity "clock_div" for hierarchy "clock_div:cdiv"
+Info: Elaborating entity "CLK_LOCK" for hierarchy "CLK_LOCK:clklk"
+Info: Elaborating entity "CLK_LOCK_altclkctrl_tb8" for hierarchy "CLK_LOCK:clklk|CLK_LOCK_altclkctrl_tb8:CLK_LOCK_altclkctrl_tb8_component"
+Info: Elaborating entity "part1" for hierarchy "part1:p1"
+Info: Elaborating entity "count10b" for hierarchy "part1:p1|count10b:counter"
+Info: Elaborating entity "part2c" for hierarchy "part2c:p2"
+Info: Elaborating entity "hex_disps" for hierarchy "hex_disps:displays"
+Info: Elaborating entity "BCD7seg" for hierarchy "hex_disps:displays|BCD7seg:display0"
+Info: Elaborating entity "LCD_int_i4" for hierarchy "LCD_int_i4:lcd"
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX4[0]" is stuck at VCC
+    Warning (13410): Pin "HEX4[1]" is stuck at VCC
+    Warning (13410): Pin "HEX4[2]" is stuck at VCC
+    Warning (13410): Pin "HEX4[3]" is stuck at VCC
+    Warning (13410): Pin "HEX4[4]" is stuck at VCC
+    Warning (13410): Pin "HEX4[5]" is stuck at VCC
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC
+    Warning (13410): Pin "HEX5[0]" is stuck at VCC
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC
+    Warning (13410): Pin "HEX5[2]" is stuck at VCC
+    Warning (13410): Pin "HEX5[3]" is stuck at VCC
+    Warning (13410): Pin "HEX5[4]" is stuck at VCC
+    Warning (13410): Pin "HEX5[5]" is stuck at VCC
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC
+    Warning (13410): Pin "HEX6[0]" is stuck at VCC
+    Warning (13410): Pin "HEX6[1]" is stuck at VCC
+    Warning (13410): Pin "HEX6[2]" is stuck at VCC
+    Warning (13410): Pin "HEX6[3]" is stuck at VCC
+    Warning (13410): Pin "HEX6[4]" is stuck at VCC
+    Warning (13410): Pin "HEX6[5]" is stuck at VCC
+    Warning (13410): Pin "HEX6[6]" is stuck at VCC
+    Warning (13410): Pin "HEX7[0]" is stuck at VCC
+    Warning (13410): Pin "HEX7[1]" is stuck at VCC
+    Warning (13410): Pin "HEX7[2]" is stuck at VCC
+    Warning (13410): Pin "HEX7[3]" is stuck at VCC
+    Warning (13410): Pin "HEX7[4]" is stuck at VCC
+    Warning (13410): Pin "HEX7[5]" is stuck at VCC
+    Warning (13410): Pin "HEX7[6]" is stuck at VCC
+    Warning (13410): Pin "LCD_ON" is stuck at VCC
+    Warning (13410): Pin "LCD_BLON" is stuck at VCC
+Warning: Ignored assignments for entity "cdel-module-2" -- entity does not exist in design
+    Warning: Assignment for entity set_global_assignment -name LL_ROOT_REGION ON -entity "cdel-module-2" -section_id "Root Region" was ignored
+    Warning: Assignment for entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity "cdel-module-2" -section_id "Root Region" was ignored
+Warning: Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]"
+    Warning (15610): No output dependent on input pin "KEY[2]"
+    Warning (15610): No output dependent on input pin "KEY[3]"
+Info: Implemented 523 device resources after synthesis - the final resource count might be different
+    Info: Implemented 9 input pins
+    Info: Implemented 92 output pins
+    Info: Implemented 8 bidirectional pins
+    Info: Implemented 412 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 38 warnings
+    Info: Peak virtual memory: 244 megabytes
+    Info: Processing ended: Wed Nov 18 13:43:22 2026
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:04
+</PRE>
+<HR>
+
+<A HREF="#top">Top</A>
+
+</BODY>
+
+</HTML>
+

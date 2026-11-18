@@ -1,0 +1,4865 @@
+<HTML>
+
+<HEAD>
+<TITLE>Classic Timing Analyzer report for keypad_de2_i4</TITLE>
+</HEAD>
+
+<BODY>
+
+<A NAME="top"></A>
+
+<CENTER>
+<H1>Classic Timing Analyzer report for keypad_de2_i4</H1>
+<H3>Wed Nov 18 13:43:30 2026<BR>
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition</H3>
+</CENTER>
+
+<P><HR></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Table of Contents</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<OL>
+<LI><A HREF="#1">Legal Notice</A></LI>
+<LI><A HREF="#2">Timing Analyzer Summary</A></LI>
+<LI><A HREF="#3">Timing Analyzer Settings</A></LI>
+<LI><A HREF="#4">Clock Settings Summary</A></LI>
+<LI><A HREF="#5">Parallel Compilation</A></LI>
+<LI><A HREF="#6">Clock Setup: 'OSC_50'</A></LI>
+<LI><A HREF="#7">tsu</A></LI>
+<LI><A HREF="#8">tco</A></LI>
+<LI><A HREF="#9">th</A></LI>
+<LI><A HREF="#10">Timing Analyzer Messages</A></LI>
+</OL>
+
+<P><A NAME="1"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Legal Notice</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<PRE>Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+</PRE>
+
+<P><A NAME="2"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Timing Analyzer Summary</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Type</TH>
+<TH>Slack</TH>
+<TH>Required Time</TH>
+<TH>Actual Time</TH>
+<TH>From</TH>
+<TH>To</TH>
+<TH>From Clock</TH>
+<TH>To Clock</TH>
+<TH>Failed Paths</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Worst-case tsu</TD>
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">6.057 ns</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[4]</TD>
+<TD ALIGN="LEFT">--</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">0</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Worst-case tco</TD>
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">13.739 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[1]</TD>
+<TD ALIGN="LEFT">LCD_DATA[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">--</TD>
+<TD ALIGN="LEFT">0</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Worst-case th</TD>
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-1.782 ns</TD>
+<TD ALIGN="LEFT">COL[3]</TD>
+<TD ALIGN="LEFT">part1:p1|colq[3]</TD>
+<TD ALIGN="LEFT">--</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">0</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Clock Setup: 'OSC_50'</TD>
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">173.49 MHz ( period = 5.764 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[2]</TD>
+<TD ALIGN="LEFT">part1:p1|curr_st.wait0</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">0</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Total number of failed paths</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">0</TD>
+</TR>
+</TABLE>
+<P><A NAME="3"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Timing Analyzer Settings</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Option</TH>
+<TH>Setting</TH>
+<TH>From</TH>
+<TH>To</TH>
+<TH>Entity Name</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Device Name</TD>
+<TD ALIGN="LEFT">EP2C35F672C6</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Timing Models</TD>
+<TD ALIGN="LEFT">Final</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Default hold multicycle</TD>
+<TD ALIGN="LEFT">Same as Multicycle</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Cut paths between unrelated clock domains</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Cut off read during write signal paths</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Cut off feedback from I/O pins</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Report Combined Fast/Slow Timing</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Ignore Clock Settings</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Analyze latches as synchronous elements</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Enable Recovery/Removal analysis</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Enable Clock Latency</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Use TimeQuest Timing Analyzer</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Minimum Core Junction Temperature</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Maximum Core Junction Temperature</TD>
+<TD ALIGN="LEFT">85</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Number of source nodes to report per destination node</TD>
+<TD ALIGN="LEFT">10</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Number of destination nodes to report</TD>
+<TD ALIGN="LEFT">10</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Number of paths to report</TD>
+<TD ALIGN="LEFT">200</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Report Minimum Timing Checks</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Use Fast Timing Models</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Report IO Paths Separately</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Perform Multicorner Analysis</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Reports the worst-case path for each clock domain and analysis</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Reports worst-case timing paths for each clock domain and analysis</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis</TD>
+<TD ALIGN="LEFT">100</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Removes common clock path pessimism (CCPP) during slack computation</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Output I/O Timing Endpoint</TD>
+<TD ALIGN="LEFT">Near End</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+<P><A NAME="4"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Clock Settings Summary</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Clock Node Name</TH>
+<TH>Clock Setting Name</TH>
+<TH>Type</TH>
+<TH>Fmax Requirement</TH>
+<TH>Early Latency</TH>
+<TH>Late Latency</TH>
+<TH>Based on</TH>
+<TH>Multiply Base Fmax by</TH>
+<TH>Divide Base Fmax by</TH>
+<TH>Offset</TH>
+<TH>Phase offset</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">User Pin</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">0.000 ns</TD>
+<TD ALIGN="LEFT">0.000 ns</TD>
+<TD ALIGN="LEFT">--</TD>
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+<P><A NAME="5"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Parallel Compilation</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.<br>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Processors</TH>
+<TH>Number</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Number detected on machine</TD>
+<TD ALIGN="LEFT">12</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Maximum allowed</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+</TABLE>
+<P><A NAME="6"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Clock Setup: 'OSC_50'</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Slack</TH>
+<TH>Actual fmax (period)</TH>
+<TH>From</TH>
+<TH>To</TH>
+<TH>From Clock</TH>
+<TH>To Clock</TH>
+<TH>Required Setup Relationship</TH>
+<TH>Required Longest P2P Time</TH>
+<TH>Actual Longest P2P Time</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">173.49 MHz ( period = 5.764 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[2]</TD>
+<TD ALIGN="LEFT">part1:p1|curr_st.wait0</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.668 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">177.62 MHz ( period = 5.630 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[2]</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.601 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">177.75 MHz ( period = 5.626 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[2]</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.599 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">178.89 MHz ( period = 5.590 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[3]</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.581 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">179.02 MHz ( period = 5.586 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[3]</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.579 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">187.83 MHz ( period = 5.324 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[2]</TD>
+<TD ALIGN="LEFT">part1:p1|curr_st.wait1</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.448 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">187.90 MHz ( period = 5.322 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[1]</TD>
+<TD ALIGN="LEFT">part1:p1|curr_st.wait0</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.447 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">188.04 MHz ( period = 5.318 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[2]</TD>
+<TD ALIGN="LEFT">part1:p1|curr_st.check1</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.445 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">192.75 MHz ( period = 5.188 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[1]</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.380 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">192.90 MHz ( period = 5.184 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[1]</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.378 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">194.86 MHz ( period = 5.132 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[0]</TD>
+<TD ALIGN="LEFT">part1:p1|curr_st.wait0</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.352 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">195.31 MHz ( period = 5.120 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[1]</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.345 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">196.73 MHz ( period = 5.083 ns )</TD>
+<TD ALIGN="LEFT">bcnt[0]</TD>
+<TD ALIGN="LEFT">clock_div:cdiv|count[15]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.060 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">196.85 MHz ( period = 5.080 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[3]</TD>
+<TD ALIGN="LEFT">part1:p1|curr_st.wait0</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.326 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">200.08 MHz ( period = 4.998 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[0]</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.285 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">200.24 MHz ( period = 4.994 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[0]</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.283 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">203.33 MHz ( period = 4.918 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[3]</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.244 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">203.58 MHz ( period = 4.912 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[2]</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.241 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">204.83 MHz ( period = 4.882 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[1]</TD>
+<TD ALIGN="LEFT">part1:p1|curr_st.wait1</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.227 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">205.09 MHz ( period = 4.876 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[1]</TD>
+<TD ALIGN="LEFT">part1:p1|curr_st.check1</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.224 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">207.68 MHz ( period = 4.815 ns )</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[4]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.594 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">208.20 MHz ( period = 4.803 ns )</TD>
+<TD ALIGN="LEFT">part2c:p2|trick_i</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.574 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">208.68 MHz ( period = 4.792 ns )</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.seqko</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.566 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">211.06 MHz ( period = 4.738 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.seqok</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.554 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">211.24 MHz ( period = 4.734 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.seqko</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.550 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">211.73 MHz ( period = 4.723 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.seqok</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.540 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">211.91 MHz ( period = 4.719 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.seqko</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.536 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">212.68 MHz ( period = 4.702 ns )</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.waiting</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.476 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">213.13 MHz ( period = 4.692 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[0]</TD>
+<TD ALIGN="LEFT">part1:p1|curr_st.wait1</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.132 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">213.31 MHz ( period = 4.688 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[3]</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.129 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">213.40 MHz ( period = 4.686 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[0]</TD>
+<TD ALIGN="LEFT">part1:p1|curr_st.check1</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.129 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">214.04 MHz ( period = 4.672 ns )</TD>
+<TD ALIGN="LEFT">run</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.455 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">214.04 MHz ( period = 4.672 ns )</TD>
+<TD ALIGN="LEFT">run</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.455 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">214.04 MHz ( period = 4.672 ns )</TD>
+<TD ALIGN="LEFT">run</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.455 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">214.50 MHz ( period = 4.662 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[2]</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.116 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">214.92 MHz ( period = 4.653 ns )</TD>
+<TD ALIGN="LEFT">run</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.424 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">215.52 MHz ( period = 4.640 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[3]</TD>
+<TD ALIGN="LEFT">part1:p1|curr_st.wait1</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.106 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">215.80 MHz ( period = 4.634 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[3]</TD>
+<TD ALIGN="LEFT">part1:p1|curr_st.check1</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.103 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">217.25 MHz ( period = 4.603 ns )</TD>
+<TD ALIGN="LEFT">part2c:p2|wrong</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.376 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">217.91 MHz ( period = 4.589 ns )</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[1]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.368 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">218.05 MHz ( period = 4.586 ns )</TD>
+<TD ALIGN="LEFT">bcnt[0]</TD>
+<TD ALIGN="LEFT">clock_div:cdiv|count[8]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.563 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">218.15 MHz ( period = 4.584 ns )</TD>
+<TD ALIGN="LEFT">part2c:p2|good_i</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.358 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">219.20 MHz ( period = 4.562 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|key</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.seqok</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.378 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">219.39 MHz ( period = 4.558 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|key</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.seqko</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.374 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">219.39 MHz ( period = 4.558 ns )</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[4]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.337 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">220.46 MHz ( period = 4.536 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">num[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.351 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">220.46 MHz ( period = 4.536 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">num[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.351 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">220.46 MHz ( period = 4.536 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">num[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.351 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">220.46 MHz ( period = 4.536 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">num[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.351 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">220.65 MHz ( period = 4.532 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">num[8]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.354 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">221.29 MHz ( period = 4.519 ns )</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[4]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.295 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">222.77 MHz ( period = 4.489 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.start</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.307 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">225.07 MHz ( period = 4.443 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">num[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.259 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">225.07 MHz ( period = 4.443 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">num[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.259 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">225.07 MHz ( period = 4.443 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">num[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.259 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">225.07 MHz ( period = 4.443 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">num[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.259 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">225.17 MHz ( period = 4.441 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[3]</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.seqok</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.257 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">225.28 MHz ( period = 4.439 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">num[8]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.262 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">225.38 MHz ( period = 4.437 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[3]</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.seqko</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.253 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">226.04 MHz ( period = 4.424 ns )</TD>
+<TD ALIGN="LEFT">bcnt[21]</TD>
+<TD ALIGN="LEFT">bcnt[24]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.212 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">226.04 MHz ( period = 4.424 ns )</TD>
+<TD ALIGN="LEFT">bcnt[21]</TD>
+<TD ALIGN="LEFT">bcnt[22]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.212 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">226.35 MHz ( period = 4.418 ns )</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[3]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.197 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">227.07 MHz ( period = 4.404 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.waiting</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.220 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">227.89 MHz ( period = 4.388 ns )</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err3</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.159 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">228.83 MHz ( period = 4.370 ns )</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[4]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.158 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">229.78 MHz ( period = 4.352 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[3]</TD>
+<TD ALIGN="LEFT">num[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.167 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">229.78 MHz ( period = 4.352 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[3]</TD>
+<TD ALIGN="LEFT">num[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.167 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">229.78 MHz ( period = 4.352 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[3]</TD>
+<TD ALIGN="LEFT">num[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.167 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">229.78 MHz ( period = 4.352 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[3]</TD>
+<TD ALIGN="LEFT">num[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.167 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">229.99 MHz ( period = 4.348 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[3]</TD>
+<TD ALIGN="LEFT">num[8]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.170 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">230.84 MHz ( period = 4.332 ns )</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[1]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.111 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">232.02 MHz ( period = 4.310 ns )</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[2]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.089 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">232.29 MHz ( period = 4.305 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[3]</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.start</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.123 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">232.94 MHz ( period = 4.293 ns )</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[1]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.069 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">233.54 MHz ( period = 4.282 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|key</TD>
+<TD ALIGN="LEFT">num[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.097 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">233.54 MHz ( period = 4.282 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|key</TD>
+<TD ALIGN="LEFT">num[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.097 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">233.54 MHz ( period = 4.282 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|key</TD>
+<TD ALIGN="LEFT">num[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.097 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">233.54 MHz ( period = 4.282 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|key</TD>
+<TD ALIGN="LEFT">num[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.097 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">233.75 MHz ( period = 4.278 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|key</TD>
+<TD ALIGN="LEFT">num[8]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.100 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">235.07 MHz ( period = 4.254 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err2</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.073 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">236.41 MHz ( period = 4.230 ns )</TD>
+<TD ALIGN="LEFT">run</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.004 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">236.41 MHz ( period = 4.230 ns )</TD>
+<TD ALIGN="LEFT">run</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.004 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">236.41 MHz ( period = 4.230 ns )</TD>
+<TD ALIGN="LEFT">run</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.004 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">236.97 MHz ( period = 4.220 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[3]</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.waiting</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.036 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">237.42 MHz ( period = 4.212 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[2]</TD>
+<TD ALIGN="LEFT">part1:p1|curr_st.kra2</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">1.891 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">237.59 MHz ( period = 4.209 ns )</TD>
+<TD ALIGN="LEFT">bcnt[21]</TD>
+<TD ALIGN="LEFT">bcnt[19]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.993 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">237.59 MHz ( period = 4.209 ns )</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[4]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.988 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">237.98 MHz ( period = 4.202 ns )</TD>
+<TD ALIGN="LEFT">bcnt[0]</TD>
+<TD ALIGN="LEFT">clock_div:cdiv|count[14]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.989 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">238.27 MHz ( period = 4.197 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.now3ok</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.011 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">238.38 MHz ( period = 4.195 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.now2ok</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.009 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">238.61 MHz ( period = 4.191 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">num[7]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.010 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">238.61 MHz ( period = 4.191 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">num[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.010 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">238.61 MHz ( period = 4.191 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">num[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.010 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">239.12 MHz ( period = 4.182 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.now3ok</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.997 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">239.23 MHz ( period = 4.180 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.now2ok</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.995 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">239.46 MHz ( period = 4.176 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err0</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.995 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">240.33 MHz ( period = 4.161 ns )</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[3]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.940 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">240.67 MHz ( period = 4.155 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">ndig[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.971 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">240.96 MHz ( period = 4.150 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|key</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.start</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.968 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">241.31 MHz ( period = 4.144 ns )</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[1]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.932 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">241.55 MHz ( period = 4.140 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">ndig[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.957 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">242.07 MHz ( period = 4.131 ns )</TD>
+<TD ALIGN="LEFT">bcnt[0]</TD>
+<TD ALIGN="LEFT">clock_div:cdiv|count[13]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.918 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">242.07 MHz ( period = 4.131 ns )</TD>
+<TD ALIGN="LEFT">bcnt[21]</TD>
+<TD ALIGN="LEFT">blink</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.917 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">242.42 MHz ( period = 4.125 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[3]</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.now1ko</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.944 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">242.60 MHz ( period = 4.122 ns )</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[3]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.898 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">243.84 MHz ( period = 4.101 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.start</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.920 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">244.02 MHz ( period = 4.098 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">num[7]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.918 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">244.02 MHz ( period = 4.098 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">num[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.918 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">244.02 MHz ( period = 4.098 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">num[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.918 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">244.92 MHz ( period = 4.083 ns )</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.seqko</TD>
+<TD ALIGN="LEFT">shown_msg[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.869 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">244.92 MHz ( period = 4.083 ns )</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.seqko</TD>
+<TD ALIGN="LEFT">shown_msg[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.869 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">244.92 MHz ( period = 4.083 ns )</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.seqko</TD>
+<TD ALIGN="LEFT">shown_msg[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.869 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">245.70 MHz ( period = 4.070 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[3]</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err2</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.889 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">246.00 MHz ( period = 4.065 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|key</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.waiting</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.881 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">246.31 MHz ( period = 4.060 ns )</TD>
+<TD ALIGN="LEFT">bcnt[0]</TD>
+<TD ALIGN="LEFT">clock_div:cdiv|count[12]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.847 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">246.49 MHz ( period = 4.057 ns )</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.seqok</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.831 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">246.55 MHz ( period = 4.056 ns )</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|lcd_st.read1</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.852 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">246.55 MHz ( period = 4.056 ns )</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[4]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.844 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">246.67 MHz ( period = 4.054 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.now3ko</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.868 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">246.67 MHz ( period = 4.054 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[2]</TD>
+<TD ALIGN="LEFT">part1:p1|curr_st.kra3</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">1.813 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">246.73 MHz ( period = 4.053 ns )</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[2]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.832 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">246.91 MHz ( period = 4.050 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[2]</TD>
+<TD ALIGN="LEFT">part1:p1|key</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">1.811 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">247.04 MHz ( period = 4.048 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[2]</TD>
+<TD ALIGN="LEFT">part1:p1|curr_st.kra1</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">1.810 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">247.04 MHz ( period = 4.048 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|colq[2]</TD>
+<TD ALIGN="LEFT">part1:p1|curr_st.kra0</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">1.810 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">247.46 MHz ( period = 4.041 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.now2ko</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.855 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">247.59 MHz ( period = 4.039 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.now3ko</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.854 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">247.71 MHz ( period = 4.037 ns )</TD>
+<TD ALIGN="LEFT">bcnt[0]</TD>
+<TD ALIGN="LEFT">bcnt[19]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.822 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">248.39 MHz ( period = 4.026 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.now2ko</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.841 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">248.51 MHz ( period = 4.024 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">num[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.843 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">248.51 MHz ( period = 4.024 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">num[9]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.843 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">248.51 MHz ( period = 4.024 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">num[11]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.843 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">248.51 MHz ( period = 4.024 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">num[10]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.843 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">248.51 MHz ( period = 4.024 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">num[13]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.843 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">248.51 MHz ( period = 4.024 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">num[15]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.843 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">248.51 MHz ( period = 4.024 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">num[12]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.843 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">248.51 MHz ( period = 4.024 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">num[14]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.843 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">248.63 MHz ( period = 4.022 ns )</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.now4ok</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.start</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.812 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">248.63 MHz ( period = 4.022 ns )</TD>
+<TD ALIGN="LEFT">part2c:p2|wrong</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.804 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">248.69 MHz ( period = 4.021 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|key</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.now3ok</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.835 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">248.82 MHz ( period = 4.019 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|key</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.now2ok</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.833 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">248.88 MHz ( period = 4.018 ns )</TD>
+<TD ALIGN="LEFT">bcnt[0]</TD>
+<TD ALIGN="LEFT">bcnt[20]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.803 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">248.88 MHz ( period = 4.018 ns )</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.797 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">249.00 MHz ( period = 4.016 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.waiting</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.833 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">249.13 MHz ( period = 4.014 ns )</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[2]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.790 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">249.56 MHz ( period = 4.007 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[3]</TD>
+<TD ALIGN="LEFT">num[7]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.826 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">249.56 MHz ( period = 4.007 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[3]</TD>
+<TD ALIGN="LEFT">num[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.826 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">249.56 MHz ( period = 4.007 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[3]</TD>
+<TD ALIGN="LEFT">num[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.826 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">249.81 MHz ( period = 4.003 ns )</TD>
+<TD ALIGN="LEFT">part2c:p2|good_i</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.786 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">250.31 MHz ( period = 3.995 ns )</TD>
+<TD ALIGN="LEFT">bcnt[1]</TD>
+<TD ALIGN="LEFT">bcnt[19]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.780 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">250.38 MHz ( period = 3.994 ns )</TD>
+<TD ALIGN="LEFT">bcnt[24]</TD>
+<TD ALIGN="LEFT">bcnt[24]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.780 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">250.38 MHz ( period = 3.994 ns )</TD>
+<TD ALIGN="LEFT">bcnt[24]</TD>
+<TD ALIGN="LEFT">bcnt[22]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.780 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">250.50 MHz ( period = 3.992 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[3]</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err0</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.811 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">250.69 MHz ( period = 3.989 ns )</TD>
+<TD ALIGN="LEFT">bcnt[0]</TD>
+<TD ALIGN="LEFT">clock_div:cdiv|count[11]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.776 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">250.69 MHz ( period = 3.989 ns )</TD>
+<TD ALIGN="LEFT">bcnt[21]</TD>
+<TD ALIGN="LEFT">bcnt[21]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.775 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">251.07 MHz ( period = 3.983 ns )</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[1]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.762 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">251.32 MHz ( period = 3.979 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err1</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.798 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">251.32 MHz ( period = 3.979 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|key</TD>
+<TD ALIGN="LEFT">ndig[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.795 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">251.51 MHz ( period = 3.976 ns )</TD>
+<TD ALIGN="LEFT">bcnt[1]</TD>
+<TD ALIGN="LEFT">bcnt[20]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.761 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">251.70 MHz ( period = 3.973 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[2]</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.now4ko</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.787 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">251.70 MHz ( period = 3.973 ns )</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[3]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.761 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">252.08 MHz ( period = 3.967 ns )</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.waiting</TD>
+<TD ALIGN="LEFT">shown_msg[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.753 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">252.08 MHz ( period = 3.967 ns )</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.waiting</TD>
+<TD ALIGN="LEFT">shown_msg[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.753 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">252.08 MHz ( period = 3.967 ns )</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.waiting</TD>
+<TD ALIGN="LEFT">shown_msg[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.753 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">252.65 MHz ( period = 3.958 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.now4ko</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.773 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">253.29 MHz ( period = 3.948 ns )</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.waiting</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.seqok</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.734 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">253.36 MHz ( period = 3.947 ns )</TD>
+<TD ALIGN="LEFT">bcnt[0]</TD>
+<TD ALIGN="LEFT">bcnt[21]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.734 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">253.42 MHz ( period = 3.946 ns )</TD>
+<TD ALIGN="LEFT">bcnt[21]</TD>
+<TD ALIGN="LEFT">bcnt[12]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.730 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">253.49 MHz ( period = 3.945 ns )</TD>
+<TD ALIGN="LEFT">bcnt[21]</TD>
+<TD ALIGN="LEFT">bcnt[20]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.729 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">253.55 MHz ( period = 3.944 ns )</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.waiting</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.seqko</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.730 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">253.61 MHz ( period = 3.943 ns )</TD>
+<TD ALIGN="LEFT">bcnt[21]</TD>
+<TD ALIGN="LEFT">bcnt[13]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.727 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">253.68 MHz ( period = 3.942 ns )</TD>
+<TD ALIGN="LEFT">bcnt[21]</TD>
+<TD ALIGN="LEFT">bcnt[18]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.726 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">253.68 MHz ( period = 3.942 ns )</TD>
+<TD ALIGN="LEFT">bcnt[21]</TD>
+<TD ALIGN="LEFT">bcnt[16]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.726 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">253.74 MHz ( period = 3.941 ns )</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.now4ok</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.waiting</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.729 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">254.00 MHz ( period = 3.937 ns )</TD>
+<TD ALIGN="LEFT">bcnt[21]</TD>
+<TD ALIGN="LEFT">bcnt[14]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.721 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">254.00 MHz ( period = 3.937 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|key</TD>
+<TD ALIGN="LEFT">num[7]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.756 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">254.00 MHz ( period = 3.937 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|key</TD>
+<TD ALIGN="LEFT">num[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.756 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">254.00 MHz ( period = 3.937 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|key</TD>
+<TD ALIGN="LEFT">num[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.756 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">254.13 MHz ( period = 3.935 ns )</TD>
+<TD ALIGN="LEFT">bcnt[21]</TD>
+<TD ALIGN="LEFT">bcnt[11]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.719 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">254.26 MHz ( period = 3.933 ns )</TD>
+<TD ALIGN="LEFT">bcnt[21]</TD>
+<TD ALIGN="LEFT">bcnt[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.717 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">254.39 MHz ( period = 3.931 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">num[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.751 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">254.39 MHz ( period = 3.931 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">num[9]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.751 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">254.39 MHz ( period = 3.931 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">num[11]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.751 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">254.39 MHz ( period = 3.931 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">num[10]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.751 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">254.39 MHz ( period = 3.931 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">num[13]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.751 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">254.39 MHz ( period = 3.931 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">num[15]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.751 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">254.39 MHz ( period = 3.931 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">num[12]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.751 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">254.39 MHz ( period = 3.931 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[1]</TD>
+<TD ALIGN="LEFT">num[14]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.751 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">254.84 MHz ( period = 3.924 ns )</TD>
+<TD ALIGN="LEFT">bcnt[2]</TD>
+<TD ALIGN="LEFT">bcnt[19]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.709 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">255.23 MHz ( period = 3.918 ns )</TD>
+<TD ALIGN="LEFT">bcnt[0]</TD>
+<TD ALIGN="LEFT">clock_div:cdiv|count[10]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.705 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">255.43 MHz ( period = 3.915 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|key</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err2</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.734 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">256.08 MHz ( period = 3.905 ns )</TD>
+<TD ALIGN="LEFT">bcnt[1]</TD>
+<TD ALIGN="LEFT">bcnt[21]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.692 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">256.08 MHz ( period = 3.905 ns )</TD>
+<TD ALIGN="LEFT">bcnt[19]</TD>
+<TD ALIGN="LEFT">bcnt[24]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.695 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">256.08 MHz ( period = 3.905 ns )</TD>
+<TD ALIGN="LEFT">bcnt[19]</TD>
+<TD ALIGN="LEFT">bcnt[22]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.695 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">256.08 MHz ( period = 3.905 ns )</TD>
+<TD ALIGN="LEFT">bcnt[2]</TD>
+<TD ALIGN="LEFT">bcnt[20]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.690 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">256.34 MHz ( period = 3.901 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[3]</TD>
+<TD ALIGN="LEFT">ndig[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.717 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">256.41 MHz ( period = 3.900 ns )</TD>
+<TD ALIGN="LEFT">bcnt[23]</TD>
+<TD ALIGN="LEFT">bcnt[24]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.686 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">256.41 MHz ( period = 3.900 ns )</TD>
+<TD ALIGN="LEFT">bcnt[23]</TD>
+<TD ALIGN="LEFT">bcnt[22]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.686 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">256.41 MHz ( period = 3.900 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[3]</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.now3ok</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.714 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">256.54 MHz ( period = 3.898 ns )</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.now4ko</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.start</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.688 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">256.54 MHz ( period = 3.898 ns )</TD>
+<TD ALIGN="LEFT">part1:p1|keycode[3]</TD>
+<TD ALIGN="LEFT">part2c:p2|seqdet.now2ok</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">3.712 ns</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Timing analysis restricted to 200 rows.</TD>
+<TD ALIGN="LEFT">To change the limit use Settings (Assignments menu)</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+<P><A NAME="7"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>tsu</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Slack</TH>
+<TH>Required tsu</TH>
+<TH>Actual tsu</TH>
+<TH>From</TH>
+<TH>To</TH>
+<TH>To Clock</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">6.057 ns</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">6.057 ns</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">6.057 ns</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">6.038 ns</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">5.615 ns</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">5.615 ns</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">5.615 ns</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">5.470 ns</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">5.470 ns</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">5.470 ns</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">5.470 ns</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.621 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.621 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.621 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.602 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.560 ns</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.179 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.179 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.179 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.034 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.034 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.034 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">4.034 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.861 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.602 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|lcd_st.waiting</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.316 ns</TD>
+<TD ALIGN="LEFT">COL[0]</TD>
+<TD ALIGN="LEFT">part1:p1|colq[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.070 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|lcd_st.char1</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.058 ns</TD>
+<TD ALIGN="LEFT">COL[2]</TD>
+<TD ALIGN="LEFT">part1:p1|colq[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.052 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|lcd_st.read2</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.049 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|lcd_st.read1</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.042 ns</TD>
+<TD ALIGN="LEFT">COL[1]</TD>
+<TD ALIGN="LEFT">part1:p1|colq[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">2.012 ns</TD>
+<TD ALIGN="LEFT">COL[3]</TD>
+<TD ALIGN="LEFT">part1:p1|colq[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+</TABLE>
+<P><A NAME="8"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>tco</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Slack</TH>
+<TH>Required tco</TH>
+<TH>Actual tco</TH>
+<TH>From</TH>
+<TH>To</TH>
+<TH>From Clock</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">13.739 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[1]</TD>
+<TD ALIGN="LEFT">LCD_DATA[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">13.664 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[6]</TD>
+<TD ALIGN="LEFT">LCD_DATA[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">13.264 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[1]</TD>
+<TD ALIGN="LEFT">LCD_DATA[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">13.191 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[6]</TD>
+<TD ALIGN="LEFT">LCD_DATA[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">13.074 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[6]</TD>
+<TD ALIGN="LEFT">LCD_DATA[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.983 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[4]</TD>
+<TD ALIGN="LEFT">LCD_DATA[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.856 ns</TD>
+<TD ALIGN="LEFT">num[1]</TD>
+<TD ALIGN="LEFT">HEX0[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.846 ns</TD>
+<TD ALIGN="LEFT">num[2]</TD>
+<TD ALIGN="LEFT">HEX0[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.838 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[3]</TD>
+<TD ALIGN="LEFT">LCD_DATA[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.831 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[2]</TD>
+<TD ALIGN="LEFT">LCD_DATA[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.802 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[0]</TD>
+<TD ALIGN="LEFT">LCD_DATA[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.762 ns</TD>
+<TD ALIGN="LEFT">num[1]</TD>
+<TD ALIGN="LEFT">HEX0[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.755 ns</TD>
+<TD ALIGN="LEFT">num[2]</TD>
+<TD ALIGN="LEFT">HEX0[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.729 ns</TD>
+<TD ALIGN="LEFT">num[3]</TD>
+<TD ALIGN="LEFT">HEX0[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.642 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[2]</TD>
+<TD ALIGN="LEFT">LCD_DATA[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.635 ns</TD>
+<TD ALIGN="LEFT">num[3]</TD>
+<TD ALIGN="LEFT">HEX0[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.591 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[4]</TD>
+<TD ALIGN="LEFT">LCD_DATA[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.590 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[0]</TD>
+<TD ALIGN="LEFT">LCD_DATA[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.583 ns</TD>
+<TD ALIGN="LEFT">num[0]</TD>
+<TD ALIGN="LEFT">HEX0[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.547 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[1]</TD>
+<TD ALIGN="LEFT">LCD_DATA[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.528 ns</TD>
+<TD ALIGN="LEFT">num[1]</TD>
+<TD ALIGN="LEFT">HEX0[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.522 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[2]</TD>
+<TD ALIGN="LEFT">LCD_DATA[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.502 ns</TD>
+<TD ALIGN="LEFT">num[2]</TD>
+<TD ALIGN="LEFT">HEX0[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.489 ns</TD>
+<TD ALIGN="LEFT">num[0]</TD>
+<TD ALIGN="LEFT">HEX0[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.448 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[5]</TD>
+<TD ALIGN="LEFT">LCD_DATA[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.426 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[4]</TD>
+<TD ALIGN="LEFT">LCD_DATA[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.393 ns</TD>
+<TD ALIGN="LEFT">num[3]</TD>
+<TD ALIGN="LEFT">HEX0[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.385 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[0]</TD>
+<TD ALIGN="LEFT">LCD_DATA[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.337 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[3]</TD>
+<TD ALIGN="LEFT">LCD_DATA[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.321 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[0]</TD>
+<TD ALIGN="LEFT">LCD_DATA[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.308 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[4]</TD>
+<TD ALIGN="LEFT">LCD_DATA[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.293 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[1]</TD>
+<TD ALIGN="LEFT">LCD_DATA[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.282 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[0]</TD>
+<TD ALIGN="LEFT">LCD_DATA[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.280 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[2]</TD>
+<TD ALIGN="LEFT">LCD_DATA[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.266 ns</TD>
+<TD ALIGN="LEFT">num[7]</TD>
+<TD ALIGN="LEFT">HEX1[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.254 ns</TD>
+<TD ALIGN="LEFT">num[0]</TD>
+<TD ALIGN="LEFT">HEX0[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.248 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|lcd_st.char1</TD>
+<TD ALIGN="LEFT">LCD_DATA[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.224 ns</TD>
+<TD ALIGN="LEFT">num[11]</TD>
+<TD ALIGN="LEFT">HEX2[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.218 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[6]</TD>
+<TD ALIGN="LEFT">LCD_DATA[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.216 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[4]</TD>
+<TD ALIGN="LEFT">LCD_DATA[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.216 ns</TD>
+<TD ALIGN="LEFT">num[9]</TD>
+<TD ALIGN="LEFT">HEX2[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.211 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[2]</TD>
+<TD ALIGN="LEFT">LCD_DATA[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.205 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[2]</TD>
+<TD ALIGN="LEFT">LCD_DATA[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.205 ns</TD>
+<TD ALIGN="LEFT">num[5]</TD>
+<TD ALIGN="LEFT">HEX1[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.177 ns</TD>
+<TD ALIGN="LEFT">num[1]</TD>
+<TD ALIGN="LEFT">HEX0[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.132 ns</TD>
+<TD ALIGN="LEFT">num[3]</TD>
+<TD ALIGN="LEFT">HEX0[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.099 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[5]</TD>
+<TD ALIGN="LEFT">LCD_DATA[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.092 ns</TD>
+<TD ALIGN="LEFT">num[10]</TD>
+<TD ALIGN="LEFT">HEX2[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.061 ns</TD>
+<TD ALIGN="LEFT">num[11]</TD>
+<TD ALIGN="LEFT">HEX2[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.059 ns</TD>
+<TD ALIGN="LEFT">num[6]</TD>
+<TD ALIGN="LEFT">HEX1[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.057 ns</TD>
+<TD ALIGN="LEFT">num[9]</TD>
+<TD ALIGN="LEFT">HEX2[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.055 ns</TD>
+<TD ALIGN="LEFT">num[1]</TD>
+<TD ALIGN="LEFT">HEX0[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.050 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[3]</TD>
+<TD ALIGN="LEFT">LCD_DATA[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.041 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|trick_i</TD>
+<TD ALIGN="LEFT">HEX0[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.037 ns</TD>
+<TD ALIGN="LEFT">num[4]</TD>
+<TD ALIGN="LEFT">HEX1[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.010 ns</TD>
+<TD ALIGN="LEFT">num[3]</TD>
+<TD ALIGN="LEFT">HEX0[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">12.007 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[4]</TD>
+<TD ALIGN="LEFT">LCD_DATA[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.994 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[6]</TD>
+<TD ALIGN="LEFT">LCD_DATA[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.989 ns</TD>
+<TD ALIGN="LEFT">num[2]</TD>
+<TD ALIGN="LEFT">HEX0[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.974 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err0</TD>
+<TD ALIGN="LEFT">LED_RED[17]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.974 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err0</TD>
+<TD ALIGN="LEFT">LED_RED[16]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.973 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|trick_i</TD>
+<TD ALIGN="LEFT">HEX0[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.972 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|lcd_st.char2</TD>
+<TD ALIGN="LEFT">LCD_DATA[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.965 ns</TD>
+<TD ALIGN="LEFT">num[7]</TD>
+<TD ALIGN="LEFT">HEX1[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.961 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err0</TD>
+<TD ALIGN="LEFT">LED_RED[13]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.961 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err0</TD>
+<TD ALIGN="LEFT">LED_RED[12]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.956 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err3</TD>
+<TD ALIGN="LEFT">LED_RED[17]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.956 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err3</TD>
+<TD ALIGN="LEFT">LED_RED[16]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.943 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err3</TD>
+<TD ALIGN="LEFT">LED_RED[13]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.943 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err3</TD>
+<TD ALIGN="LEFT">LED_RED[12]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.925 ns</TD>
+<TD ALIGN="LEFT">num[10]</TD>
+<TD ALIGN="LEFT">HEX2[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.908 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[1]</TD>
+<TD ALIGN="LEFT">LCD_DATA[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.904 ns</TD>
+<TD ALIGN="LEFT">num[5]</TD>
+<TD ALIGN="LEFT">HEX1[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.885 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err0</TD>
+<TD ALIGN="LEFT">LED_RED[15]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.885 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err0</TD>
+<TD ALIGN="LEFT">LED_RED[14]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.881 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|lcd_st.mode1</TD>
+<TD ALIGN="LEFT">LCD_DATA[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.879 ns</TD>
+<TD ALIGN="LEFT">num[7]</TD>
+<TD ALIGN="LEFT">HEX1[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.877 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[3]</TD>
+<TD ALIGN="LEFT">LCD_DATA[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.871 ns</TD>
+<TD ALIGN="LEFT">num[2]</TD>
+<TD ALIGN="LEFT">HEX0[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.867 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err3</TD>
+<TD ALIGN="LEFT">LED_RED[15]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.867 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err3</TD>
+<TD ALIGN="LEFT">LED_RED[14]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.866 ns</TD>
+<TD ALIGN="LEFT">num[0]</TD>
+<TD ALIGN="LEFT">HEX0[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.840 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[1]</TD>
+<TD ALIGN="LEFT">LCD_DATA[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.837 ns</TD>
+<TD ALIGN="LEFT">num[11]</TD>
+<TD ALIGN="LEFT">HEX2[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.836 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|trick_i</TD>
+<TD ALIGN="LEFT">HEX0[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.826 ns</TD>
+<TD ALIGN="LEFT">num[9]</TD>
+<TD ALIGN="LEFT">HEX2[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.815 ns</TD>
+<TD ALIGN="LEFT">num[5]</TD>
+<TD ALIGN="LEFT">HEX1[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.812 ns</TD>
+<TD ALIGN="LEFT">num[3]</TD>
+<TD ALIGN="LEFT">HEX0[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.811 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|trick_i</TD>
+<TD ALIGN="LEFT">HEX2[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.809 ns</TD>
+<TD ALIGN="LEFT">num[9]</TD>
+<TD ALIGN="LEFT">HEX2[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.809 ns</TD>
+<TD ALIGN="LEFT">num[11]</TD>
+<TD ALIGN="LEFT">HEX2[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.799 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|trick_i</TD>
+<TD ALIGN="LEFT">HEX0[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.766 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|trick_i</TD>
+<TD ALIGN="LEFT">HEX0[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.759 ns</TD>
+<TD ALIGN="LEFT">num[6]</TD>
+<TD ALIGN="LEFT">HEX1[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.744 ns</TD>
+<TD ALIGN="LEFT">num[0]</TD>
+<TD ALIGN="LEFT">HEX0[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.737 ns</TD>
+<TD ALIGN="LEFT">num[4]</TD>
+<TD ALIGN="LEFT">HEX1[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.713 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|lcd_st.delay</TD>
+<TD ALIGN="LEFT">LCD_DATA[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.710 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|trick_i</TD>
+<TD ALIGN="LEFT">HEX3[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.709 ns</TD>
+<TD ALIGN="LEFT">num[2]</TD>
+<TD ALIGN="LEFT">HEX0[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.703 ns</TD>
+<TD ALIGN="LEFT">num[10]</TD>
+<TD ALIGN="LEFT">HEX2[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.691 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|lcd_st.onoff2</TD>
+<TD ALIGN="LEFT">LCD_DATA[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.679 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[4]</TD>
+<TD ALIGN="LEFT">LCD_DATA[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.675 ns</TD>
+<TD ALIGN="LEFT">num[6]</TD>
+<TD ALIGN="LEFT">HEX1[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.674 ns</TD>
+<TD ALIGN="LEFT">num[10]</TD>
+<TD ALIGN="LEFT">HEX2[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.672 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|trick_i</TD>
+<TD ALIGN="LEFT">HEX1[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.670 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[0]</TD>
+<TD ALIGN="LEFT">LCD_DATA[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.646 ns</TD>
+<TD ALIGN="LEFT">num[4]</TD>
+<TD ALIGN="LEFT">HEX1[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.632 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|lcd_st.onoff1</TD>
+<TD ALIGN="LEFT">LCD_DATA[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.606 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[1]</TD>
+<TD ALIGN="LEFT">LCD_DATA[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.592 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[5]</TD>
+<TD ALIGN="LEFT">LCD_DATA[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.580 ns</TD>
+<TD ALIGN="LEFT">num[1]</TD>
+<TD ALIGN="LEFT">HEX0[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.579 ns</TD>
+<TD ALIGN="LEFT">num[9]</TD>
+<TD ALIGN="LEFT">HEX2[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.579 ns</TD>
+<TD ALIGN="LEFT">num[11]</TD>
+<TD ALIGN="LEFT">HEX2[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.532 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[3]</TD>
+<TD ALIGN="LEFT">LCD_DATA[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.521 ns</TD>
+<TD ALIGN="LEFT">num[13]</TD>
+<TD ALIGN="LEFT">HEX3[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.516 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|trick_i</TD>
+<TD ALIGN="LEFT">HEX2[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.505 ns</TD>
+<TD ALIGN="LEFT">num[15]</TD>
+<TD ALIGN="LEFT">HEX3[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.500 ns</TD>
+<TD ALIGN="LEFT">num[11]</TD>
+<TD ALIGN="LEFT">HEX2[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.489 ns</TD>
+<TD ALIGN="LEFT">num[9]</TD>
+<TD ALIGN="LEFT">HEX2[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.481 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|lcd_st.waiting</TD>
+<TD ALIGN="LEFT">LCD_DATA[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.467 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|trick_i</TD>
+<TD ALIGN="LEFT">HEX0[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.464 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[3]</TD>
+<TD ALIGN="LEFT">LCD_DATA[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.459 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[5]</TD>
+<TD ALIGN="LEFT">LCD_DATA[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.453 ns</TD>
+<TD ALIGN="LEFT">num[8]</TD>
+<TD ALIGN="LEFT">HEX2[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.449 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err3</TD>
+<TD ALIGN="LEFT">LED_RED[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.449 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err3</TD>
+<TD ALIGN="LEFT">LED_RED[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.443 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err3</TD>
+<TD ALIGN="LEFT">LED_RED[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.443 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err3</TD>
+<TD ALIGN="LEFT">LED_RED[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.442 ns</TD>
+<TD ALIGN="LEFT">num[10]</TD>
+<TD ALIGN="LEFT">HEX2[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.431 ns</TD>
+<TD ALIGN="LEFT">num[7]</TD>
+<TD ALIGN="LEFT">HEX1[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.426 ns</TD>
+<TD ALIGN="LEFT">num[13]</TD>
+<TD ALIGN="LEFT">HEX3[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.424 ns</TD>
+<TD ALIGN="LEFT">num[13]</TD>
+<TD ALIGN="LEFT">HEX3[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.419 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err3</TD>
+<TD ALIGN="LEFT">LED_RED[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.419 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err3</TD>
+<TD ALIGN="LEFT">LED_RED[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.412 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|trick_i</TD>
+<TD ALIGN="LEFT">HEX1[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.410 ns</TD>
+<TD ALIGN="LEFT">num[15]</TD>
+<TD ALIGN="LEFT">HEX3[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.407 ns</TD>
+<TD ALIGN="LEFT">num[15]</TD>
+<TD ALIGN="LEFT">HEX3[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.405 ns</TD>
+<TD ALIGN="LEFT">num[13]</TD>
+<TD ALIGN="LEFT">HEX3[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.400 ns</TD>
+<TD ALIGN="LEFT">num[11]</TD>
+<TD ALIGN="LEFT">HEX2[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.397 ns</TD>
+<TD ALIGN="LEFT">num[9]</TD>
+<TD ALIGN="LEFT">HEX2[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.395 ns</TD>
+<TD ALIGN="LEFT">num[5]</TD>
+<TD ALIGN="LEFT">HEX1[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.392 ns</TD>
+<TD ALIGN="LEFT">num[12]</TD>
+<TD ALIGN="LEFT">HEX3[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.388 ns</TD>
+<TD ALIGN="LEFT">num[15]</TD>
+<TD ALIGN="LEFT">HEX3[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.384 ns</TD>
+<TD ALIGN="LEFT">num[13]</TD>
+<TD ALIGN="LEFT">HEX3[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.377 ns</TD>
+<TD ALIGN="LEFT">num[7]</TD>
+<TD ALIGN="LEFT">HEX1[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.367 ns</TD>
+<TD ALIGN="LEFT">num[15]</TD>
+<TD ALIGN="LEFT">HEX3[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.367 ns</TD>
+<TD ALIGN="LEFT">num[10]</TD>
+<TD ALIGN="LEFT">HEX2[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.356 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[0]</TD>
+<TD ALIGN="LEFT">LCD_DATA[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.342 ns</TD>
+<TD ALIGN="LEFT">num[14]</TD>
+<TD ALIGN="LEFT">HEX3[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.339 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[5]</TD>
+<TD ALIGN="LEFT">LCD_DATA[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.339 ns</TD>
+<TD ALIGN="LEFT">num[13]</TD>
+<TD ALIGN="LEFT">HEX3[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.330 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|trick_i</TD>
+<TD ALIGN="LEFT">HEX1[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.323 ns</TD>
+<TD ALIGN="LEFT">num[15]</TD>
+<TD ALIGN="LEFT">HEX3[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.315 ns</TD>
+<TD ALIGN="LEFT">num[5]</TD>
+<TD ALIGN="LEFT">HEX1[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.299 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|lcd_st.mode2</TD>
+<TD ALIGN="LEFT">LCD_DATA[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.293 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|trick_i</TD>
+<TD ALIGN="LEFT">HEX2[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.286 ns</TD>
+<TD ALIGN="LEFT">num[8]</TD>
+<TD ALIGN="LEFT">HEX2[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.273 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|trick_i</TD>
+<TD ALIGN="LEFT">HEX2[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.268 ns</TD>
+<TD ALIGN="LEFT">num[10]</TD>
+<TD ALIGN="LEFT">HEX2[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.249 ns</TD>
+<TD ALIGN="LEFT">num[6]</TD>
+<TD ALIGN="LEFT">HEX1[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.248 ns</TD>
+<TD ALIGN="LEFT">num[12]</TD>
+<TD ALIGN="LEFT">HEX3[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.247 ns</TD>
+<TD ALIGN="LEFT">num[14]</TD>
+<TD ALIGN="LEFT">HEX3[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.245 ns</TD>
+<TD ALIGN="LEFT">num[14]</TD>
+<TD ALIGN="LEFT">HEX3[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.226 ns</TD>
+<TD ALIGN="LEFT">num[14]</TD>
+<TD ALIGN="LEFT">HEX3[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.223 ns</TD>
+<TD ALIGN="LEFT">num[4]</TD>
+<TD ALIGN="LEFT">HEX1[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.205 ns</TD>
+<TD ALIGN="LEFT">num[14]</TD>
+<TD ALIGN="LEFT">HEX3[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.196 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|good_i</TD>
+<TD ALIGN="LEFT">LED_GREEN[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.196 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|good_i</TD>
+<TD ALIGN="LEFT">LED_GREEN[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.187 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|lcd_st.char1</TD>
+<TD ALIGN="LEFT">LCD_DATA[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.178 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|lcd_st.delay</TD>
+<TD ALIGN="LEFT">LCD_DATA[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.174 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|lcd_st.delay</TD>
+<TD ALIGN="LEFT">LCD_DATA[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.170 ns</TD>
+<TD ALIGN="LEFT">num[6]</TD>
+<TD ALIGN="LEFT">HEX1[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.164 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|trick_i</TD>
+<TD ALIGN="LEFT">HEX2[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.162 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|lcd_st.read1</TD>
+<TD ALIGN="LEFT">LCD_DATA[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.161 ns</TD>
+<TD ALIGN="LEFT">num[14]</TD>
+<TD ALIGN="LEFT">HEX3[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.159 ns</TD>
+<TD ALIGN="LEFT">num[1]</TD>
+<TD ALIGN="LEFT">HEX0[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.154 ns</TD>
+<TD ALIGN="LEFT">num[12]</TD>
+<TD ALIGN="LEFT">HEX3[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.151 ns</TD>
+<TD ALIGN="LEFT">num[12]</TD>
+<TD ALIGN="LEFT">HEX3[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.143 ns</TD>
+<TD ALIGN="LEFT">num[4]</TD>
+<TD ALIGN="LEFT">HEX1[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.143 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err2</TD>
+<TD ALIGN="LEFT">LED_RED[7]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.143 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err2</TD>
+<TD ALIGN="LEFT">LED_RED[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.133 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[2]</TD>
+<TD ALIGN="LEFT">LCD_DATA[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.133 ns</TD>
+<TD ALIGN="LEFT">num[12]</TD>
+<TD ALIGN="LEFT">HEX3[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.121 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[6]</TD>
+<TD ALIGN="LEFT">LCD_DATA[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.115 ns</TD>
+<TD ALIGN="LEFT">num[3]</TD>
+<TD ALIGN="LEFT">HEX0[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.114 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err3</TD>
+<TD ALIGN="LEFT">LED_RED[7]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.114 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|errcnt.err3</TD>
+<TD ALIGN="LEFT">LED_RED[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.113 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[5]</TD>
+<TD ALIGN="LEFT">LCD_DATA[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.112 ns</TD>
+<TD ALIGN="LEFT">num[12]</TD>
+<TD ALIGN="LEFT">HEX3[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.067 ns</TD>
+<TD ALIGN="LEFT">num[12]</TD>
+<TD ALIGN="LEFT">HEX3[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.065 ns</TD>
+<TD ALIGN="LEFT">num[8]</TD>
+<TD ALIGN="LEFT">HEX2[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.062 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[3]</TD>
+<TD ALIGN="LEFT">LCD_DATA[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.036 ns</TD>
+<TD ALIGN="LEFT">num[8]</TD>
+<TD ALIGN="LEFT">HEX2[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.024 ns</TD>
+<TD ALIGN="LEFT">num[0]</TD>
+<TD ALIGN="LEFT">HEX0[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.022 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|good_i</TD>
+<TD ALIGN="LEFT">LED_GREEN[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.013 ns</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|lcd_st.delay</TD>
+<TD ALIGN="LEFT">LCD_DATA[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.012 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|good_i</TD>
+<TD ALIGN="LEFT">LED_GREEN[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">11.006 ns</TD>
+<TD ALIGN="LEFT">num[13]</TD>
+<TD ALIGN="LEFT">HEX3[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">10.997 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|good_i</TD>
+<TD ALIGN="LEFT">LED_GREEN[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">10.997 ns</TD>
+<TD ALIGN="LEFT">part2c:p2|good_i</TD>
+<TD ALIGN="LEFT">LED_GREEN[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Timing analysis restricted to 200 rows.</TD>
+<TD ALIGN="LEFT">To change the limit use Settings (Assignments menu)</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+<P><A NAME="9"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>th</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Minimum Slack</TH>
+<TH>Required th</TH>
+<TH>Actual th</TH>
+<TH>From</TH>
+<TH>To</TH>
+<TH>To Clock</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-1.782 ns</TD>
+<TD ALIGN="LEFT">COL[3]</TD>
+<TD ALIGN="LEFT">part1:p1|colq[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-1.812 ns</TD>
+<TD ALIGN="LEFT">COL[1]</TD>
+<TD ALIGN="LEFT">part1:p1|colq[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-1.819 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|lcd_st.read1</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-1.822 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|lcd_st.read2</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-1.828 ns</TD>
+<TD ALIGN="LEFT">COL[2]</TD>
+<TD ALIGN="LEFT">part1:p1|colq[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-1.840 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|lcd_st.char1</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-2.086 ns</TD>
+<TD ALIGN="LEFT">COL[0]</TD>
+<TD ALIGN="LEFT">part1:p1|colq[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-2.372 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|lcd_st.waiting</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-2.631 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-3.345 ns</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-3.804 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-3.804 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-3.804 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-3.804 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-3.949 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-3.949 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-3.949 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-4.372 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-4.391 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-4.391 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-4.391 ns</TD>
+<TD ALIGN="LEFT">LCD_DATA[7]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-5.240 ns</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-5.240 ns</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-5.240 ns</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-5.240 ns</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|counter[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-5.385 ns</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[3]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-5.385 ns</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[5]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-5.385 ns</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[6]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-5.808 ns</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[2]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-5.827 ns</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[0]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-5.827 ns</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[1]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">N/A</TD>
+<TD ALIGN="LEFT">None</TD>
+<TD ALIGN="LEFT">-5.827 ns</TD>
+<TD ALIGN="LEFT">KEY[0]</TD>
+<TD ALIGN="LEFT">LCD_int_i4:lcd|add[4]</TD>
+<TD ALIGN="LEFT">OSC_50</TD>
+</TR>
+</TABLE>
+<P><A NAME="10"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Timing Analyzer Messages</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<PRE>
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Wed Nov 18 13:43:30 2026
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off cdel-module-2 -c keypad_de2_i4 --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "OSC_50" is an undefined clock
+Warning: Found 2 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "clock_div:cdiv|count[15]" as buffer
+    Info: Detected ripple clock "clock_div:cdiv|count[8]" as buffer
+Info: Clock "OSC_50" has Internal fmax of 173.49 MHz between source register "part1:p1|colq[2]" and destination register "part1:p1|curr_st.wait0" (period= 5.764 ns)
+    Info: + Longest register to register delay is 2.668 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X45_Y27_N9; Fanout = 10; REG Node = 'part1:p1|colq[2]'
+        Info: 2: + IC(0.543 ns) + CELL(0.410 ns) = 0.953 ns; Loc. = LCCOMB_X45_Y27_N4; Fanout = 11; COMB Node = 'part1:p1|kpressed~0'
+        Info: 3: + IC(0.294 ns) + CELL(0.275 ns) = 1.522 ns; Loc. = LCCOMB_X45_Y27_N26; Fanout = 3; COMB Node = 'part1:p1|next_st.check1~2'
+        Info: 4: + IC(0.254 ns) + CELL(0.415 ns) = 2.191 ns; Loc. = LCCOMB_X45_Y27_N28; Fanout = 1; COMB Node = 'part1:p1|next_st.wait0~2'
+        Info: 5: + IC(0.243 ns) + CELL(0.150 ns) = 2.584 ns; Loc. = LCCOMB_X45_Y27_N30; Fanout = 1; COMB Node = 'part1:p1|next_st.wait0~3'
+        Info: 6: + IC(0.000 ns) + CELL(0.084 ns) = 2.668 ns; Loc. = LCFF_X45_Y27_N31; Fanout = 8; REG Node = 'part1:p1|curr_st.wait0'
+        Info: Total cell delay = 1.334 ns ( 50.00 % )
+        Info: Total interconnect delay = 1.334 ns ( 50.00 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "OSC_50" to destination register is 4.280 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 3; CLK Node = 'OSC_50'
+            Info: 2: + IC(0.331 ns) + CELL(0.787 ns) = 2.117 ns; Loc. = LCFF_X1_Y18_N17; Fanout = 3; REG Node = 'clock_div:cdiv|count[8]'
+            Info: 3: + IC(0.635 ns) + CELL(0.000 ns) = 2.752 ns; Loc. = CLKCTRL_G0; Fanout = 69; COMB Node = 'CLK_LOCK:clklk|CLK_LOCK_altclkctrl_tb8:CLK_LOCK_altclkctrl_tb8_component|wire_clkctrl1_outclk'
+            Info: 4: + IC(0.991 ns) + CELL(0.537 ns) = 4.280 ns; Loc. = LCFF_X45_Y27_N31; Fanout = 8; REG Node = 'part1:p1|curr_st.wait0'
+            Info: Total cell delay = 2.323 ns ( 54.28 % )
+            Info: Total interconnect delay = 1.957 ns ( 45.72 % )
+        Info: - Longest clock path from clock "OSC_50" to source register is 4.280 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 3; CLK Node = 'OSC_50'
+            Info: 2: + IC(0.331 ns) + CELL(0.787 ns) = 2.117 ns; Loc. = LCFF_X1_Y18_N17; Fanout = 3; REG Node = 'clock_div:cdiv|count[8]'
+            Info: 3: + IC(0.635 ns) + CELL(0.000 ns) = 2.752 ns; Loc. = CLKCTRL_G0; Fanout = 69; COMB Node = 'CLK_LOCK:clklk|CLK_LOCK_altclkctrl_tb8:CLK_LOCK_altclkctrl_tb8_component|wire_clkctrl1_outclk'
+            Info: 4: + IC(0.991 ns) + CELL(0.537 ns) = 4.280 ns; Loc. = LCFF_X45_Y27_N9; Fanout = 10; REG Node = 'part1:p1|colq[2]'
+            Info: Total cell delay = 2.323 ns ( 54.28 % )
+            Info: Total interconnect delay = 1.957 ns ( 45.72 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Micro setup delay of destination is -0.036 ns
+    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50%, fmax is divided by two
+Info: tsu for register "LCD_int_i4:lcd|add[0]" (data pin = "KEY[0]", clock pin = "OSC_50") is 6.057 ns
+    Info: + Longest pin to register delay is 10.400 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.862 ns) = 0.862 ns; Loc. = PIN_G26; Fanout = 127; PIN Node = 'KEY[0]'
+        Info: 2: + IC(6.644 ns) + CELL(0.420 ns) = 7.926 ns; Loc. = LCCOMB_X12_Y27_N10; Fanout = 2; COMB Node = 'LCD_int_i4:lcd|counter[3]~2'
+        Info: 3: + IC(0.689 ns) + CELL(0.419 ns) = 9.034 ns; Loc. = LCCOMB_X14_Y27_N6; Fanout = 7; COMB Node = 'LCD_int_i4:lcd|add[5]~0'
+        Info: 4: + IC(0.706 ns) + CELL(0.660 ns) = 10.400 ns; Loc. = LCFF_X14_Y26_N1; Fanout = 33; REG Node = 'LCD_int_i4:lcd|add[0]'
+        Info: Total cell delay = 2.361 ns ( 22.70 % )
+        Info: Total interconnect delay = 8.039 ns ( 77.30 % )
+    Info: + Micro setup delay of destination is -0.036 ns
+    Info: - Shortest clock path from clock "OSC_50" to destination register is 4.307 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 3; CLK Node = 'OSC_50'
+        Info: 2: + IC(0.331 ns) + CELL(0.787 ns) = 2.117 ns; Loc. = LCFF_X1_Y18_N31; Fanout = 2; REG Node = 'clock_div:cdiv|count[15]'
+        Info: 3: + IC(0.641 ns) + CELL(0.000 ns) = 2.758 ns; Loc. = CLKCTRL_G1; Fanout = 27; COMB Node = 'CLK_LOCK:clklk2|CLK_LOCK_altclkctrl_tb8:CLK_LOCK_altclkctrl_tb8_component|wire_clkctrl1_outclk'
+        Info: 4: + IC(1.012 ns) + CELL(0.537 ns) = 4.307 ns; Loc. = LCFF_X14_Y26_N1; Fanout = 33; REG Node = 'LCD_int_i4:lcd|add[0]'
+        Info: Total cell delay = 2.323 ns ( 53.94 % )
+        Info: Total interconnect delay = 1.984 ns ( 46.06 % )
+Info: tco from clock "OSC_50" to destination pin "LCD_DATA[4]" through register "LCD_int_i4:lcd|add[1]" is 13.739 ns
+    Info: + Longest clock path from clock "OSC_50" to source register is 4.307 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 3; CLK Node = 'OSC_50'
+        Info: 2: + IC(0.331 ns) + CELL(0.787 ns) = 2.117 ns; Loc. = LCFF_X1_Y18_N31; Fanout = 2; REG Node = 'clock_div:cdiv|count[15]'
+        Info: 3: + IC(0.641 ns) + CELL(0.000 ns) = 2.758 ns; Loc. = CLKCTRL_G1; Fanout = 27; COMB Node = 'CLK_LOCK:clklk2|CLK_LOCK_altclkctrl_tb8:CLK_LOCK_altclkctrl_tb8_component|wire_clkctrl1_outclk'
+        Info: 4: + IC(1.012 ns) + CELL(0.537 ns) = 4.307 ns; Loc. = LCFF_X14_Y26_N27; Fanout = 34; REG Node = 'LCD_int_i4:lcd|add[1]'
+        Info: Total cell delay = 2.323 ns ( 53.94 % )
+        Info: Total interconnect delay = 1.984 ns ( 46.06 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Longest register to pin delay is 9.182 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X14_Y26_N27; Fanout = 34; REG Node = 'LCD_int_i4:lcd|add[1]'
+        Info: 2: + IC(1.530 ns) + CELL(0.420 ns) = 1.950 ns; Loc. = LCCOMB_X11_Y27_N12; Fanout = 1; COMB Node = 'LCD_int_i4:lcd|WideOr17~5'
+        Info: 3: + IC(0.712 ns) + CELL(0.410 ns) = 3.072 ns; Loc. = LCCOMB_X14_Y27_N0; Fanout = 1; COMB Node = 'LCD_int_i4:lcd|WideOr17~6'
+        Info: 4: + IC(0.975 ns) + CELL(0.275 ns) = 4.322 ns; Loc. = LCCOMB_X11_Y28_N6; Fanout = 1; COMB Node = 'LCD_int_i4:lcd|Selector21~2'
+        Info: 5: + IC(0.716 ns) + CELL(0.393 ns) = 5.431 ns; Loc. = LCCOMB_X12_Y27_N20; Fanout = 1; COMB Node = 'LCD_int_i4:lcd|Selector21~3'
+        Info: 6: + IC(1.119 ns) + CELL(2.632 ns) = 9.182 ns; Loc. = PIN_J4; Fanout = 0; PIN Node = 'LCD_DATA[4]'
+        Info: Total cell delay = 4.130 ns ( 44.98 % )
+        Info: Total interconnect delay = 5.052 ns ( 55.02 % )
+Info: th for register "part1:p1|colq[3]" (data pin = "COL[3]", clock pin = "OSC_50") is -1.782 ns
+    Info: + Longest clock path from clock "OSC_50" to destination register is 4.280 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 3; CLK Node = 'OSC_50'
+        Info: 2: + IC(0.331 ns) + CELL(0.787 ns) = 2.117 ns; Loc. = LCFF_X1_Y18_N17; Fanout = 3; REG Node = 'clock_div:cdiv|count[8]'
+        Info: 3: + IC(0.635 ns) + CELL(0.000 ns) = 2.752 ns; Loc. = CLKCTRL_G0; Fanout = 69; COMB Node = 'CLK_LOCK:clklk|CLK_LOCK_altclkctrl_tb8:CLK_LOCK_altclkctrl_tb8_component|wire_clkctrl1_outclk'
+        Info: 4: + IC(0.991 ns) + CELL(0.537 ns) = 4.280 ns; Loc. = LCFF_X45_Y27_N21; Fanout = 5; REG Node = 'part1:p1|colq[3]'
+        Info: Total cell delay = 2.323 ns ( 54.28 % )
+        Info: Total interconnect delay = 1.957 ns ( 45.72 % )
+    Info: + Micro hold delay of destination is 0.266 ns
+    Info: - Shortest pin to register delay is 6.328 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.852 ns) = 0.852 ns; Loc. = PIN_H24; Fanout = 1; PIN Node = 'COL[3]'
+        Info: 2: + IC(5.110 ns) + CELL(0.366 ns) = 6.328 ns; Loc. = LCFF_X45_Y27_N21; Fanout = 5; REG Node = 'part1:p1|colq[3]'
+        Info: Total cell delay = 1.218 ns ( 19.25 % )
+        Info: Total interconnect delay = 5.110 ns ( 80.75 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 182 megabytes
+    Info: Processing ended: Wed Nov 18 13:43:31 2026
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+</PRE>
+<HR>
+
+<A HREF="#top">Top</A>
+
+</BODY>
+
+</HTML>
+

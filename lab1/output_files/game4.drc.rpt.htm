@@ -1,0 +1,806 @@
+<HTML>
+
+<HEAD>
+<TITLE>Design Assistant report for game4</TITLE>
+</HEAD>
+
+<BODY>
+
+<A NAME="top"></A>
+
+<CENTER>
+<H1>Design Assistant report for game4</H1>
+<H3>Wed Oct 21 14:57:32 2026<BR>
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition</H3>
+</CENTER>
+
+<P><HR></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Table of Contents</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<OL>
+<LI><A HREF="#1">Legal Notice</A></LI>
+<LI><A HREF="#2">Design Assistant Summary</A></LI>
+<LI><A HREF="#3">Design Assistant Settings</A></LI>
+<LI><A HREF="#4">Medium Violations</A></LI>
+<LI><A HREF="#5">Information only Violations</A></LI>
+<LI><A HREF="#6">Design Assistant Messages</A></LI>
+</OL>
+
+<P><A NAME="1"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Legal Notice</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<PRE>Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+</PRE>
+
+<P><A NAME="2"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Design Assistant Summary</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle">
+<TD ALIGN="LEFT">Design Assistant Status</TH>
+<TD ALIGN="LEFT">Analyzed - Wed Oct 21 14:57:32 2026</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Revision Name</TD>
+<TD ALIGN="LEFT">game4</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Top-level Entity Name</TD>
+<TD ALIGN="LEFT">game4</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Family</TD>
+<TD ALIGN="LEFT">Cyclone II</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Total Critical Violations</TD>
+<TD ALIGN="LEFT">0</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Total High Violations</TD>
+<TD ALIGN="LEFT">0</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Total Medium Violations</TD>
+<TD ALIGN="LEFT">3</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">- Rule C104</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">- Rule C106</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">- Rule R102</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Total Information only Violations</TD>
+<TD ALIGN="LEFT">52</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">- Rule T101</TD>
+<TD ALIGN="LEFT">2</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">- Rule T102</TD>
+<TD ALIGN="LEFT">50</TD>
+</TR>
+</TABLE>
+<P><A NAME="3"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Design Assistant Settings</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Option</TH>
+<TH>Setting</TH>
+<TH>To</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Design Assistant mode</TD>
+<TD ALIGN="LEFT">Post-Fitting</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Threshold value for clock net not mapped to clock spines rule</TD>
+<TD ALIGN="LEFT">25</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Minimum number of clock port feed by gated clocks</TD>
+<TD ALIGN="LEFT">30</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Minimum number of node fan-out</TD>
+<TD ALIGN="LEFT">30</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Maximum number of nodes to report</TD>
+<TD ALIGN="LEFT">50</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule C101: Gated clock should be implemented according to the Altera standard scheme</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule C102: Logic cell should not be used to generate an inverted clock signal</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule C103: Gated clock does not feed at least a pre-defined number of clock ports to effectively save power</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule C104: Clock signal source should drive only clock input ports</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule C105: Clock signal should be a global signal (Rule applies during post-fitting analysis. This rule applies during both post-fitting analysis and post-synthesis analysis if the design targets a MAX 3000 or MAX 7000 device. For more information, see the Help for the rule.)</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule C106: Clock signal source should not drive registers triggered by different clock edges</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule R101: Combinational logic used as a reset signal should be synchronized</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule R102: External reset signals should be synchronized using two cascaded registers</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule R103: External reset signal should be correctly synchronized</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule R104: The reset signal that is generated in one clock domain and used in another clock domain should be correctly synchronized</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule R105: The reset signal that is generated in one clock domain and used in another clock domain should be synchronized</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T101: Nodes with more than the specified number of fan-outs</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule A101: Design should not contain combinational loops</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule A102: Register output should not drive its own control signal directly or through combinational logic</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule A103: Design should not contain delay chains</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule A104: Design should not contain ripple clock structures</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule A105: Pulses should not be implemented asynchronously</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule A106: Multiple pulses should not be generated in design</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule A107: Design should not contain SR latches</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule A108: Design should not contain latches</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule S101: Output enable and input of the same tri-state node should not be driven by same signal source</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule S103: More than one asynchronous port of a register should not be driven by the same signal source</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule S104: Clock port and any other port of a register should not be driven by the same signal source</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule D102: Multiple data bits that are transferred across asynchronous clock domains are synchronized, but not all bits may be aligned in the receiving clock domain</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains</TD>
+<TD ALIGN="LEFT">On</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule M101: Data bits are not synchronized when transferred to the state machine of asynchronous clock domains</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule M102: No reset signal defined to initialize the state machine</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule M103: State machine should not contain an unreachable state</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule M104: State machine should not contain a deadlock state</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule M105: State machine should not contain a dead transition</TD>
+<TD ALIGN="LEFT">Off</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+<P><A NAME="4"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Medium Violations</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Rule name</TH>
+<TH>Name</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule C104: Clock signal source should drive only clock input ports</TD>
+<TD ALIGN="LEFT">clock_div:inst1|count[15]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Clock ports destination node(s) list</TD>
+<TD ALIGN="LEFT">trick:inst4|show_x</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Clock ports destination node(s) list</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|add[6]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Clock ports destination node(s) list</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|add[5]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Clock ports destination node(s) list</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|add[4]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Clock ports destination node(s) list</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|add[3]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Clock ports destination node(s) list</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|add[2]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Clock ports destination node(s) list</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|add[1]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Clock ports destination node(s) list</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|add[0]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Clock ports destination node(s) list</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|lcd_st.set1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Clock ports destination node(s) list</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|lcd_st.set2</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Non-clock ports destination node(s) list</TD>
+<TD ALIGN="LEFT">clock_div:inst1|count[15]~43</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule C106: Clock signal source should not drive registers triggered by different clock edges</TD>
+<TD ALIGN="LEFT">clock_div:inst1|count[15]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Positive edge destination node(s) list</TD>
+<TD ALIGN="LEFT">tutorial4:inst10|inst4[0]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Positive edge destination node(s) list</TD>
+<TD ALIGN="LEFT">tutorial4:inst10|control4:inst3|state.check</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Positive edge destination node(s) list</TD>
+<TD ALIGN="LEFT">tutorial4:inst10|control4:inst3|state.start</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Positive edge destination node(s) list</TD>
+<TD ALIGN="LEFT">keypad:inst3|current_state.kra3</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Positive edge destination node(s) list</TD>
+<TD ALIGN="LEFT">keypad:inst3|current_state.kra1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Positive edge destination node(s) list</TD>
+<TD ALIGN="LEFT">keypad:inst3|current_state.kra2</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Positive edge destination node(s) list</TD>
+<TD ALIGN="LEFT">keypad:inst3|current_state.kra0</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Positive edge destination node(s) list</TD>
+<TD ALIGN="LEFT">tutorial4:inst10|control4:inst3|state.show</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Positive edge destination node(s) list</TD>
+<TD ALIGN="LEFT">keypad:inst3|current_state.wait0</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Positive edge destination node(s) list</TD>
+<TD ALIGN="LEFT">tutorial4:inst10|inst4[3]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Negative edge destination node(s) list</TD>
+<TD ALIGN="LEFT">keypad:inst3|colq[1]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Negative edge destination node(s) list</TD>
+<TD ALIGN="LEFT">keypad:inst3|colq[2]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Negative edge destination node(s) list</TD>
+<TD ALIGN="LEFT">keypad:inst3|colq[0]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Negative edge destination node(s) list</TD>
+<TD ALIGN="LEFT">keypad:inst3|colq[3]</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule R102: External reset signals should be synchronized using two cascaded registers</TD>
+<TD ALIGN="LEFT">KEY0</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Reset signal destination node(s) list</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|lcd_st.delay</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Reset signal destination node(s) list</TD>
+<TD ALIGN="LEFT">trick:inst4|show_x</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Reset signal destination node(s) list</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|lcd_st.set1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Reset signal destination node(s) list</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|lcd_st.set2</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Reset signal destination node(s) list</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|lcd_st.onoff1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Reset signal destination node(s) list</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|lcd_st.onoff2</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Reset signal destination node(s) list</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|lcd_st.mode1</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Reset signal destination node(s) list</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|lcd_st.mode2</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Reset signal destination node(s) list</TD>
+<TD ALIGN="LEFT">tutorial4:inst10|control4:inst3|run_i</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">&nbsp;Reset signal destination node(s) list</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|run_d</TD>
+</TR>
+</TABLE>
+<P><A NAME="5"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Information only Violations</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<TABLE BORDER="1" cellspacing="1" cellpadding="2">
+<TR valign="middle" bgcolor="#C0C0C0">
+<TH>Rule name</TH>
+<TH>Name</TH>
+<TH>Fan-Out</TH>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T101: Nodes with more than the specified number of fan-outs</TD>
+<TD ALIGN="LEFT">CLK_LOCK:inst2|CLK_LOCK_altclkctrl_tb8:CLK_LOCK_altclkctrl_tb8_component|wire_clkctrl1_outclk</TD>
+<TD ALIGN="LEFT">75</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T101: Nodes with more than the specified number of fan-outs</TD>
+<TD ALIGN="LEFT">KEY0~clkctrl</TD>
+<TD ALIGN="LEFT">79</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">KEY0~clkctrl</TD>
+<TD ALIGN="LEFT">79</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">CLK_LOCK:inst2|CLK_LOCK_altclkctrl_tb8:CLK_LOCK_altclkctrl_tb8_component|wire_clkctrl1_outclk</TD>
+<TD ALIGN="LEFT">75</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|add[2]</TD>
+<TD ALIGN="LEFT">27</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|add[1]</TD>
+<TD ALIGN="LEFT">23</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|add[0]</TD>
+<TD ALIGN="LEFT">23</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|add[4]</TD>
+<TD ALIGN="LEFT">22</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|add[3]</TD>
+<TD ALIGN="LEFT">20</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|add[5]</TD>
+<TD ALIGN="LEFT">19</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|add[6]</TD>
+<TD ALIGN="LEFT">17</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|lcd_st.waiting</TD>
+<TD ALIGN="LEFT">15</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">OSC_50~clkctrl</TD>
+<TD ALIGN="LEFT">15</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|lcd_st.delay</TD>
+<TD ALIGN="LEFT">15</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|WideOr6~0</TD>
+<TD ALIGN="LEFT">14</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">trick:inst4|show_x</TD>
+<TD ALIGN="LEFT">13</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">tutorial4:inst10|control4:inst3|shftl~1</TD>
+<TD ALIGN="LEFT">12</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">tutorial4:inst10|control4:inst3|state.start</TD>
+<TD ALIGN="LEFT">12</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">keypad:inst3|keycode[2]~11</TD>
+<TD ALIGN="LEFT">11</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">keypad:inst3|current_state.kra1</TD>
+<TD ALIGN="LEFT">11</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">keypad:inst3|current_state.kra0</TD>
+<TD ALIGN="LEFT">11</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">keypad:inst3|current_state.kra2</TD>
+<TD ALIGN="LEFT">10</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">keypad:inst3|colq[0]</TD>
+<TD ALIGN="LEFT">10</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">keypad:inst3|current_state.check0</TD>
+<TD ALIGN="LEFT">9</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">keypad:inst3|colq[1]</TD>
+<TD ALIGN="LEFT">9</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">tutorial4:inst10|BCDcnt3:inst|cnt4:inst2|count[0]</TD>
+<TD ALIGN="LEFT">8</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">tutorial4:inst10|BCDcnt3:inst|cnt4:inst2|count[3]</TD>
+<TD ALIGN="LEFT">8</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">keypad:inst3|current_state.kra3</TD>
+<TD ALIGN="LEFT">8</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">keypad:inst3|colq[2]</TD>
+<TD ALIGN="LEFT">8</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">keypad:inst3|keycode[0]~4</TD>
+<TD ALIGN="LEFT">7</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">trick:inst4|disp[8]~11</TD>
+<TD ALIGN="LEFT">7</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">trick:inst4|disp[2]~1</TD>
+<TD ALIGN="LEFT">7</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">keypad:inst3|current_state.wait0</TD>
+<TD ALIGN="LEFT">7</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">tutorial4:inst10|BCDcnt3:inst|inst4</TD>
+<TD ALIGN="LEFT">7</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">trick:inst4|disp[1]~2</TD>
+<TD ALIGN="LEFT">7</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">tutorial4:inst10|keygroup:inst2|inst6~0</TD>
+<TD ALIGN="LEFT">7</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|counter[0]</TD>
+<TD ALIGN="LEFT">7</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">trick:inst4|disp[3]~0</TD>
+<TD ALIGN="LEFT">7</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">trick:inst4|disp[0]~3</TD>
+<TD ALIGN="LEFT">7</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">trick:inst4|disp[7]~4</TD>
+<TD ALIGN="LEFT">7</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">trick:inst4|disp[6]~5</TD>
+<TD ALIGN="LEFT">7</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">trick:inst4|disp[5]~6</TD>
+<TD ALIGN="LEFT">7</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">trick:inst4|disp[4]~7</TD>
+<TD ALIGN="LEFT">7</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">trick:inst4|disp[11]~8</TD>
+<TD ALIGN="LEFT">7</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">trick:inst4|disp[10]~9</TD>
+<TD ALIGN="LEFT">7</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">trick:inst4|disp[9]~10</TD>
+<TD ALIGN="LEFT">7</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">tutorial4:inst10|BCDcnt3:inst|cnt4:inst|count[0]</TD>
+<TD ALIGN="LEFT">6</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|Equal6~0</TD>
+<TD ALIGN="LEFT">6</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">tutorial4:inst10|BCDcnt3:inst|cnt4:inst|count[3]</TD>
+<TD ALIGN="LEFT">6</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">tutorial4:inst10|BCDcnt3:inst|cnt4:inst1|count[0]</TD>
+<TD ALIGN="LEFT">6</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">tutorial4:inst10|control4:inst3|last_msg[0]</TD>
+<TD ALIGN="LEFT">6</TD>
+</TR>
+<TR valign="middle">
+<TD ALIGN="LEFT">Rule T102: Top nodes with the highest number of fan-outs</TD>
+<TD ALIGN="LEFT">LCD_int:inst15|lcd_st.read2</TD>
+<TD ALIGN="LEFT">6</TD>
+</TR>
+</TABLE>
+<P><A NAME="6"><HR></A></P>
+<TABLE WIDTH="100%" BORDER="0"><TR VALIGN="TOP">
+<TD><H2>Design Assistant Messages</H2></TD>
+<TD ALIGN="RIGHT"><A HREF="#top">Top</a></TD></TR></TABLE>
+<PRE>
+Info: *******************************************************************
+Info: Running Quartus II Design Assistant
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Wed Oct 21 14:57:32 2026
+Info: Command: quartus_drc --read_settings_files=off --write_settings_files=off game -c game4
+Warning: (Medium) Rule C104: Clock signal source should drive only clock input ports. Found 1 nodes related to this rule.
+    Warning: Node  "clock_div:inst1|count[15]"
+Warning: (Medium) Rule C106: Clock signal source should not drive registers triggered by different clock edges. Found 1 node(s) related to this rule.
+    Warning: Node  "clock_div:inst1|count[15]"
+Warning: (Medium) Rule R102: External reset signals should be synchronized using two cascaded registers. Found 1 node(s) related to this rule.
+    Warning: Node  "KEY0"
+Info: (Information) Rule T101: Nodes with more than the specified number of fan-outs. (Value defined:30). Found 2 node(s) with highest fan-out.
+    Info: Node  "CLK_LOCK:inst2|CLK_LOCK_altclkctrl_tb8:CLK_LOCK_altclkctrl_tb8_component|wire_clkctrl1_outclk"
+    Info: Node  "KEY0~clkctrl"
+Info: (Information) Rule T102: Top nodes with the highest number of fan-outs. (Value defined:50). Found 50 node(s) with highest fan-out.
+    Info: Node  "KEY0~clkctrl"
+    Info: Node  "CLK_LOCK:inst2|CLK_LOCK_altclkctrl_tb8:CLK_LOCK_altclkctrl_tb8_component|wire_clkctrl1_outclk"
+    Info: Node  "LCD_int:inst15|add[2]"
+    Info: Node  "LCD_int:inst15|add[1]"
+    Info: Node  "LCD_int:inst15|add[0]"
+    Info: Node  "LCD_int:inst15|add[4]"
+    Info: Node  "LCD_int:inst15|add[3]"
+    Info: Node  "LCD_int:inst15|add[5]"
+    Info: Node  "LCD_int:inst15|add[6]"
+    Info: Node  "LCD_int:inst15|lcd_st.waiting"
+    Info: Node  "OSC_50~clkctrl"
+    Info: Node  "LCD_int:inst15|lcd_st.delay"
+    Info: Node  "LCD_int:inst15|WideOr6~0"
+    Info: Node  "trick:inst4|show_x"
+    Info: Node  "tutorial4:inst10|control4:inst3|shftl~1"
+    Info: Node  "tutorial4:inst10|control4:inst3|state.start"
+    Info: Node  "keypad:inst3|keycode[2]~11"
+    Info: Node  "keypad:inst3|current_state.kra1"
+    Info: Node  "keypad:inst3|current_state.kra0"
+    Info: Node  "keypad:inst3|current_state.kra2"
+    Info: Node  "keypad:inst3|colq[0]"
+    Info: Node  "keypad:inst3|current_state.check0"
+    Info: Node  "keypad:inst3|colq[1]"
+    Info: Node  "tutorial4:inst10|BCDcnt3:inst|cnt4:inst2|count[0]"
+    Info: Node  "tutorial4:inst10|BCDcnt3:inst|cnt4:inst2|count[3]"
+    Info: Node  "keypad:inst3|current_state.kra3"
+    Info: Node  "keypad:inst3|colq[2]"
+    Info: Node  "keypad:inst3|keycode[0]~4"
+    Info: Node  "trick:inst4|disp[8]~11"
+    Info: Node  "trick:inst4|disp[2]~1"
+    Info: Truncated list of Design Assistant messages to 30 messages. Go to sections under Design Assistant section of Compilation Report for complete lists of Design Assistant messages generated.
+Info: Design Assistant information: finished post-fitting analysis of current design -- generated 52 information messages and 3 warning messages
+Info: Quartus II Design Assistant was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 191 megabytes
+    Info: Processing ended: Wed Oct 21 14:57:32 2026
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+</PRE>
+<HR>
+
+<A HREF="#top">Top</A>
+
+</BODY>
+
+</HTML>
+

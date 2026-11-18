@@ -63,7 +63,7 @@ go <= run & run_d;
 					       elsif message = 5 then  
 							  lcd_st <= clear1; add <= 64; 	 -- Message 5
 					       elsif message = 6 then  
-							  lcd_st <= clear1; add <= 80; 	 -- Message 5
+							  lcd_st <= clear1; add <= 80; 	 -- Message 6
 						   else
 							  lcd_st <= waiting;
 						   end if;	  	
